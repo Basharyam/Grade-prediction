@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email" required />
+        <div class="invalid-feedback">
+          Please enter a valid email.
+        </div>
+        <div class="valid-feedback">
+          OK
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+        <div class="invalid-feedback">Password must be at least 7 characters long and include at least one lowercase , one uppercase letter, and one special character.</div>
+        <div class="valid-feedback">OK</div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <script src="Login.js"></script>
+</body>
+</html>
