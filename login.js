@@ -2,7 +2,7 @@ let form = document.getElementById("loginForm");
 let input_email = document.getElementById("email");
 let input_password = document.getElementById("password");
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit',async (e) => {
     e.preventDefault();
 
     input_email.classList.remove("is-valid", "is-invalid");
@@ -47,6 +47,38 @@ form.addEventListener('submit', (e) => {
         input_email.classList.remove("is-valid");
         input_password.classList.remove("is-valid");
     }
+
+    // Prepare payload
+  const payload = {
+    email: input_email.value.trim(),
+    password: input_password.value
+  };
+
+  try {
+    // Send login request
+    const res = await fetch('/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+
+    if (!result.success) {
+      // login failed on the server
+      alert(result.message || 'Invalid email or password');
+      return;
+    }
+
+    // login succeeded → save user in sessionStorage
+    sessionStorage.setItem('user', JSON.stringify(result.user));
+
+    // redirect to search page
+    window.location.href = 'index.html';
+
+  } catch (err) {
+    console.error('Network error:', err);
+    alert('Network error. Please try again later.');
+  }
 
 });
 

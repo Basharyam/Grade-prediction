@@ -4,7 +4,7 @@ let input_email=document.getElementById("email");
 let input_password=document.getElementById("password");
 let confirm_pass=document.getElementById("confirm");
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     input_name.classList.remove("is-valid", "is-invalid");
@@ -76,13 +76,36 @@ form.addEventListener('submit', (e) => {
         emailValidFeedback.style.display = "block";
     }
 
-    if (vaild) {
-        alert("Registe done");
+    if (!vaild) return;
+
+    const payload = {
+        name: input_name.value.trim(),
+        email: input_email.value.trim(),
+        password: input_password.value
+    };
+
+    try {
+        const res = await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+            alert('Registration successful! Redirecting to login...');
+            window.location.href = 'login.html';
+        } else {
+            alert(`Error: ${result.error || result.message || 'Unknown error'}`);
+        }
+
         form.reset();
-        input_name.classList.remove("is-valid");
-        input_email.classList.remove("is-valid");
-        input_password.classList.remove("is-valid");
-        confirm_pass.classList.remove("is-valid");
+        [input_name, input_email, input_password, confirm_pass].forEach(i => i.classList.remove('is-valid'));
+
+    } catch (err) {
+        console.error('Network error:', err);
+        alert('Network error. Please try again later.');
     }
 });
 
