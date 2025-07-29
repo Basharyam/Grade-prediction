@@ -41,13 +41,6 @@ form.addEventListener('submit',async (e) => {
         emailValidFeedback.style.display = "block";
     }
 
-    if (valid) {
-        alert("Login successful");
-        form.reset();
-        input_email.classList.remove("is-valid");
-        input_password.classList.remove("is-valid");
-    }
-
     // Prepare payload
   const payload = {
     email: input_email.value.trim(),
@@ -69,10 +62,11 @@ form.addEventListener('submit',async (e) => {
       return;
     }
 
-    // login succeeded → save user in sessionStorage
+    // Save user and token in sessionStorage
     sessionStorage.setItem('user', JSON.stringify(result.user));
+    sessionStorage.setItem('token', result.token);
 
-    // redirect to search page
+    alert("Login successful! Redirecting...");
     window.location.href = 'predict.html';
 
   } catch (err) {

@@ -100,6 +100,10 @@ function authMiddleware(req, res, next) {
 
 
 // Registration
+app.get('/register', (req, res) => {
+  res.sendFile(__dirname + '/register.html');
+});
+
 app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
