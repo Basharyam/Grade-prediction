@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Prediction</title>
+  <link rel="stylesheet" href="predict.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Course Grade Prediction</h1>
+    <form id="predictForm">
+      <label>Gender:</label><br>
+      <input type="radio" name="gender" value="male" required> Male
+      <input type="radio" name="gender" value="female" required> Female
+
+      <br><br>
+
+      <label for="race">Race/Ethnicity:</label>
+      <select name="race" id="race" required>
+        <option value="">Select</option>
+        <option value="group A">Group A</option>
+        <option value="group B">Group B</option>
+        <option value="group C">Group C</option>
+        <option value="group D">Group D</option>
+        <option value="group E">Group E</option>
+      </select>
+
+      <br><br>
+
+      <label for="education">Parental Level of Education:</label>
+      <select name="education" id="education" required>
+        <option value="">Select</option>
+        <option value="some high school">Some High School</option>
+        <option value="high school">High School</option>
+        <option value="some college">Some College</option>
+        <option value="associate's degree">Associate's Degree</option>
+        <option value="bachelor's degree">Bachelor's Degree</option>
+        <option value="master's degree">Master's Degree</option>
+      </select>
+
+      <br><br>
+
+      <label for="lunch">Lunch:</label>
+      <select name="lunch" id="lunch" required>
+        <option value="">Select</option>
+        <option value="standard">Standard</option>
+        <option value="free/reduced">Free/Reduced</option>
+      </select>
+
+      <br><br>
+
+      <label>Test Preparation Course:</label><br>
+      <input type="radio" name="test_prep" value="completed" required> Completed
+      <input type="radio" name="test_prep" value="none" required> None
+
+      <br><br>
+
+      <button type="submit">Predict Grade</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="predict.js"></script>
+</body>
+</html>

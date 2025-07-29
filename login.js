@@ -73,7 +73,7 @@ form.addEventListener('submit',async (e) => {
     sessionStorage.setItem('user', JSON.stringify(result.user));
 
     // redirect to search page
-    window.location.href = 'index.html';
+    window.location.href = 'predict.html';
 
   } catch (err) {
     console.error('Network error:', err);

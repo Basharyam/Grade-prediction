@@ -39,6 +39,9 @@ mongoose.connect(process.env.MONGODB_URI, {
 // These will be implemented later
 
 // Login
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/login.html');
+});
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -69,6 +72,7 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ success: false, message: 'Server error' });
   }
 });
+
 // --- 🔐 Logout
 app.post('/logout', authMiddleware, async (req, res) => {
   try {
