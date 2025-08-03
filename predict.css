@@ -48,3 +48,13 @@ button {
   color: green;
   text-align: center;
 }
+
+.grade-input {
+  width: 160px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+

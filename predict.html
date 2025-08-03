@@ -10,12 +10,13 @@
   <div class="container">
     <h1>Course Grade Prediction</h1>
     <form id="predictForm">
+      <!-- Gender -->
       <label>Gender:</label><br>
       <input type="radio" name="gender" value="male" required> Male
       <input type="radio" name="gender" value="female" required> Female
-
       <br><br>
 
+      <!-- Race -->
       <label for="race">Race/Ethnicity:</label>
       <select name="race" id="race" required>
         <option value="">Select</option>
@@ -25,9 +26,9 @@
         <option value="group D">Group D</option>
         <option value="group E">Group E</option>
       </select>
-
       <br><br>
 
+      <!-- Education -->
       <label for="education">Parental Level of Education:</label>
       <select name="education" id="education" required>
         <option value="">Select</option>
@@ -38,24 +39,53 @@
         <option value="bachelor's degree">Bachelor's Degree</option>
         <option value="master's degree">Master's Degree</option>
       </select>
-
       <br><br>
 
+      <!-- Lunch -->
       <label for="lunch">Lunch:</label>
       <select name="lunch" id="lunch" required>
         <option value="">Select</option>
         <option value="standard">Standard</option>
         <option value="free/reduced">Free/Reduced</option>
       </select>
-
       <br><br>
 
+      <!-- Test Prep -->
       <label>Test Preparation Course:</label><br>
       <input type="radio" name="test_prep" value="completed" required> Completed
       <input type="radio" name="test_prep" value="none" required> None
-
       <br><br>
 
+      <!-- Grade Inputs -->
+      <label>Enter Your Grades:</label><br>
+
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <div>
+          <label for="math_score">Math</label><br>
+          <input type="number" name="math_score" id="math_score"
+                 placeholder="0–100" min="0" max="100" value="0"
+                 class="grade-input" required>
+        </div>
+      
+        <div>
+          <label for="reading_score">Reading</label><br>
+          <input type="number" name="reading_score" id="reading_score"
+                 placeholder="0–100" min="0" max="100" value="0"
+                 class="grade-input" required>
+        </div>
+      
+        <div>
+          <label for="writing_score">Writing</label><br>
+          <input type="number" name="writing_score" id="writing_score"
+                 placeholder="0–100" min="0" max="100" value="0"
+                 class="grade-input" required>
+        </div>
+      </div>
+      
+      <br>
+       
+
+      <!-- Submit -->
       <button type="submit">Predict Grade</button>
     </form>
 

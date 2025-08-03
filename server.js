@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 
 const User = require('./models/user');
 const bcrypt = require('bcrypt');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET || 'secret123'; // ideally from .env
@@ -128,6 +129,18 @@ app.post('/register', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+
+// העברת בקשות אל Flask
+// העברת בקשות אל Flask
+app.use('/api', createProxyMiddleware({
+  target: 'http://localhost:5000',  // Flask
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': ''
+  }
+}));
+
 
 
 // Start server
