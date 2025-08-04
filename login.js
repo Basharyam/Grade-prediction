@@ -2,7 +2,7 @@ let form = document.getElementById("loginForm");
 let input_email = document.getElementById("email");
 let input_password = document.getElementById("password");
 
-form.addEventListener('submit',async (e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     input_email.classList.remove("is-valid", "is-invalid");
@@ -18,22 +18,21 @@ form.addEventListener('submit',async (e) => {
     passwordInvalidFeedback.style.display = "none";
     passwordValidFeedback.style.display = "none";
 
-
-    let valid =true;
+    let valid = true;
 
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).{7,15}$/;
-    if (!passwordRegex.test(input_password.value) || input_password.value.length >15 || input_password.value.length < 7){
+    if (!passwordRegex.test(input_password.value) || input_password.value.length > 15 || input_password.value.length < 7) {
         valid = false;
         input_password.classList.add("is-invalid");
         passwordInvalidFeedback.style.display = "block";
-    } else{
+    } else {
         input_password.classList.add("is-valid");
         passwordValidFeedback.style.display = "block";
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(input_email.value)){
-        valid = false ; 
+    if (!emailRegex.test(input_email.value)) {
+        valid = false;
         input_email.classList.add("is-invalid");
         emailInvalidFeedback.style.display = "block";
     } else {
@@ -41,40 +40,165 @@ form.addEventListener('submit',async (e) => {
         emailValidFeedback.style.display = "block";
     }
 
-    // Prepare payload
-  const payload = {
-    email: input_email.value.trim(),
-    password: input_password.value
-  };
-
-  try {
-    // Send login request
-    const res = await fetch('/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const result = await res.json();
-
-    if (!result.success) {
-      // login failed on the server
-      alert(result.message || 'Invalid email or password');
-      return;
+    if (!valid) {
+        return;
     }
 
-    // Save user and token in sessionStorage
-    sessionStorage.setItem('user', JSON.stringify(result.user));
-    sessionStorage.setItem('token', result.token);
+    // Prepare payload
+    const payload = {
+        email: input_email.value.trim(),
+        password: input_password.value
+    };
 
-    alert("Login successful! Redirecting...");
-    window.location.href = 'predict.html';
+    try {
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Signing In...';
+        submitBtn.disabled = true;
 
-  } catch (err) {
-    console.error('Network error:', err);
-    alert('Network error. Please try again later.');
-  }
+        // Send login request
+        const res = await fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        const result = await res.json();
 
+        if (!result.success) {
+            // login failed on the server
+            showNotification(result.message || 'Invalid email or password', 'error');
+            return;
+        }
+
+        // Save user and token in sessionStorage
+        const userData = {
+            name: result.user.name || result.user.email,
+            email: result.user.email
+        };
+        
+        console.log('Saving user data:', userData);
+        sessionStorage.setItem('user', JSON.stringify(userData));
+        sessionStorage.setItem('token', result.token);
+
+        showNotification("Login successful! Redirecting...", 'success');
+        
+        // Update navigation immediately
+        if (typeof checkAuthStatus === 'function') {
+            console.log('Calling checkAuthStatus...');
+            checkAuthStatus();
+        } else {
+            console.log('checkAuthStatus function not found');
+        }
+        
+        setTimeout(() => {
+            window.location.href = 'predict.html';
+        }, 1500);
+
+    } catch (err) {
+        console.error('Network error:', err);
+        showNotification('Network error. Please try again later.', 'error');
+    } finally {
+        // Reset button state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = '<i class="fas fa-sign-in-alt me-2"></i>Sign In';
+        submitBtn.disabled = false;
+    }
 });
 
-// still need to check if the email and the password is in the DB.
-// READ THE REQURIMENTS AGAIN TO CHECK IF I HAVE DONE ALL THE THINGS.
+// Notification function
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            z-index: 1000;
+            animation: slideInRight 0.3s ease-out;
+            background: ${type === 'success' ? 'linear-gradient(135deg, #51cf66, #40c057)' : 
+                         type === 'error' ? 'linear-gradient(135deg, #ff6b6b, #fa5252)' : 
+                         'linear-gradient(135deg, #74c0fc, #4dabf7)'};
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        ">
+            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'} me-2"></i>
+            ${message}
+        </div>
+    `;
+
+    document.body.appendChild(notification);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
+}
+
+// Add CSS for notification animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Check if user is logged in on page load
+document.addEventListener('DOMContentLoaded', function() {
+  checkAuthStatus();
+});
+
+function checkAuthStatus() {
+  const user = sessionStorage.getItem('user');
+  const authButtons = document.getElementById('auth-buttons');
+  const userInfo = document.getElementById('user-info');
+  const userName = document.getElementById('user-name');
+
+  if (user) {
+    // User is logged in
+    const userData = JSON.parse(user);
+    userName.textContent = userData.name || userData.email;
+    authButtons.style.display = 'none';
+    userInfo.style.display = 'flex';
+  } else {
+    // User is not logged in
+    authButtons.style.display = 'flex';
+    userInfo.style.display = 'none';
+  }
+}
+
+function logout() {
+  // Clear session storage
+  sessionStorage.removeItem('user');
+  sessionStorage.removeItem('token');
+  
+  // Show notification
+  showNotification('Logged out successfully!', 'success');
+  
+  // Update navigation
+  setTimeout(() => {
+    checkAuthStatus();
+    // Redirect to home page
+    window.location.href = '/';
+  }, 1000);
+}
