@@ -187,6 +187,8 @@ function checkAuthStatus() {
   }
 }
 
+
+
 function logout() {
   // Clear session storage
   sessionStorage.removeItem('user');
