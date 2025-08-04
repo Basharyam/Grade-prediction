@@ -3,95 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade Prediction</title>
+  <title>Grade Prediction - Grade Predictor</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="predict.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Course Grade Prediction</h1>
-    <form id="predictForm">
-      <!-- Gender -->
-      <label>Gender:</label><br>
-      <input type="radio" name="gender" value="male" required> Male
-      <input type="radio" name="gender" value="female" required> Female
-      <br><br>
-
-      <!-- Race -->
-      <label for="race">Race/Ethnicity:</label>
-      <select name="race" id="race" required>
-        <option value="">Select</option>
-        <option value="group A">Group A</option>
-        <option value="group B">Group B</option>
-        <option value="group C">Group C</option>
-        <option value="group D">Group D</option>
-        <option value="group E">Group E</option>
-      </select>
-      <br><br>
-
-      <!-- Education -->
-      <label for="education">Parental Level of Education:</label>
-      <select name="education" id="education" required>
-        <option value="">Select</option>
-        <option value="some high school">Some High School</option>
-        <option value="high school">High School</option>
-        <option value="some college">Some College</option>
-        <option value="associate's degree">Associate's Degree</option>
-        <option value="bachelor's degree">Bachelor's Degree</option>
-        <option value="master's degree">Master's Degree</option>
-      </select>
-      <br><br>
-
-      <!-- Lunch -->
-      <label for="lunch">Lunch:</label>
-      <select name="lunch" id="lunch" required>
-        <option value="">Select</option>
-        <option value="standard">Standard</option>
-        <option value="free/reduced">Free/Reduced</option>
-      </select>
-      <br><br>
-
-      <!-- Test Prep -->
-      <label>Test Preparation Course:</label><br>
-      <input type="radio" name="test_prep" value="completed" required> Completed
-      <input type="radio" name="test_prep" value="none" required> None
-      <br><br>
-
-      <!-- Grade Inputs -->
-      <label>Enter Your Grades:</label><br>
-
-      <div style="display: flex; gap: 10px; margin-top: 10px;">
-        <div>
-          <label for="math_score">Math</label><br>
-          <input type="number" name="math_score" id="math_score"
-                 placeholder="0–100" min="0" max="100" value="0"
-                 class="grade-input" required>
-        </div>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-chart-line me-2"></i>GradePredictor
+      </a>
       
-        <div>
-          <label for="reading_score">Reading</label><br>
-          <input type="number" name="reading_score" id="reading_score"
-                 placeholder="0–100" min="0" max="100" value="0"
-                 class="grade-input" required>
-        </div>
-      
-        <div>
-          <label for="writing_score">Writing</label><br>
-          <input type="number" name="writing_score" id="writing_score"
-                 placeholder="0–100" min="0" max="100" value="0"
-                 class="grade-input" required>
-        </div>
+      <!-- Login/Register buttons (shown when not logged in) -->
+      <div id="auth-buttons" class="d-flex">
+        <button class="btn btn-outline-primary me-2" onclick="window.location.href='login'">
+          <i class="fas fa-sign-in-alt me-1"></i>Login
+        </button>
+        <button class="btn btn-primary" onclick="window.location.href='register'">
+          <i class="fas fa-user-plus me-1"></i>Register
+        </button>
       </div>
       
-      <br>
-       
+      <!-- User info and logout button (shown when logged in) -->
+      <div id="user-info" class="d-flex align-items-center" style="display: none;">
+        <span id="user-name" class="text-dark me-3 fw-semibold"></span>
+        <button class="btn btn-outline-danger" onclick="logout()">
+          <i class="fas fa-sign-out-alt me-1"></i>Logout
+        </button>
+      </div>
+    </div>
+  </nav>
 
-      <!-- Submit -->
-      <button type="submit">Predict Grade</button>
-    </form>
+  <div class="predict-container">
+    <div class="predict-card">
+      <div class="predict-header">
+        <i class="fas fa-calculator predict-icon"></i>
+        <h1>Course Grade Prediction</h1>
+        <p>Enter your information to get an AI-powered grade prediction</p>
+      </div>
+      
+      <form id="predictForm">
+        <div class="form-sections">
+          <!-- Personal Information Section -->
+          <div class="form-section">
+            <h3><i class="fas fa-user me-2"></i>Personal Information</h3>
+            
+            <!-- Gender -->
+            <div class="form-group">
+              <label class="form-label">Gender:</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="gender" value="male" required>
+                  <span class="radio-custom"></span>
+                  <i class="fas fa-mars me-1"></i>Male
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="gender" value="female" required>
+                  <span class="radio-custom"></span>
+                  <i class="fas fa-venus me-1"></i>Female
+                </label>
+              </div>
+            </div>
 
-    <div id="result"></div>
+            <!-- Race -->
+            <div class="form-group">
+              <label for="race" class="form-label">
+                <i class="fas fa-globe me-2"></i>Race/Ethnicity:
+              </label>
+              <select name="race" id="race" class="form-control" required>
+                <option value="">Select Race/Ethnicity</option>
+                <option value="group A">Group A</option>
+                <option value="group B">Group B</option>
+                <option value="group C">Group C</option>
+                <option value="group D">Group D</option>
+                <option value="group E">Group E</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Background Information Section -->
+          <div class="form-section">
+            <h3><i class="fas fa-graduation-cap me-2"></i>Background Information</h3>
+            
+            <!-- Education -->
+            <div class="form-group">
+              <label for="education" class="form-label">
+                <i class="fas fa-university me-2"></i>Parental Level of Education:
+              </label>
+              <select name="education" id="education" class="form-control" required>
+                <option value="">Select Education Level</option>
+                <option value="some high school">Some High School</option>
+                <option value="high school">High School</option>
+                <option value="some college">Some College</option>
+                <option value="associate's degree">Associate's Degree</option>
+                <option value="bachelor's degree">Bachelor's Degree</option>
+                <option value="master's degree">Master's Degree</option>
+              </select>
+            </div>
+
+            <!-- Lunch -->
+            <div class="form-group">
+              <label for="lunch" class="form-label">
+                <i class="fas fa-utensils me-2"></i>Lunch Type:
+              </label>
+              <select name="lunch" id="lunch" class="form-control" required>
+                <option value="">Select Lunch Type</option>
+                <option value="standard">Standard</option>
+                <option value="free/reduced">Free/Reduced</option>
+              </select>
+            </div>
+
+            <!-- Test Prep -->
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fas fa-book me-2"></i>Test Preparation Course:
+              </label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="test_prep" value="completed" required>
+                  <span class="radio-custom"></span>
+                  <i class="fas fa-check-circle me-1"></i>Completed
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="test_prep" value="none" required>
+                  <span class="radio-custom"></span>
+                  <i class="fas fa-times-circle me-1"></i>None
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Scores Section -->
+          <div class="form-section">
+            <h3><i class="fas fa-chart-bar me-2"></i>Academic Scores</h3>
+            <p class="section-description">Enter your current scores (0-100)</p>
+            
+            <div class="scores-grid">
+              <div class="score-input">
+                <label for="math_score" class="form-label">
+                  <i class="fas fa-square-root-alt me-2"></i>Math Score
+                </label>
+                <input type="number" name="math_score" id="math_score"
+                       placeholder="0–100" min="0" max="100" value="0"
+                       class="form-control grade-input" required>
+              </div>
+            
+              <div class="score-input">
+                <label for="reading_score" class="form-label">
+                  <i class="fas fa-book-open me-2"></i>Reading Score
+                </label>
+                <input type="number" name="reading_score" id="reading_score"
+                       placeholder="0–100" min="0" max="100" value="0"
+                       class="form-control grade-input" required>
+              </div>
+            
+              <div class="score-input">
+                <label for="writing_score" class="form-label">
+                  <i class="fas fa-pen me-2"></i>Writing Score
+                </label>
+                <input type="number" name="writing_score" id="writing_score"
+                       placeholder="0–100" min="0" max="100" value="0"
+                       class="form-control grade-input" required>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="predict-btn">
+          <i class="fas fa-magic me-2"></i>Predict My Grade
+        </button>
+      </form>
+
+      <!-- Results Section -->
+      <div id="result" class="result-section"></div>
+    </div>
   </div>
 
+  <!-- Custom JavaScript -->
   <script src="predict.js"></script>
 </body>
 </html>
