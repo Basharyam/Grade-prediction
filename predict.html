@@ -16,19 +16,12 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <span class="navbar-brand">
         <i class="fas fa-chart-line me-2"></i>GradePredictor
-      </a>
+      </span>
       
       <!-- Login/Register buttons (shown when not logged in) -->
-      <div id="auth-buttons" class="d-flex">
-        <button class="btn btn-outline-primary me-2" onclick="window.location.href='login'">
-          <i class="fas fa-sign-in-alt me-1"></i>Login
-        </button>
-        <button class="btn btn-primary" onclick="window.location.href='register'">
-          <i class="fas fa-user-plus me-1"></i>Register
-        </button>
-      </div>
+      <div id="auth-buttons" class="d-flex"></div>
       
       <!-- User info and logout button (shown when logged in) -->
       <div id="user-info" class="d-flex align-items-center" style="display: none;">
@@ -39,6 +32,14 @@
       </div>
     </div>
   </nav>
+
+  <!-- User Welcome Section (shown when logged in) -->
+  <div id="user-welcome-section" class="user-welcome-container" style="display: none;">
+    <div class="user-welcome-content">
+      <i class="fas fa-user-circle user-welcome-icon"></i>
+      <h2 id="user-welcome-message">Welcome!</h2>
+    </div>
+  </div>
 
   <div class="predict-container">
     <div class="predict-card">
@@ -180,9 +181,7 @@
           <i class="fas fa-magic me-2"></i>Predict My Grade
         </button>
       </form>
-
-      <!-- Results Section -->
-      <div id="result" class="result-section"></div>
+      <div id="result"></div>
     </div>
   </div>
 

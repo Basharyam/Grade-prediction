@@ -31,12 +31,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transition: transform 0.3s ease;
-  text-decoration: none;
-}
-
-.navbar-brand:hover {
-  transform: scale(1.05);
+  cursor: default;
 }
 
 .btn {

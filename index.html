@@ -22,9 +22,9 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <span class="navbar-brand">
         <i class="fas fa-chart-line me-2"></i>GradePredictor
-      </a>
+      </span>
       <div class="d-flex">
         <!-- Login/Register buttons (shown when not logged in) -->
         <div id="auth-buttons" class="d-flex">
@@ -33,6 +33,17 @@
           </button>
           <button class="btn btn-primary" onclick="window.location.href='register'">
             <i class="fas fa-user-plus me-1"></i>Register
+          </button>
+        </div>
+        
+        <!-- User info and logout button (shown when logged in) -->
+        <div id="user-info" class="d-flex align-items-center">
+          <span class="me-3 text-muted">
+            <i class="fas fa-user me-1"></i>
+            <span id="user-name">User</span>
+          </span>
+          <button class="btn btn-outline-danger" onclick="logout()">
+            <i class="fas fa-sign-out-alt me-1"></i>Logout
           </button>
         </div>
       </div>
@@ -45,9 +56,25 @@
       <h1>Predict Your Academic Success</h1>
       <p>Leverage the power of machine learning to predict your course grades and make informed decisions about your academic journey.</p>
       <div class="btn-group">
-        <a href="/predict" class="btn btn-success btn-lg">
+        <a href="predict.html" class="btn btn-success btn-lg">
           <i class="fas fa-rocket me-2"></i>Start Predicting
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Message Section (shown when logged in) -->
+  <div id="welcome-section" class="container mt-5" style="display: none;">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <div class="welcome-card">
+          <i class="fas fa-user-circle welcome-icon"></i>
+          <h2 id="welcome-message">Welcome back!</h2>
+          <p class="text-muted">You're all set to start predicting your grades</p>
+          <a href="predict.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-chart-line me-2"></i>Go to Predictions
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -60,13 +60,14 @@ app.post('/login', async (req, res) => {
       return res.status(401).json({ success: false, message: 'Invalid email or password' });
     }
     user.online = true;
+    user.lastLogin = new Date(); // <-- update lastLogin
     await user.save();
     const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
 
     res.json({
       success: true,
       token,
-      user: { id: user._id, name: user.name, email: user.email }
+      user: { id: user._id, name: user.name, email: user.email, lastLogin: user.lastLogin }
     });
   } catch (err) {
     console.error('Login error:', err);
@@ -130,8 +131,72 @@ app.post('/register', async (req, res) => {
   }
 });
 
+// API endpoints for user management
+// Get all users
+app.get('/api/users', async (req, res) => {
+  try {
+    const users = await User.find({}, 'name email lastLogin');
+    res.json({ success: true, users });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
 
-// העברת בקשות אל Flask
+// Update user
+app.put('/api/users/:id', async (req, res) => {
+  console.log('Updating user:', req.params.id, req.body); // Debug log
+  try {
+    const { name, email } = req.body;
+    // Validate input
+    if (!name || !email) {
+      return res.status(400).json({ success: false, message: 'Name and email are required' });
+    }
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+    // Check if new email already exists (except for current user)
+    if (email !== user.email) {
+      const existingUser = await User.findOne({ email, _id: { $ne: req.params.id } });
+      if (existingUser) {
+        return res.status(400).json({ success: false, message: 'Email already exists' });
+      }
+    }
+    // Update user
+    try {
+      const updatedUser = await User.findByIdAndUpdate(
+        req.params.id,
+        { name, email },
+        { new: true, runValidators: true }
+      );
+      res.json({ success: true, user: updatedUser });
+    } catch (updateErr) {
+      console.error('Error during user update:', updateErr);
+      return res.status(500).json({ success: false, message: updateErr.message, stack: updateErr.stack });
+    }
+  } catch (err) {
+    console.error('Update user error:', err);
+    res.status(500).json({ success: false, message: err.message || 'Server error', stack: err.stack });
+  }
+});
+
+// Delete user
+app.delete('/api/users/:id', async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+    
+    await User.findByIdAndDelete(req.params.id);
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Delete user error:', err);
+    res.status(500).json({ success: false, message: err.message || 'Server error', stack: err.stack });
+  }
+});
+
 // העברת בקשות אל Flask
 app.use('/api', createProxyMiddleware({
   target: 'http://localhost:5000',  // Flask
@@ -140,7 +205,6 @@ app.use('/api', createProxyMiddleware({
     '^/api': ''
   }
 }));
-
 
 
 // Start server

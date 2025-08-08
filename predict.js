@@ -1,28 +1,68 @@
 document.getElementById("predictForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
+  // Input validation
+  const requiredFields = [
+    'gender', 'race', 'education', 'lunch', 'test_prep', 'math_score', 'reading_score', 'writing_score'
+  ];
+  let valid = true;
+  let errorMsg = '';
+  for (const field of requiredFields) {
+    let value;
+    if (['gender', 'test_prep'].includes(field)) {
+      value = document.querySelector(`input[name="${field}"]:checked`);
+      if (!value) {
+        valid = false;
+        errorMsg = `Please select ${field.replace('_', ' ')}.`;
+        break;
+      }
+    } else {
+      value = document.getElementById(field === 'education' ? 'education' : field).value;
+      if (!value) {
+        valid = false;
+        errorMsg = `Please enter/select ${field.replace('_', ' ')}.`;
+        break;
+      }
+      if (["math_score", "reading_score", "writing_score"].includes(field) && isNaN(parseFloat(value))) {
+        valid = false;
+        errorMsg = `Please enter a valid number for ${field.replace('_', ' ')}.`;
+        break;
+      }
+    }
+  }
+  if (!valid) {
+    document.getElementById("result").innerHTML = `<p style='color: #ff6b6b;'>${errorMsg}</p>`;
+    return;
+  }
+
+  // Show loading spinner
+  document.getElementById("result").innerHTML = `<div class='result-section show'><div class='text-center'><div class='spinner-border text-primary' role='status'><span class='visually-hidden'>Loading...</span></div><p>Predicting your grade...</p></div></div>`;
+
   const data = {
     gender: document.querySelector('input[name="gender"]:checked').value,
     race: document.getElementById("race").value,
-    education: document.getElementById("education").value,
+    parental_level_of_education: document.getElementById("education").value,
     lunch: document.getElementById("lunch").value,
-    test_prep: document.querySelector('input[name="test_prep"]:checked').value,
+    test_preparation_course: document.querySelector('input[name="test_prep"]:checked').value,
     math_score: parseFloat(document.getElementById("math_score").value),
     reading_score: parseFloat(document.getElementById("reading_score").value),
     writing_score: parseFloat(document.getElementById("writing_score").value)
   };
 
   try {
-    const response = await fetch("/predict", {
+    const response = await fetch("/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
-    
     const result = await response.json();
 
-    if (!result.success) {
-      document.getElementById("result").innerHTML = `<p style="color: #ff6b6b;">Error: ${result.message}</p>`;
+    if (result.error) {
+      document.getElementById("result").innerHTML = `<p style='color: #ff6b6b;'>Error: ${result.error}</p>`;
+      return;
+    }
+    if (!result.success && result.message) {
+      document.getElementById("result").innerHTML = `<p style='color: #ff6b6b;'>Error: ${result.message}</p>`;
       return;
     }
 
@@ -101,6 +141,8 @@ function checkAuthStatus() {
   const authButtons = document.getElementById('auth-buttons');
   const userInfo = document.getElementById('user-info');
   const userName = document.getElementById('user-name');
+  const userWelcomeSection = document.getElementById('user-welcome-section');
+  const userWelcomeMessage = document.getElementById('user-welcome-message');
 
   console.log('Checking auth status on predict page...');
   console.log('User data:', user);
@@ -109,25 +151,31 @@ function checkAuthStatus() {
     // User is logged in
     try {
       const userData = JSON.parse(user);
+      const userNameText = userData.name || userData.email || 'User';
       console.log('User data parsed:', userData);
-      userName.textContent = userData.name || userData.email || 'User';
       
-      // Hide auth buttons and show user info
+      // Update navigation with welcome message and hand wave
+      userName.textContent = `Welcome, ${userNameText} 👋`;
       authButtons.style.display = 'none';
       userInfo.style.display = 'flex';
       
-      console.log('User is logged in, showing logout button on predict page');
+      // Hide the welcome section - we only want the name in the navigation bar
+      userWelcomeSection.style.display = 'none';
+      
+      console.log('User is logged in, showing welcome message and logout button on predict page');
     } catch (error) {
       console.error('Error parsing user data:', error);
       // If there's an error parsing, treat as not logged in
       authButtons.style.display = 'flex';
       userInfo.style.display = 'none';
+      userWelcomeSection.style.display = 'none';
     }
   } else {
     // User is not logged in
     console.log('User is not logged in, showing auth buttons on predict page');
     authButtons.style.display = 'flex';
     userInfo.style.display = 'none';
+    userWelcomeSection.style.display = 'none';
   }
 }
 
@@ -207,18 +255,3 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-
-// Test function to manually set user data (for debugging)
-function testLogin() {
-  const testUser = {
-    name: 'Test User',
-    email: 'test@example.com'
-  };
-  sessionStorage.setItem('user', JSON.stringify(testUser));
-  sessionStorage.setItem('token', 'test-token');
-  checkAuthStatus();
-  console.log('Test login completed on predict page');
-}
-
-// Expose test function globally for debugging
-window.testLogin = testLogin;

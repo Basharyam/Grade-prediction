@@ -183,39 +183,4 @@ document.addEventListener('DOMContentLoaded', function() {
   checkAuthStatus();
 });
 
-function checkAuthStatus() {
-  const user = sessionStorage.getItem('user');
-  const authButtons = document.getElementById('auth-buttons');
-  const userInfo = document.getElementById('user-info');
-  const userName = document.getElementById('user-name');
-
-  if (user) {
-    // User is logged in
-    const userData = JSON.parse(user);
-    userName.textContent = userData.name || userData.email;
-    authButtons.style.display = 'none';
-    userInfo.style.display = 'flex';
-  } else {
-    // User is not logged in
-    authButtons.style.display = 'flex';
-    userInfo.style.display = 'none';
-  }
-}
-
-function logout() {
-  // Clear session storage
-  sessionStorage.removeItem('user');
-  sessionStorage.removeItem('token');
-  
-  // Show notification
-  showNotification('Logged out successfully!', 'success');
-  
-  // Update navigation
-  setTimeout(() => {
-    checkAuthStatus();
-    // Redirect to home page
-    window.location.href = '/';
-  }, 1000);
-}
-
 
