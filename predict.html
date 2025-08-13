@@ -143,35 +143,19 @@
           <!-- Academic Scores Section -->
           <div class="form-section">
             <h3><i class="fas fa-chart-bar me-2"></i>Academic Scores</h3>
-            <p class="section-description">Enter your current scores (0-100)</p>
-            
-            <div class="scores-grid">
-              <div class="score-input">
-                <label for="math_score" class="form-label">
-                  <i class="fas fa-square-root-alt me-2"></i>Math Score
-                </label>
-                <input type="number" name="math_score" id="math_score"
-                       placeholder="0–100" min="0" max="100" value="0"
-                       class="form-control grade-input" required>
-              </div>
-            
-              <div class="score-input">
-                <label for="reading_score" class="form-label">
-                  <i class="fas fa-book-open me-2"></i>Reading Score
-                </label>
-                <input type="number" name="reading_score" id="reading_score"
-                       placeholder="0–100" min="0" max="100" value="0"
-                       class="form-control grade-input" required>
-              </div>
-            
-              <div class="score-input">
-                <label for="writing_score" class="form-label">
-                  <i class="fas fa-pen me-2"></i>Writing Score
-                </label>
-                <input type="number" name="writing_score" id="writing_score"
-                       placeholder="0–100" min="0" max="100" value="0"
-                       class="form-control grade-input" required>
-              </div>
+            <p class="section-description">Enter your current scores (0-100) for the other two subjects. Select the subject you want to predict.</p>
+            <div class="form-group">
+              <label for="target_subject" class="form-label">
+                <i class="fas fa-bullseye me-2"></i>Subject to Predict:
+              </label>
+              <select name="target_subject" id="target_subject" class="form-control" required>
+                <option value="math score">Math</option>
+                <option value="reading score">Reading</option>
+                <option value="writing score">Writing</option>
+              </select>
+            </div>
+            <div class="scores-grid" id="scores-grid">
+              <!-- Score inputs will be dynamically rendered by JS -->
             </div>
           </div>
         </div>
