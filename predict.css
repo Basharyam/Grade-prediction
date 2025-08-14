@@ -546,7 +546,7 @@ select.form-control {
   min-height: 100px;
   font-size: 1.2rem;
   text-align: center;
-  background: rgba(255,255,255,0.85);
+  background: rgba(0, 0, 0,0.85);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(102,126,234,0.10);
   padding: 1.5rem 1rem;
@@ -670,5 +670,108 @@ select.form-control {
   
   .radio-label {
     padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Prediction Result Card Styling */
+.result-section.show {
+  background: #232136;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(102,126,234,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin: 2rem auto 0 auto;
+  max-width: 500px;
+  color: #fff;
+  text-align: center;
+  border: 1.5px solid #35324c;
+}
+
+.result-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.prediction {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0.5rem 0 1.5rem 0;
+  letter-spacing: 2px;
+  color: #51cf66;
+}
+.prediction.F {
+  color: #ff6b6b;
+}
+.prediction.D {
+  color: #ff922b;
+}
+.prediction.C {
+  color: #ffd43b;
+}
+.prediction.B {
+  color: #74c0fc;
+}
+.prediction.A {
+  color: #51cf66;
+}
+
+.result-section .advice-box {
+  margin: 2rem 0 1.5rem 0;
+  padding: 1.25rem 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.07);
+  border-left: 5px solid #ff6b6b;
+  color: #ff6b6b;
+  box-shadow: 0 2px 12px rgba(255,107,107,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.result-section .advice-box.success {
+  border-left: 5px solid #51cf66;
+  color: #51cf66;
+  background: rgba(81,207,102,0.07);
+}
+.result-section .advice-box.info {
+  border-left: 5px solid #74c0fc;
+  color: #74c0fc;
+  background: rgba(116,192,252,0.07);
+}
+.result-section .advice-box.warning {
+  border-left: 5px solid #ffd43b;
+  color: #ffd43b;
+  background: rgba(255,212,59,0.07);
+}
+.result-section .advice-box.danger {
+  border-left: 5px solid #ff6b6b;
+  color: #ff6b6b;
+  background: rgba(255,107,107,0.07);
+}
+
+.result-section .result-meta {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #bdbdbd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .result-section.show {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  .result-section h2 {
+    font-size: 1.2rem;
+  }
+  .prediction {
+    font-size: 2.5rem;
   }
 }

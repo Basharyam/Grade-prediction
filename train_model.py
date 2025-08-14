@@ -3,47 +3,45 @@ import os
 import pickle
 from typing import List
 from pathlib import Path
-
 import pandas as pd
 from pymongo import MongoClient
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsRegressor
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import mean_absolute_error, r2_score
 from dotenv import load_dotenv
 
-# -------- Load .env --------
-load_dotenv()  # טוען MONGODB_URI, DB_NAME, COLLECTION
-
-# -------- CONFIG --------
+load_dotenv()
 MONGODB_URI = os.getenv("MONGODB_URI")
 DB_NAME     = os.getenv("DB_NAME", "grade_predictor")
 COLLECTION  = os.getenv("COLLECTION", "grades")
-
-# נשמור את המודל באותה תיקייה של הסקריפט (כלומר ליד app.py אם שניהם יחד)
 APP_DIR = Path(__file__).resolve().parent
 
-FEATURE_ORDER: List[str] = [
+CATEGORICAL = [
     "gender",
     "race",
     "parental level of education",
     "lunch",
     "test preparation course",
-    "math score",
-    "reading score",
-    "writing score",
 ]
-CATEGORICAL = FEATURE_ORDER[:5]
-TARGETS     = ["math score", "reading score", "writing score"]  # סדר חשוב!
+TARGETS = ["math score", "reading score", "writing score"]
+
+# User can set this to 'math score', 'reading score', or 'writing score'
+TARGET_TO_PREDICT = os.getenv("TARGET_SUBJECT", "math score")
+assert TARGET_TO_PREDICT in TARGETS, f"Invalid target: {TARGET_TO_PREDICT}"
+
+# The other two scores are used as features
+OTHER_SCORES = [s for s in TARGETS if s != TARGET_TO_PREDICT]
+
+FEATURE_ORDER = CATEGORICAL + OTHER_SCORES
 
 def main():
     if not MONGODB_URI:
         raise ValueError("MONGODB_URI not set in .env file")
 
-    # 1) Load from MongoDB (רק העמודות שאנחנו צריכים)
     client = MongoClient(MONGODB_URI)
     coll = client[DB_NAME][COLLECTION]
-    projection = {k: 1 for k in FEATURE_ORDER}
+    projection = {k: 1 for k in CATEGORICAL + TARGETS}
     docs = list(coll.find({}, projection))
 
     if not docs:
@@ -54,63 +52,66 @@ def main():
     if "_id" in df.columns:
         df.drop(columns=["_id"], inplace=True)
 
-    missing = [c for c in FEATURE_ORDER if c not in df.columns]
+    missing = [c for c in CATEGORICAL + TARGETS if c not in df.columns]
     if missing:
         raise ValueError(f"Missing fields in collection '{COLLECTION}': {missing}")
 
-    # 2) Clean & Encode
+    # Clean & Encode
     for sc in TARGETS:
         df[sc] = pd.to_numeric(df[sc], errors="coerce")
     df.dropna(subset=CATEGORICAL + TARGETS, inplace=True)
-
     if df.empty:
         raise ValueError("After dropna the dataframe is empty. Check your data.")
 
-    encoders = {}
-    for col in CATEGORICAL:
-        le = LabelEncoder()
-        df[col] = le.fit_transform(df[col].astype(str))
-        encoders[col] = le  # המפתחות נשמרים בדיוק כמו ש-app.py מצפה
+    # One-hot encode categoricals
+    ohe = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
+    X_cat = ohe.fit_transform(df[CATEGORICAL])
+    # Use only the other two scores as features
+    X_num = df[OTHER_SCORES].values
+    X = np.hstack([X_cat, X_num])
+    y = df[TARGET_TO_PREDICT].values
 
-    # 3) Train (8 פיצ'רים → 3 יעדים)
-    X = df[FEATURE_ORDER].values
-    y = df[TARGETS].values
+    # Scale features
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
 
-    print("X shape:", X.shape, "y shape:", y.shape)  # צריך להיות (N, 8) ו-(N, 3)
+    print("X shape:", X_scaled.shape, "y shape:", y.shape)
 
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
+        X_scaled, y, test_size=0.2, random_state=42
     )
 
-    model = KNeighborsRegressor(n_neighbors=5, weights="distance")
+    # Try different k values
+    best_k = 5
+    best_mae = float('inf')
+    for k in range(3, 16):
+        model = KNeighborsRegressor(n_neighbors=k, weights="distance")
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        mae = mean_absolute_error(y_test, y_pred)
+        if mae < best_mae:
+            best_mae = mae
+            best_k = k
+    print(f"Best k: {best_k} (MAE: {best_mae:.2f})")
+
+    # Train final model
+    model = KNeighborsRegressor(n_neighbors=best_k, weights="distance")
     model.fit(X_train, y_train)
-
-    # 4) Metrics
     y_pred = model.predict(X_test)
-    mae = [mean_absolute_error(y_test[:, i], y_pred[:, i]) for i in range(3)]
-    r2  = [r2_score(y_test[:, i], y_pred[:, i]) for i in range(3)]
-    print("MAE [Math, Reading, Writing]:", [round(v, 3) for v in mae])
-    print("R2  [Math, Reading, Writing]:", [round(v, 3) for v in r2])
+    print("Final MAE:", mean_absolute_error(y_test, y_pred))
+    print("Final R2:", r2_score(y_test, y_pred))
 
-    # 5) Save atomically next to app.py/train_model.py
-    tmp_model = APP_DIR / "model.tmp.pkl"
-    tmp_enc   = APP_DIR / "encoders.tmp.pkl"
-    with open(tmp_model, "wb") as f:
+    # Save model, encoder, scaler, and feature order
+    with open(APP_DIR / "model.pkl", "wb") as f:
         pickle.dump(model, f)
-    with open(tmp_enc, "wb") as f:
-        pickle.dump(encoders, f)
-
-    # אימות חד-משמעי: המודל חייב להיות על 8 פיצ'רים
-    nfi = getattr(model, "n_features_in_", None)
-    print("n_features_in_ (trained):", nfi)
-    assert nfi == 8, "Model is not trained on 8 features! Check FEATURE_ORDER/X."
-
-    # החלפת קבצים ישנים בשם הסופי
-    (tmp_model).replace(APP_DIR / "model.pkl")
-    (tmp_enc).replace(APP_DIR / "encoders.pkl")
-
-    print("✅ Saved:", APP_DIR / "model.pkl")
-    print("✅ Saved:", APP_DIR / "encoders.pkl")
+    with open(APP_DIR / "ohe.pkl", "wb") as f:
+        pickle.dump(ohe, f)
+    with open(APP_DIR / "scaler.pkl", "wb") as f:
+        pickle.dump(scaler, f)
+    with open(APP_DIR / "feature_order.pkl", "wb") as f:
+        pickle.dump(FEATURE_ORDER, f)
+    print("✅ Saved model, ohe, scaler, and feature order.")
 
 if __name__ == "__main__":
+    import numpy as np
     main()

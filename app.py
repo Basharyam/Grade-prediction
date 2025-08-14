@@ -1,154 +1,163 @@
 # app.py  (unified)
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 import os
 import numpy as np
 import pickle
+from pymongo import MongoClient
+from bson import ObjectId
 
 app = Flask(__name__)
 CORS(app)
 
-# -------------------- Load model & encoders --------------------
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
-ENCS_PATH  = os.path.join(BASE_DIR, "encoders.pkl")
+OHE_PATH   = os.path.join(BASE_DIR, "ohe.pkl")
+SCALER_PATH= os.path.join(BASE_DIR, "scaler.pkl")
+FEAT_PATH  = os.path.join(BASE_DIR, "feature_order.pkl")
 
-print(">> Loading model from:", MODEL_PATH)
-print(">> Loading encoders from:", ENCS_PATH)
-
-if not os.path.exists(MODEL_PATH):
-    raise FileNotFoundError(f"model.pkl not found at {MODEL_PATH}")
-if not os.path.exists(ENCS_PATH):
-    raise FileNotFoundError(f"encoders.pkl not found at {ENCS_PATH}")
+if not (os.path.exists(MODEL_PATH) and os.path.exists(OHE_PATH) and os.path.exists(SCALER_PATH) and os.path.exists(FEAT_PATH)):
+    raise FileNotFoundError("Model, encoder, scaler, or feature order file missing.")
 
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
-with open(ENCS_PATH, "rb") as f:
-    encoders = pickle.load(f)
+with open(OHE_PATH, "rb") as f:
+    ohe = pickle.load(f)
+with open(SCALER_PATH, "rb") as f:
+    scaler = pickle.load(f)
+with open(FEAT_PATH, "rb") as f:
+    FEATURE_ORDER = pickle.load(f)
 
-nfi = getattr(model, "n_features_in_", None)
-print(">> Loaded model n_features_in_:", nfi)
+CATEGORICAL = FEATURE_ORDER[:5]
+TARGETS = ["math score", "reading score", "writing score"]
+latest_neighbors_result = None
 
-# API builds 8 features (5 categorical + 3 scores) → model must match
-if nfi != 8:
-    raise RuntimeError(
-        f"Model was trained for {nfi} features, but API builds 8. "
-        f"Retrain to multi-output with 8 features or replace model.pkl."
-    )
-
-# -------------------- Constants --------------------
-FEATURE_ORDER = [
-    "gender",
-    "race",
-    "parental level of education",
-    "lunch",
-    "test preparation course",
-    "math score",
-    "reading score",
-    "writing score",
-]
-
-# -------------------- Helpers --------------------
-def safe_encode(le, value):
-    """Encode with LabelEncoder; unseen values fall back to first class."""
-    try:
-        return int(le.transform([value])[0])
-    except Exception:
-        return int(le.transform([le.classes_[0]])[0])
-
-def to_letter_grade(avg):
-    if avg >= 90: return "A"
-    if avg >= 80: return "B"
-    if avg >= 70: return "C"
-    if avg >= 60: return "D"
-    return "F"
-
-def predict_core(data):
-    # normalize some frontend values to match training text exactly
-    genders  = {"male": "male", "female": "female"}
-    testprep = {"completed": "completed", "none": "none"}
-
-    row = {
-        "gender": genders.get(str(data.get("gender", "")).lower(), str(data.get("gender", ""))),
-        "race": data.get("race", ""),
-        "parental level of education": data.get("parental_level_of_education", ""),
-        "lunch": data.get("lunch", ""),
-        "test preparation course": testprep.get(
-            str(data.get("test_preparation_course", "")).lower(),
-            str(data.get("test_preparation_course", ""))
-        ),
-        "math score": float(data.get("math_score", 0)),
-        "reading score": float(data.get("reading_score", 0)),
-        "writing score": float(data.get("writing_score", 0)),
-    }
-
-    # encode categoricals exactly like training
-    try:
-        g  = safe_encode(encoders["gender"], row["gender"])
-        r  = safe_encode(encoders["race"], row["race"])
-        pe = safe_encode(encoders["parental level of education"], row["parental level of education"])
-        l  = safe_encode(encoders["lunch"], row["lunch"])
-        tp = safe_encode(encoders["test preparation course"], row["test preparation course"])
-    except KeyError as ke:
-        raise KeyError(f"Missing encoder for: {ke}. Available: {list(encoders.keys())}")
-
-    # build feature vector (same order as training)
-    x_row = [g, r, pe, l, tp, row["math score"], row["reading score"], row["writing score"]]
-    X_np = np.array([x_row], dtype=float)  # shape: (1, 8)
-
-    # predict the three scores (multi-output KNN)
-    y_pred = model.predict(X_np)  # shape: (1, 3)
-    math_p, read_p, write_p = [float(v) for v in y_pred[0]]
-    avg_pred = (math_p + read_p + write_p) / 3.0
-
-    # letter + simple confidence from neighbor distances (if available)
-    letter = to_letter_grade(avg_pred)
-    try:
-        distances, _ = model.kneighbors(X_np, n_neighbors=model.n_neighbors)
-        confidence = 1.0 / (1.0 + float(np.mean(distances)))
-    except Exception:
-        confidence = 0.6
-
-    return {
-        "success": True,
-        "prediction": letter,
-        "predicted_scores": {
-            "math": round(math_p, 1),
-            "reading": round(read_p, 1),
-            "writing": round(write_p, 1),
-            "average": round(avg_pred, 1),
-        },
-        "confidence": round(confidence, 3),
-        "message": "Prediction generated successfully",
-    }
-
-# -------------------- Routes --------------------
 @app.post("/api/predict")
 def api_predict():
+    global latest_neighbors_result
     try:
         data = request.get_json(force=True)
-        return jsonify(predict_core(data))
+        target = data.get("target_subject", "math score")
+        if target not in TARGETS:
+            return jsonify({"success": False, "error": f"Invalid target_subject: {target}"}), 400
+        other_scores = [s for s in TARGETS if s != target]
+        # Validate input
+        for cat in CATEGORICAL:
+            if cat.replace(" ", "_") not in data and cat not in data:
+                return jsonify({"success": False, "error": f"Missing field: {cat}"}), 400
+        for score in other_scores:
+            if score.replace(" ", "_") not in data and score not in data:
+                return jsonify({"success": False, "error": f"Missing field: {score}"}), 400
+        # Build input row
+        row = []
+        for cat in CATEGORICAL:
+            val = data.get(cat.replace(" ", "_"), data.get(cat, ""))
+            row.append(val)
+        for score in other_scores:
+            val = float(data.get(score.replace(" ", "_"), data.get(score, 0)))
+            row.append(val)
+        # One-hot encode categoricals
+        X_cat = ohe.transform([row[:5]])
+        X_num = np.array([row[5:]], dtype=float)
+        X = np.hstack([X_cat, X_num])
+        X_scaled = scaler.transform(X)
+        # Predict
+        y_pred = model.predict(X_scaled)[0]
+        # Find k=5 neighbors
+        distances, indices = model.kneighbors(X_scaled, n_neighbors=5)
+        neighbors = []
+        for idx, dist in zip(indices[0], distances[0]):
+            neighbors.append({"index": int(idx), "distance": float(dist)})
+        # Store latest neighbors for admin (by user email if available)
+        user_email = data.get("user_email")
+        if user_email:
+            MONGODB_URI = os.getenv("MONGODB_URI")
+            DB_NAME = os.getenv("DB_NAME", "grade_predictor")
+            client = MongoClient(MONGODB_URI)
+            db = client[DB_NAME]
+            db["predictions"].insert_one({
+                "user_email": user_email,
+                "target_subject": target,
+                "predicted_score": round(float(y_pred), 1),
+                "neighbors": neighbors
+            })
+        latest_neighbors_result = {
+            "neighbors": neighbors,
+            "target_subject": target,
+            "predicted_score": round(float(y_pred), 1)
+        }
+        return jsonify({
+            "success": True,
+            "predicted_score": round(float(y_pred), 1),
+            "target_subject": target,
+            "neighbors": neighbors,
+            "message": f"Prediction for {target} generated successfully"
+        })
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 400
 
-# Alias (if you call without the Node proxy)
-@app.post("/predict")
-def bare_predict():
-    return api_predict()
+@app.get("/api/admin/last_neighbors")
+def get_last_neighbors():
+    global latest_neighbors_result
+    if latest_neighbors_result is None:
+        return jsonify({"success": False, "message": "No prediction has been made yet."}), 404
+    return jsonify({"success": True, **latest_neighbors_result})
+
+@app.get("/api/admin/predictions")
+def get_all_predictions():
+    MONGODB_URI = os.getenv("MONGODB_URI")
+    DB_NAME = os.getenv("DB_NAME", "grade_predictor")
+    client = MongoClient(MONGODB_URI)
+    db = client[DB_NAME]
+    preds = list(db["predictions"].find({}))
+    for pred in preds:
+        pred["_id"] = str(pred["_id"])
+    return jsonify({"success": True, "predictions": preds})
+
+@app.get("/api/users")
+def get_users():
+    MONGODB_URI = os.getenv("MONGODB_URI")
+    DB_NAME = os.getenv("DB_NAME", "grade_predictor")
+    client = MongoClient(MONGODB_URI)
+    db = client[DB_NAME]
+    users = list(db["users"].find({}, {"password": 0}))  # Exclude password
+    for user in users:
+        user["_id"] = str(user["_id"])
+    return jsonify({"success": True, "users": users})
+
+@app.put("/api/users/<user_id>")
+def update_user(user_id):
+    MONGODB_URI = os.getenv("MONGODB_URI")
+    DB_NAME = os.getenv("DB_NAME", "grade_predictor")
+    client = MongoClient(MONGODB_URI)
+    db = client[DB_NAME]
+    data = request.get_json(force=True)
+    update_fields = {}
+    if "name" in data:
+        update_fields["name"] = data["name"]
+    if "email" in data:
+        update_fields["email"] = data["email"]
+    if not update_fields:
+        return jsonify({"success": False, "message": "No fields to update."}), 400
+    result = db["users"].update_one({"_id": ObjectId(user_id)}, {"$set": update_fields})
+    if result.matched_count == 0:
+        return jsonify({"success": False, "message": "User not found."}), 404
+    return jsonify({"success": True, "message": "User updated."})
+
+@app.delete("/api/users/<user_id>")
+def delete_user(user_id):
+    MONGODB_URI = os.getenv("MONGODB_URI")
+    DB_NAME = os.getenv("DB_NAME", "grade_predictor")
+    client = MongoClient(MONGODB_URI)
+    db = client[DB_NAME]
+    result = db["users"].delete_one({"_id": ObjectId(user_id)})
+    if result.deleted_count == 0:
+        return jsonify({"success": False, "message": "User not found."}), 404
+    return jsonify({"success": True, "message": "User deleted."})
 
 @app.get("/health")
 def health():
     return {"ok": True}
 
-# Small debug endpoint to verify loaded artifacts
-@app.get("/debug/model")
-def debug_model():
-    return {
-        "n_features_in_": getattr(model, "n_features_in_", None),
-        "encoders_keys": sorted(list(encoders.keys()))
-    }
-
-# -------------------- Main --------------------
 if __name__ == "__main__":
-    # run on 5001 to match your Node proxy
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

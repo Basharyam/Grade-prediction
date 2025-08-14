@@ -1,9 +1,12 @@
 document.getElementById("predictForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
+  const target = document.getElementById('target_subject').value;
+  const otherFields = scoreFields[target].map(f => f.id);
+
   // Input validation
   const requiredFields = [
-    'gender', 'race', 'education', 'lunch', 'test_prep', 'math_score', 'reading_score', 'writing_score'
+    'gender', 'race', 'education', 'lunch', 'test_prep', ...otherFields
   ];
   let valid = true;
   let errorMsg = '';
@@ -38,19 +41,31 @@ document.getElementById("predictForm").addEventListener("submit", async function
   // Show loading spinner
   document.getElementById("result").innerHTML = `<div class='result-section show'><div class='text-center'><div class='spinner-border text-primary' role='status'><span class='visually-hidden'>Loading...</span></div><p>Predicting your grade...</p></div></div>`;
 
+  // Build data for backend
   const data = {
     gender: document.querySelector('input[name="gender"]:checked').value,
     race: document.getElementById("race").value,
     parental_level_of_education: document.getElementById("education").value,
     lunch: document.getElementById("lunch").value,
     test_preparation_course: document.querySelector('input[name="test_prep"]:checked').value,
-    math_score: parseFloat(document.getElementById("math_score").value),
-    reading_score: parseFloat(document.getElementById("reading_score").value),
-    writing_score: parseFloat(document.getElementById("writing_score").value)
+    target_subject: target
   };
+  // Attach user email if logged in
+  const user = sessionStorage.getItem('user');
+  if (user) {
+    try {
+      const userData = JSON.parse(user);
+      if (userData.email) {
+        data.user_email = userData.email;
+      }
+    } catch (e) {}
+  }
+  otherFields.forEach(f => {
+    data[f.replace('_', ' ')] = parseFloat(document.getElementById(f).value);
+  });
 
   try {
-    const response = await fetch("/api/predict", {
+    const response = await fetch("http://localhost:5000/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
@@ -66,59 +81,31 @@ document.getElementById("predictForm").addEventListener("submit", async function
       return;
     }
 
-    const { prediction, confidence, message } = result;
-    
-    // Calculate average score for context
-    const avgScore = (data.math_score + data.reading_score + data.writing_score) / 3;
-    
-    // Generate personalized advice based on prediction
+    const { predicted_score, target_subject, neighbors, message } = result;
+    let subjectLabel = target_subject.charAt(0).toUpperCase() + target_subject.slice(1).replace(' score', '');
+    // Tailored advice section
     let advice = "";
-    let adviceColor = "";
-    
-    switch(prediction) {
-      case 'A':
-        advice = "🎉 Outstanding! You're on track for excellent academic performance. Keep up the great work!";
-        adviceColor = "#51cf66";
-        break;
-      case 'B':
-        advice = "👍 Good work! You're performing well. Focus on areas of improvement to reach the next level.";
-        adviceColor = "#74c0fc";
-        break;
-      case 'C':
-        advice = "📚 You're doing okay, but there's room for improvement. Consider additional study time and practice.";
-        adviceColor = "#ffd43b";
-        break;
-      case 'D':
-        advice = "⚠️ You need to put in more effort. Consider seeking help from teachers or tutors.";
-        adviceColor = "#ff922b";
-        break;
-      case 'F':
-        advice = "🚨 Immediate action needed. Please seek academic support and consider additional resources.";
-        adviceColor = "#ff6b6b";
-        break;
-      default:
-        advice = "📊 Based on your current scores, focus on consistent improvement across all subjects.";
-        adviceColor = "#868e96";
+    if (predicted_score >= 85) {
+      advice = "Excellent work! Keep up your strong study habits and continue challenging yourself.";
+    } else if (predicted_score >= 70) {
+      advice = "You're doing well, but there's room for improvement. Try reviewing your notes regularly and practicing with extra exercises.";
+    } else {
+      advice = "Don't be discouraged! Focus on understanding the basics, ask for help when needed, and create a study plan to boost your performance.";
     }
-
     document.getElementById("result").innerHTML = `
       <div class="result-section show">
         <h2><i class="fas fa-chart-line me-2"></i>Prediction Results</h2>
-        <div class="prediction">${prediction}</div>
-        <p><strong>Confidence Level:</strong> ${Math.round(confidence * 100)}%</p>
-        <p><strong>Average Score:</strong> ${avgScore.toFixed(1)}/100</p>
-        <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 10px; border-left: 4px solid ${adviceColor};">
-          <p style="color: ${adviceColor}; font-weight: 600; margin: 0;">${advice}</p>
+        <div><strong>${subjectLabel} Predicted Score:</strong> <span style="font-size:2rem;color:#007bff;">${predicted_score}</span> / 100</div>
+        <div class="result-meta">
+          <i class="fas fa-info-circle me-1"></i>
+          This prediction is based on your current academic performance and demographic factors.
         </div>
-        <div style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
-          <p><i class="fas fa-info-circle me-1"></i>This prediction is based on your current academic performance and demographic factors.</p>
+        <div class="advice-section" style="margin-top:1rem;">
+          <strong>Advice:</strong> <span style="color:#51cf66;">${advice}</span>
         </div>
       </div>
     `;
-    
-    // Scroll to results
     document.getElementById("result").scrollIntoView({ behavior: 'smooth' });
-    
   } catch (error) {
     document.getElementById("result").innerHTML = `
       <div class="result-section show">
@@ -128,6 +115,48 @@ document.getElementById("predictForm").addEventListener("submit", async function
       </div>
     `;
   }
+});
+
+// --- Dynamic score input rendering ---
+const scoreFields = {
+  'math score': [
+    { id: 'reading_score', label: 'Reading Score', icon: 'fa-book-open' },
+    { id: 'writing_score', label: 'Writing Score', icon: 'fa-pen' }
+  ],
+  'reading score': [
+    { id: 'math_score', label: 'Math Score', icon: 'fa-square-root-alt' },
+    { id: 'writing_score', label: 'Writing Score', icon: 'fa-pen' }
+  ],
+  'writing score': [
+    { id: 'math_score', label: 'Math Score', icon: 'fa-square-root-alt' },
+    { id: 'reading_score', label: 'Reading Score', icon: 'fa-book-open' }
+  ]
+};
+
+function renderScoreInputs(target) {
+  const grid = document.getElementById('scores-grid');
+  grid.innerHTML = '';
+  scoreFields[target].forEach(field => {
+    grid.innerHTML += `
+      <div class="score-input">
+        <label for="${field.id}" class="form-label">
+          <i class="fas ${field.icon} me-2"></i>${field.label}
+        </label>
+        <input type="number" name="${field.id}" id="${field.id}"
+               placeholder="0–100" min="0" max="100" value="0"
+               class="form-control grade-input" required>
+      </div>
+    `;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const targetSelect = document.getElementById('target_subject');
+  renderScoreInputs(targetSelect.value);
+  targetSelect.addEventListener('change', function() {
+    renderScoreInputs(this.value);
+  });
+  checkAuthStatus();
 });
 
 // Check if user is logged in on page load
