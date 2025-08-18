@@ -143,29 +143,68 @@
           <!-- Academic Scores Section -->
           <div class="form-section">
             <h3><i class="fas fa-chart-bar me-2"></i>Academic Scores</h3>
-            <p class="section-description">Enter your current scores (0-100) for the other two subjects. Select the subject you want to predict.</p>
+            <p class="section-description">Enter your current scores (0-100) for all subjects. Select the subject you want to predict.</p>
             <div class="form-group">
               <label for="target_subject" class="form-label">
                 <i class="fas fa-bullseye me-2"></i>Subject to Predict:
               </label>
               <select name="target_subject" id="target_subject" class="form-control" required>
                 <option value="math score">Math</option>
-                <option value="reading score">Reading</option>
-                <option value="writing score">Writing</option>
+                <option value="biology score">Biology</option>
+                <option value="physics score">Physics</option>
+                <option value="computer science score">Computer Science</option>
+                <option value="psychology score">Psychology</option>
+                <option value="literature score">Literature</option>
+                <option value="economics score">Economics</option>
+                <option value="history score">History</option>
               </select>
             </div>
             <div class="scores-grid" id="scores-grid">
-              <!-- Score inputs will be dynamically rendered by JS -->
+              <div class="form-group">
+                <label for="math_score" class="form-label">Math Score:</label>
+                <input type="number" name="math_score" id="math_score" min="0" max="100" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="biology_score" class="form-label">Biology Score:</label>
+                <input type="number" name="biology_score" id="biology_score" min="0" max="100" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="physics_score" class="form-label">Physics Score:</label>
+                <input type="number" name="physics_score" id="physics_score" min="0" max="100" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="computer_science_score" class="form-label">Computer Science Score:</label>
+                <input type="number" name="computer_science_score" id="computer_science_score" min="0" max="100" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="psychology_score" class="form-label">Psychology Score:</label>
+                <input type="number" name="psychology_score" id="psychology_score" min="0" max="100" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="literature_score" class="form-label">Literature Score:</label>
+                <input type="number" name="literature_score" id="literature_score" min="0" max="100" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="economics_score" class="form-label">Economics Score:</label>
+                <input type="number" name="economics_score" id="economics_score" min="0" max="100" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="history_score" class="form-label">History Score:</label>
+                <input type="number" name="history_score" id="history_score" min="0" max="100" class="form-control" required>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="predict-btn">
-          <i class="fas fa-magic me-2"></i>Predict My Grade
+        <button type="button" class="predict-btn" onclick="checkResults()">
+          <i class="fas fa-magic me-2"></i>Check Results
         </button>
       </form>
       <div id="result"></div>
+      <div id="progress" class="progress-bar" style="display:none;">
+        <div class="progress-fill"></div>
+      </div>
     </div>
   </div>
 

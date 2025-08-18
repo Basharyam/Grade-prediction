@@ -19,6 +19,16 @@
       <span class="navbar-brand">
         <i class="fas fa-chart-line me-2"></i>GradePredictor
       </span>
+      <div class="d-flex">
+        <!-- Login/Register buttons (shown when not logged in) -->
+        <div id="auth-buttons" class="d-flex">
+          <button class="btn btn-outline-primary me-2" onclick="window.location.href='login-chrom.html'">
+            <i class="fas fa-sign-in-alt me-1"></i>Login
+          </button>
+          <button class="btn btn-primary" onclick="window.location.href='register-chrom.html'">
+            <i class="fas fa-user-plus me-1"></i>Register
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -28,7 +38,7 @@
       <div class="register-header">
         <i class="fas fa-user-plus register-icon"></i>
         <h2>Create Account</h2>
-        <p>Join us to start predicting your academic success</p>
+        <p>Join us to start predicting your academic success for 8 subjects</p>
       </div>
       
       <form id="registerForm">
@@ -37,7 +47,7 @@
           <label for="name" class="form-label">
             <i class="fas fa-user me-2"></i>Full Name
           </label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" />
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required />
           <div class="invalid-feedback">
             <i class="fas fa-exclamation-circle me-1"></i>Name must contain only letters and spaces.
           </div>
@@ -51,7 +61,7 @@
           <label for="email" class="form-label">
             <i class="fas fa-envelope me-2"></i>Email
           </label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" />
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
           <div class="invalid-feedback">
             <i class="fas fa-exclamation-circle me-1"></i>Please enter a valid email address.
           </div>
@@ -67,7 +77,7 @@
           </label>
           <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" minlength="7" maxlength="15" required />
           <div class="invalid-feedback">
-            <i class="fas fa-exclamation-circle me-1"></i>Password must be between 7 and 15 characters.
+            <i class="fas fa-exclamation-circle me-1"></i>Password must be between 7 and 15 characters and include at least one lowercase, one uppercase letter, and one number.
           </div>
           <div class="valid-feedback">
             <i class="fas fa-check me-1"></i>Valid password
@@ -95,7 +105,7 @@
       </form>
       
       <div class="register-footer">
-        <p>Already have an account? <a href="login.html">Sign in here</a></p>
+        <p>Already have an account? <a href="login-chrom.html">Sign in here</a></p>
       </div>
     </div>
   </div>

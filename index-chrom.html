@@ -9,9 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS CDN -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom CSS -->
@@ -28,16 +26,16 @@
       <div class="d-flex">
         <!-- Login/Register buttons (shown when not logged in) -->
         <div id="auth-buttons" class="d-flex">
-          <button class="btn btn-outline-primary me-2" onclick="window.location.href='login'">
+          <button class="btn btn-outline-primary me-2" onclick="window.location.href='login-chrom.html'">
             <i class="fas fa-sign-in-alt me-1"></i>Login
           </button>
-          <button class="btn btn-primary" onclick="window.location.href='register'">
+          <button class="btn btn-primary" onclick="window.location.href='register-chrom.html'">
             <i class="fas fa-user-plus me-1"></i>Register
           </button>
         </div>
         
         <!-- User info and logout button (shown when logged in) -->
-        <div id="user-info" class="d-flex align-items-center">
+        <div id="user-info" class="d-flex align-items-center" style="display: none;">
           <span class="me-3 text-muted">
             <i class="fas fa-user me-1"></i>
             <span id="user-name">User</span>
@@ -54,9 +52,9 @@
   <div class="container hero">
     <div class="hero-content">
       <h1>Predict Your Academic Success</h1>
-      <p>Leverage the power of machine learning to predict your course grades and make informed decisions about your academic journey.</p>
+      <p>Leverage the power of machine learning to predict your course grades across 8 subjects and make informed decisions about your academic journey.</p>
       <div class="btn-group">
-        <a href="predict.html" class="btn btn-success btn-lg">
+        <a href="predict-chrom.html" class="btn btn-success btn-lg">
           <i class="fas fa-rocket me-2"></i>Start Predicting
         </a>
       </div>
@@ -70,8 +68,8 @@
         <div class="welcome-card">
           <i class="fas fa-user-circle welcome-icon"></i>
           <h2 id="welcome-message">Welcome back!</h2>
-          <p class="text-muted">You're all set to start predicting your grades</p>
-          <a href="predict.html" class="btn btn-primary btn-lg">
+          <p class="text-muted">You're all set to start predicting your grades for 8 subjects</p>
+          <a href="predict-chrom.html" class="btn btn-primary btn-lg">
             <i class="fas fa-chart-line me-2"></i>Go to Predictions
           </a>
         </div>
@@ -86,14 +84,14 @@
         <div class="feature-card">
           <i class="fas fa-brain feature-icon"></i>
           <h4>AI-Powered</h4>
-          <p>Advanced machine learning algorithms analyze your academic patterns</p>
+          <p>Advanced machine learning algorithms analyze your academic patterns across 8 subjects</p>
         </div>
       </div>
       <div class="col-md-4 text-center mb-4">
         <div class="feature-card">
           <i class="fas fa-chart-bar feature-icon"></i>
           <h4>Data-Driven</h4>
-          <p>Make decisions based on comprehensive data analysis and insights</p>
+          <p>Make decisions based on comprehensive data analysis and insights from 8 subjects</p>
         </div>
       </div>
       <div class="col-md-4 text-center mb-4">
@@ -107,9 +105,7 @@
   </div>
 
   <!-- Bootstrap JS Bundle -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <!-- Custom JavaScript -->
   <script src="index.js"></script>

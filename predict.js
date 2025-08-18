@@ -1,13 +1,18 @@
-document.getElementById("predictForm").addEventListener("submit", async function (e) {
+// --- Event Listener for Check Results Button ---
+document.getElementById("predictForm").addEventListener("submit", function (e) {
   e.preventDefault();
+  checkResults();
+});
 
+async function checkResults() {
   const target = document.getElementById('target_subject').value;
-  const otherFields = scoreFields[target].map(f => f.id);
+  const scoreInputs = [
+    'math_score', 'biology_score', 'physics_score', 'computer_science_score',
+    'psychology_score', 'literature_score', 'economics_score', 'history_score'
+  ];
 
   // Input validation
-  const requiredFields = [
-    'gender', 'race', 'education', 'lunch', 'test_prep', ...otherFields
-  ];
+  const requiredFields = ['gender', 'race', 'education', 'lunch', 'test_prep', ...scoreInputs];
   let valid = true;
   let errorMsg = '';
   for (const field of requiredFields) {
@@ -26,9 +31,13 @@ document.getElementById("predictForm").addEventListener("submit", async function
         errorMsg = `Please enter/select ${field.replace('_', ' ')}.`;
         break;
       }
-      if (["math_score", "reading_score", "writing_score"].includes(field) && isNaN(parseFloat(value))) {
+      if (scoreInputs.includes(field) && isNaN(parseFloat(value))) {
         valid = false;
         errorMsg = `Please enter a valid number for ${field.replace('_', ' ')}.`;
+        break;
+      } else if (scoreInputs.includes(field) && (parseFloat(value) < 0 || parseFloat(value) > 100)) {
+        valid = false;
+        errorMsg = `${field.replace('_', ' ')} must be between 0 and 100.`;
         break;
       }
     }
@@ -38,8 +47,17 @@ document.getElementById("predictForm").addEventListener("submit", async function
     return;
   }
 
-  // Show loading spinner
-  document.getElementById("result").innerHTML = `<div class='result-section show'><div class='text-center'><div class='spinner-border text-primary' role='status'><span class='visually-hidden'>Loading...</span></div><p>Predicting your grade...</p></div></div>`;
+  // Show progress bar
+  const progress = document.getElementById('progress');
+  const progressFill = document.querySelector('#progress .progress-fill');
+  progress.style.display = 'block';
+  progressFill.style.width = '0';
+  let width = 0;
+  const interval = setInterval(() => {
+    if (width >= 100) clearInterval(interval);
+    else width += 5;
+    progressFill.style.width = `${width}%`;
+  }, 200);
 
   // Build data for backend
   const data = {
@@ -60,7 +78,7 @@ document.getElementById("predictForm").addEventListener("submit", async function
       }
     } catch (e) {}
   }
-  otherFields.forEach(f => {
+  scoreInputs.forEach(f => {
     data[f.replace('_', ' ')] = parseFloat(document.getElementById(f).value);
   });
 
@@ -81,27 +99,20 @@ document.getElementById("predictForm").addEventListener("submit", async function
       return;
     }
 
-    const { predicted_score, target_subject, neighbors, message } = result;
+    const { predicted_score, predicted_grade, target_subject, message } = result;
     let subjectLabel = target_subject.charAt(0).toUpperCase() + target_subject.slice(1).replace(' score', '');
-    // Tailored advice section
-    let advice = "";
-    if (predicted_score >= 85) {
-      advice = "Excellent work! Keep up your strong study habits and continue challenging yourself.";
-    } else if (predicted_score >= 70) {
-      advice = "You're doing well, but there's room for improvement. Try reviewing your notes regularly and practicing with extra exercises.";
-    } else {
-      advice = "Don't be discouraged! Focus on understanding the basics, ask for help when needed, and create a study plan to boost your performance.";
-    }
+    // Tailored advice section (using message from backend)
     document.getElementById("result").innerHTML = `
       <div class="result-section show">
         <h2><i class="fas fa-chart-line me-2"></i>Prediction Results</h2>
         <div><strong>${subjectLabel} Predicted Score:</strong> <span style="font-size:2rem;color:#007bff;">${predicted_score}</span> / 100</div>
+        <div><strong>Grade:</strong> <span style="font-size:1.5rem;color:#28a745;">${predicted_grade}</span></div>
         <div class="result-meta">
           <i class="fas fa-info-circle me-1"></i>
           This prediction is based on your current academic performance and demographic factors.
         </div>
         <div class="advice-section" style="margin-top:1rem;">
-          <strong>Advice:</strong> <span style="color:#51cf66;">${advice}</span>
+          <strong>Message:</strong> <span style="color:#51cf66;">${message}</span>
         </div>
       </div>
     `;
@@ -114,48 +125,17 @@ document.getElementById("predictForm").addEventListener("submit", async function
         <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Error details: ${error.message}</p>
       </div>
     `;
+  } finally {
+    clearInterval(interval);
+    progress.style.display = 'none';
+    progressFill.style.width = '0';
   }
-});
-
-// --- Dynamic score input rendering ---
-const scoreFields = {
-  'math score': [
-    { id: 'reading_score', label: 'Reading Score', icon: 'fa-book-open' },
-    { id: 'writing_score', label: 'Writing Score', icon: 'fa-pen' }
-  ],
-  'reading score': [
-    { id: 'math_score', label: 'Math Score', icon: 'fa-square-root-alt' },
-    { id: 'writing_score', label: 'Writing Score', icon: 'fa-pen' }
-  ],
-  'writing score': [
-    { id: 'math_score', label: 'Math Score', icon: 'fa-square-root-alt' },
-    { id: 'reading_score', label: 'Reading Score', icon: 'fa-book-open' }
-  ]
-};
-
-function renderScoreInputs(target) {
-  const grid = document.getElementById('scores-grid');
-  grid.innerHTML = '';
-  scoreFields[target].forEach(field => {
-    grid.innerHTML += `
-      <div class="score-input">
-        <label for="${field.id}" class="form-label">
-          <i class="fas ${field.icon} me-2"></i>${field.label}
-        </label>
-        <input type="number" name="${field.id}" id="${field.id}"
-               placeholder="0–100" min="0" max="100" value="0"
-               class="form-control grade-input" required>
-      </div>
-    `;
-  });
 }
+
+// --- Dynamic score input rendering (removed as inputs are now static) ---
 
 document.addEventListener('DOMContentLoaded', function() {
   const targetSelect = document.getElementById('target_subject');
-  renderScoreInputs(targetSelect.value);
-  targetSelect.addEventListener('change', function() {
-    renderScoreInputs(this.value);
-  });
   checkAuthStatus();
 });
 
@@ -224,7 +204,7 @@ function logout() {
   setTimeout(() => {
     checkAuthStatus();
     // Redirect to home page
-    window.location.href = '/';
+    window.location.href = 'index-chrom.html';
   }, 1000);
 }
 

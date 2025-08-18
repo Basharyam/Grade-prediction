@@ -50,14 +50,6 @@ body {
 }
 
 /* Enhanced Navigation Styling */
-.navbar {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-}
-
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: 700;
@@ -115,8 +107,6 @@ body {
   box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
 }
 
-
-
 /* User Name - Centered in Navigation */
 #user-name {
   color: #333 !important;
@@ -152,39 +142,6 @@ body {
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
   }
-}
-
-.btn {
-  border-radius: 12px;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  transition: all 0.3s ease;
-  border: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
-}
-
-.btn-outline-primary {
-  border: 2px solid #667eea;
-  color: #667eea;
-  background: transparent;
-}
-
-.btn-outline-primary:hover {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 /* User Welcome Section */
@@ -261,12 +218,11 @@ body {
 
 /* Predict Card */
 .predict-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
+  background: #ffffff;
   border-radius: 25px;
   padding: 3rem 2.5rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #e0e0e0;
   width: 100%;
   max-width: 800px;
   position: relative;
@@ -290,14 +246,14 @@ body {
 }
 
 .predict-header h1 {
-  color: white;
+  color: #333;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .predict-header p {
-  color: rgba(255, 255, 255, 0.8);
+  color: #666;
   font-size: 1.1rem;
 }
 
@@ -309,23 +265,23 @@ body {
 }
 
 .form-section {
-  background: rgba(255, 255, 255, 0.05);
+  background: #f5f7fa;
   border-radius: 15px;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #e0e0e0;
 }
 
 .form-section h3 {
-  color: white;
+  color: #333;
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .section-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
@@ -337,54 +293,53 @@ body {
 
 .form-label {
   display: block;
-  color: white;
+  color: #333;
   font-weight: 600;
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
 
 .form-label i {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
 }
 
 .form-control {
   width: 100%;
   padding: 1rem 1.25rem;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #e0e0e0;
   border-radius: 12px;
-  background: #2c3e50;
-  color: white;
+  background: #ffffff;
+  color: #333;
   font-size: 1rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: #999;
 }
 
 .form-control:focus {
   outline: none;
   border-color: #667eea;
-  background: #34495e;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
   transform: translateY(-2px);
 }
 
 /* Select Options Styling */
 .form-control option {
-  background: #2c3e50;
-  color: white;
+  background: #ffffff;
+  color: #333;
   padding: 0.5rem;
 }
 
 .form-control option:hover {
-  background: #34495e;
+  background: #f5f7fa;
 }
 
 .form-control option:checked {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background: #667eea;
+  color: #ffffff;
 }
 
 /* Custom Select Styling */
@@ -392,7 +347,7 @@ select.form-control {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1em;
@@ -409,20 +364,19 @@ select.form-control {
 .radio-label {
   display: flex;
   align-items: center;
-  color: white;
+  color: #333;
   font-weight: 500;
   cursor: pointer;
   padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: #ffffff;
   border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #e0e0e0;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .radio-label:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: #667eea;
   transform: translateY(-2px);
 }
 
@@ -433,7 +387,7 @@ select.form-control {
 .radio-custom {
   width: 18px;
   height: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid #666;
   border-radius: 50%;
   margin-right: 0.5rem;
   position: relative;
@@ -503,15 +457,34 @@ select.form-control {
   transform: translateY(-1px);
 }
 
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background: #56ab2f;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
 /* Results Section */
 .result-section {
   margin-top: 2rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: #ffffff;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #e0e0e0;
   text-align: center;
   display: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .result-section.show {
@@ -520,13 +493,13 @@ select.form-control {
 }
 
 .result-section h2 {
-  color: white;
+  color: #333;
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .result-section p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #666;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
@@ -546,9 +519,9 @@ select.form-control {
   min-height: 100px;
   font-size: 1.2rem;
   text-align: center;
-  background: rgba(0, 0, 0,0.85);
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(102,126,234,0.10);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.10);
   padding: 1.5rem 1rem;
   transition: background 0.3s;
 }
@@ -675,88 +648,72 @@ select.form-control {
 
 /* Prediction Result Card Styling */
 .result-section.show {
-  background: #232136;
+  background: #f5f7fa;
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(102,126,234,0.10);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.10);
   padding: 2.5rem 2rem 2rem 2rem;
   margin: 2rem auto 0 auto;
   max-width: 500px;
-  color: #fff;
+  color: #333;
   text-align: center;
-  border: 1.5px solid #35324c;
+  border: 1px solid #e0e0e0;
 }
 
 .result-section h2 {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: #333;
   letter-spacing: 1px;
 }
 
-.prediction {
+.result-section .prediction {
   font-size: 4rem;
   font-weight: 900;
   margin: 0.5rem 0 1.5rem 0;
   letter-spacing: 2px;
-  color: #51cf66;
 }
-.prediction.F {
+.result-section .prediction.F {
   color: #ff6b6b;
 }
-.prediction.D {
+.result-section .prediction.D {
   color: #ff922b;
 }
-.prediction.C {
+.result-section .prediction.C {
   color: #ffd43b;
 }
-.prediction.B {
+.result-section .prediction.B {
   color: #74c0fc;
 }
-.prediction.A {
+.result-section .prediction.A {
   color: #51cf66;
 }
 
-.result-section .advice-box {
+.result-section .advice-section {
   margin: 2rem 0 1.5rem 0;
   padding: 1.25rem 1rem;
   border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
-  background: rgba(255,255,255,0.07);
-  border-left: 5px solid #ff6b6b;
-  color: #ff6b6b;
-  box-shadow: 0 2px 12px rgba(255,107,107,0.08);
+  background: #ffffff;
+  border-left: 5px solid #51cf66;
+  color: #51cf66;
+  box-shadow: 0 2px 12px rgba(81, 207, 102, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
 }
-.result-section .advice-box.success {
-  border-left: 5px solid #51cf66;
-  color: #51cf66;
-  background: rgba(81,207,102,0.07);
-}
-.result-section .advice-box.info {
-  border-left: 5px solid #74c0fc;
-  color: #74c0fc;
-  background: rgba(116,192,252,0.07);
-}
-.result-section .advice-box.warning {
-  border-left: 5px solid #ffd43b;
-  color: #ffd43b;
-  background: rgba(255,212,59,0.07);
-}
-.result-section .advice-box.danger {
+.result-section .advice-section.danger {
   border-left: 5px solid #ff6b6b;
   color: #ff6b6b;
-  background: rgba(255,107,107,0.07);
+  background: #fff5f5;
 }
 
 .result-section .result-meta {
   margin-top: 1.5rem;
   font-size: 1rem;
-  color: #bdbdbd;
+  color: #666;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -771,7 +728,7 @@ select.form-control {
   .result-section h2 {
     font-size: 1.2rem;
   }
-  .prediction {
+  .result-section .prediction {
     font-size: 2.5rem;
   }
 }

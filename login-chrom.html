@@ -22,7 +22,12 @@
       <div class="d-flex">
         <!-- Login/Register buttons (shown when not logged in) -->
         <div id="auth-buttons" class="d-flex">
-          
+          <button class="btn btn-outline-primary me-2" onclick="window.location.href='login-chrom.html'">
+            <i class="fas fa-sign-in-alt me-1"></i>Login
+          </button>
+          <button class="btn btn-primary" onclick="window.location.href='register-chrom.html'">
+            <i class="fas fa-user-plus me-1"></i>Register
+          </button>
         </div>
       </div>
     </div>
@@ -33,7 +38,7 @@
       <div class="login-header">
         <i class="fas fa-sign-in-alt login-icon"></i>
         <h2>Welcome Back</h2>
-        <p>Sign in to access your grade predictions</p>
+        <p>Sign in to access your grade predictions for 8 subjects</p>
       </div>
       
       <form id="loginForm">
@@ -42,9 +47,9 @@
           <label for="email" class="form-label">
             <i class="fas fa-envelope me-2"></i>Email
           </label>
-          <input type="text" id="email" name="email" placeholder="Enter your email" required />
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
           <div class="invalid-feedback">
-            Please enter a valid email.
+            Please enter a valid email address.
           </div>
           <div class="valid-feedback">
             <i class="fas fa-check"></i> Valid email
@@ -58,13 +63,12 @@
           </label>
           <input type="password" id="password" name="password" placeholder="Enter your password" required />
           <div class="invalid-feedback">
-            Password must be at least 7 characters long and include at least one lowercase, one uppercase letter, and one special character.
+            Password must be at least 7 characters long and include at least one lowercase, one uppercase letter, and one number.
           </div>
           <div class="valid-feedback">
             <i class="fas fa-check"></i> Valid password
           </div>
         </div>
- 
         
         <!-- Submit -->
         <button type="submit" class="login-btn">
@@ -73,7 +77,7 @@
       </form>
       
       <div class="login-footer">
-        <p>Don't have an account? <a href="register.html">Register here</a></p>
+        <p>Don't have an account? <a href="register-chrom.html">Register here</a></p>
       </div>
     </div>
   </div>

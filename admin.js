@@ -42,14 +42,14 @@ async function editUser(userId, currentName, currentEmail) {
     }
 
     if (data.success) {
-      alert('User updated successfully!');
+      showNotification('User updated successfully!', 'success');
       location.reload();
     } else {
       throw new Error(data.message || 'Failed to update user');
     }
   } catch (error) {
     console.error('Error updating user:', error);
-    alert(error.message || 'Error updating user. Please try again.');
+    showNotification(error.message || 'Error updating user. Please try again.', 'error');
   }
 }
 
@@ -64,13 +64,13 @@ async function deleteUser(userId) {
     
     const data = await response.json();
     if (data.success) {
-      // Refresh the page to show updated data
+      showNotification('User deleted successfully!', 'success');
       location.reload();
     } else {
       alert('Failed to delete user: ' + data.message);
     }
   } catch (error) {
-    alert('Error deleting user');
+    showNotification('Error deleting user. Please try again.', 'error');
     console.error('Error:', error);
   }
 }
@@ -82,12 +82,80 @@ function logout() {
   sessionStorage.removeItem('token');
   
   // Redirect to home page
-  window.location.href = 'index.html';
+  window.location.href = 'index-chrom.html';
 }
+
+// Notification function
+function showNotification(message, type = 'info') {
+  // Remove existing notifications
+  const existingNotification = document.querySelector('.notification');
+  if (existingNotification) {
+    existingNotification.remove();
+  }
+
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      z-index: 1000;
+      animation: slideInRight 0.3s ease-out;
+      background: ${type === 'success' ? 'linear-gradient(135deg, #51cf66, #40c057)' : 
+                   type === 'error' ? 'linear-gradient(135deg, #ff6b6b, #fa5252)' : 
+                   'linear-gradient(135deg, #74c0fc, #4dabf7)'};
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    ">
+      <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'} me-2"></i>
+      ${message}
+    </div>
+  `;
+
+  document.body.appendChild(notification);
+
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.remove();
+    }
+  }, 5000);
+}
+
+// Add CSS for notification animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+`;
+document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', async () => {
   const tableBody = document.getElementById('users-table-body');
   const statsDiv = document.getElementById('admin-stats');
+  const adminName = document.getElementById('admin-name');
+  
+  // Set admin name from session storage if available
+  const user = sessionStorage.getItem('user');
+  if (user) {
+    const userData = JSON.parse(user);
+    if (userData.name) {
+      adminName.textContent = userData.name;
+    }
+  }
+
   try {
     // Fetch users and predictions in parallel
     const [usersRes, predsRes] = await Promise.all([
@@ -98,18 +166,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     const predsData = await predsRes.json();
     const predictions = predsData.success ? predsData.predictions : [];
     window._allPredictions = predictions;
+
     if (usersData.success) {
       // Show stats
       if (statsDiv) {
-        const totalUsers = usersData.users.length-1;
+        const totalUsers = usersData.users.length - 1; // Exclude admin
         statsDiv.innerHTML = `
           <p><strong>Total Users:</strong> ${totalUsers}</p>
+          <p><strong>Total Predictions:</strong> ${predictions.length}</p>
         `;
       }
       tableBody.innerHTML = usersData.users
         .filter(user => user.email.toLowerCase() !== 'admin@gmail.com')
         .map(user => {
-          // Find all predictions for this user
           const userPreds = predictions.filter(p => p.user_email === user.email);
           const latestPred = userPreds.length > 0 ? userPreds[userPreds.length - 1] : null;
           let historyHtml = latestPred
@@ -140,29 +209,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   } catch (err) {
     tableBody.innerHTML = '<tr><td colspan="5">Error loading users</td></tr>';
-  }
- 
-  const actionHistoryDiv = document.getElementById('admin-action-history');
-  if (actionHistoryDiv) {
-    try {
-      const res = await fetch('http://localhost:5000/api/admin/predictions');
-      const data = await res.json();
-      if (data.success && data.predictions.length > 0) {
-        actionHistoryDiv.innerHTML = data.predictions.map(pred => `
-          <div class="prediction-block" style="margin-bottom:1.5rem;">
-            <div><strong>User Email:</strong> ${pred.user_email || 'N/A'}</div>
-            <div><strong>Target Subject:</strong> ${pred.target_subject}</div>
-            <div><strong>Predicted Score:</strong> ${pred.predicted_score}</div>
-          </div>
-        `).join('');
-      } else {
-        actionHistoryDiv.innerHTML = '<div>No predictions found.</div>';
-      }
-    } catch (err) {
-      actionHistoryDiv.innerHTML = '<div>Error loading predictions.</div>';
-    }
+    console.error('Error fetching data:', err);
   }
 });
+
 // Modal logic for prediction history
 window.showHistoryModal = function(email) {
   const allPreds = window._allPredictions || [];
@@ -176,17 +226,21 @@ window.showHistoryModal = function(email) {
       <div style="margin-bottom:1rem;">
         <div><strong>Target Subject:</strong> ${pred.target_subject}</div>
         <div><strong>Predicted Score:</strong> ${pred.predicted_score}</div>
+        <div><strong>Date:</strong> ${new Date(pred.created_at).toLocaleString()}</div>
       </div>
     `).join('');
   }
   modal.style.display = 'block';
   modal.classList.add('show');
   modal.classList.add('d-block');
-}
+};
+
 window.closeHistoryModal = function() {
   const modal = document.getElementById('historyModal');
   modal.style.display = 'none';
   modal.classList.remove('show');
   modal.classList.remove('d-block');
-}
+};
+
 window.editUser = editUser;
+window.deleteUser = deleteUser;

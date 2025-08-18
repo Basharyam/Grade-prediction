@@ -25,7 +25,7 @@ app.use('/api', createProxyMiddleware({
 }));
 // Middleware
 app.use(express.json());
-app.use(express.static(__dirname, { index: 'index.html' }));
+app.use(express.static(__dirname, { index: 'index-chrom.html' }));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
@@ -49,7 +49,7 @@ function authMiddleware(req, res, next) {
 }
 
 // ---------- Auth Routes ----------
-app.get('/login', (req, res) => res.sendFile(__dirname + '/login.html'));
+app.get('/login', (req, res) => res.sendFile(__dirname + '/login-chrom.html'));
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password)
@@ -84,7 +84,7 @@ app.post('/logout', authMiddleware, async (req, res) => {
   }
 });
 
-app.get('/register', (req, res) => res.sendFile(__dirname + '/register.html'));
+app.get('/register', (req, res) => res.sendFile(__dirname + '/register-chrom.html'));
 app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password)
