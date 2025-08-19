@@ -2,3 +2,9 @@ node_modules/
 .DS_Store
 model.pkl
 encoders.pkl
+.venv
+venv
+avg_grade.pkl
+feature_order.pkl
+ohe.pkl
+scaler.pkl

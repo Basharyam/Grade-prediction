@@ -19,7 +19,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'secret123';
 
 // ---------- Proxy to Flask ----------
 app.use('/api', createProxyMiddleware({
-  target: 'http://127.0.0.1:5001',
+  target: 'http://127.0.0.1:5002',
   changeOrigin: true,
   logLevel: 'debug'
 }));

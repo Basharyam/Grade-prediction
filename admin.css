@@ -2,7 +2,6 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  color: #333;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -34,22 +33,19 @@ body {
 .admin-title {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff; /* uses white for contrast against purple background */
   margin-bottom: 0.5rem;
 }
 
 .admin-welcome {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
+  color: #ffffff; /* uses white for better readability */
   margin-bottom: 0.5rem;
 }
 
 .admin-desc {
-  color: #666;
+  color: #e0e0e0; /* uses light gray for better contrast and eye comfort */
   margin-bottom: 2rem;
 }
 

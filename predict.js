@@ -5,16 +5,15 @@ document.getElementById("predictForm").addEventListener("submit", function (e) {
 });
 
 async function checkResults() {
-  const target = document.getElementById('target_subject').value;
-  const scoreInputs = [
-    'math_score', 'biology_score', 'physics_score', 'computer_science_score',
-    'psychology_score', 'literature_score', 'economics_score', 'history_score'
-  ];
+  const targetSubject = document.getElementById('target_subject').value;
+  const scoresGrid = document.getElementById('scores-grid');
 
   // Input validation
-  const requiredFields = ['gender', 'race', 'education', 'lunch', 'test_prep', ...scoreInputs];
+  const requiredFields = ['gender', 'race', 'education', 'lunch', 'test_prep'];
   let valid = true;
   let errorMsg = '';
+
+  // Validate categorical fields
   for (const field of requiredFields) {
     let value;
     if (['gender', 'test_prep'].includes(field)) {
@@ -25,23 +24,36 @@ async function checkResults() {
         break;
       }
     } else {
-      value = document.getElementById(field === 'education' ? 'education' : field).value;
+      value = document.getElementById(field).value;
       if (!value) {
         valid = false;
         errorMsg = `Please enter/select ${field.replace('_', ' ')}.`;
         break;
       }
-      if (scoreInputs.includes(field) && isNaN(parseFloat(value))) {
-        valid = false;
-        errorMsg = `Please enter a valid number for ${field.replace('_', ' ')}.`;
-        break;
-      } else if (scoreInputs.includes(field) && (parseFloat(value) < 0 || parseFloat(value) > 100)) {
-        valid = false;
-        errorMsg = `${field.replace('_', ' ')} must be between 0 and 100.`;
-        break;
-      }
     }
   }
+
+  // Validate score fields dynamically
+  const scoreInputs = scoresGrid.querySelectorAll('input[type="number"]');
+  const scoreData = {};
+  if (scoreInputs.length !== 7) {
+    valid = false;
+    errorMsg = "Please select a subject to predict to enable score inputs.";
+  } else {
+    scoreInputs.forEach(input => {
+      const field = input.id;
+      const value = parseFloat(input.value);
+      if (isNaN(value)) {
+        valid = false;
+        errorMsg = `Please enter a valid number for ${field.replace('_', ' ')}.`;
+      } else if (value < 0 || value > 100) {
+        valid = false;
+        errorMsg = `${field.replace('_', ' ')} must be between 0 and 100.`;
+      }
+      scoreData[field] = value;
+    });
+  }
+
   if (!valid) {
     document.getElementById("result").innerHTML = `<p style='color: #ff6b6b;'>${errorMsg}</p>`;
     return;
@@ -66,7 +78,8 @@ async function checkResults() {
     parental_level_of_education: document.getElementById("education").value,
     lunch: document.getElementById("lunch").value,
     test_preparation_course: document.querySelector('input[name="test_prep"]:checked').value,
-    target_subject: target
+    target_subject: targetSubject,
+    timestamp: new Date().toISOString() // Add timestamp for potential future use
   };
   // Attach user email if logged in
   const user = sessionStorage.getItem('user');
@@ -76,14 +89,22 @@ async function checkResults() {
       if (userData.email) {
         data.user_email = userData.email;
       }
-    } catch (e) {}
+      if (userData.lastLogin) {
+        data.last_login = userData.lastLogin; // Pass last login if available
+      }
+    } catch (e) {
+      console.error('Error parsing user data:', e);
+    }
   }
-  scoreInputs.forEach(f => {
-    data[f.replace('_', ' ')] = parseFloat(document.getElementById(f).value);
-  });
+  // Add only the remaining 7 scores, excluding the target subject
+  for (const [field, value] of Object.entries(scoreData)) {
+    if (field !== targetSubject) {
+      data[field.replace('_', ' ')] = value;
+    }
+  }
 
   try {
-    const response = await fetch("http://localhost:5000/api/predict", {
+    const response = await fetch("http://localhost:5002/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
@@ -92,14 +113,16 @@ async function checkResults() {
 
     if (result.error) {
       document.getElementById("result").innerHTML = `<p style='color: #ff6b6b;'>Error: ${result.error}</p>`;
+      console.error('Prediction error:', result.error);
       return;
     }
     if (!result.success && result.message) {
       document.getElementById("result").innerHTML = `<p style='color: #ff6b6b;'>Error: ${result.message}</p>`;
+      console.error('Prediction message:', result.message);
       return;
     }
 
-    const { predicted_score, predicted_grade, target_subject, message } = result;
+    const { predicted_score, predicted_grade, target_subject, message, avg_grade } = result;
     let subjectLabel = target_subject.charAt(0).toUpperCase() + target_subject.slice(1).replace(' score', '');
     // Tailored advice section (using message from backend)
     document.getElementById("result").innerHTML = `
@@ -107,6 +130,7 @@ async function checkResults() {
         <h2><i class="fas fa-chart-line me-2"></i>Prediction Results</h2>
         <div><strong>${subjectLabel} Predicted Score:</strong> <span style="font-size:2rem;color:#007bff;">${predicted_score}</span> / 100</div>
         <div><strong>Grade:</strong> <span style="font-size:1.5rem;color:#28a745;">${predicted_grade}</span></div>
+        <div><strong>Average ${subjectLabel} Score:</strong> <span style="font-size:1.5rem;color:#6c757d;">${avg_grade}</span> / 100</div>
         <div class="result-meta">
           <i class="fas fa-info-circle me-1"></i>
           This prediction is based on your current academic performance and demographic factors.
@@ -125,6 +149,7 @@ async function checkResults() {
         <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Error details: ${error.message}</p>
       </div>
     `;
+    console.error('Fetch error:', error);
   } finally {
     clearInterval(interval);
     progress.style.display = 'none';
@@ -132,14 +157,6 @@ async function checkResults() {
   }
 }
 
-// --- Dynamic score input rendering (removed as inputs are now static) ---
-
-document.addEventListener('DOMContentLoaded', function() {
-  const targetSelect = document.getElementById('target_subject');
-  checkAuthStatus();
-});
-
-// Check if user is logged in on page load
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Predict page loaded, checking auth status...');
   checkAuthStatus();
@@ -157,30 +174,23 @@ function checkAuthStatus() {
   console.log('User data:', user);
 
   if (user) {
-    // User is logged in
     try {
       const userData = JSON.parse(user);
       const userNameText = userData.name || userData.email || 'User';
       console.log('User data parsed:', userData);
       
-      // Update navigation with welcome message and hand wave
       userName.textContent = `Welcome, ${userNameText} 👋`;
       authButtons.style.display = 'none';
       userInfo.style.display = 'flex';
-      
-      // Hide the welcome section - we only want the name in the navigation bar
       userWelcomeSection.style.display = 'none';
-      
       console.log('User is logged in, showing welcome message and logout button on predict page');
     } catch (error) {
       console.error('Error parsing user data:', error);
-      // If there's an error parsing, treat as not logged in
       authButtons.style.display = 'flex';
       userInfo.style.display = 'none';
       userWelcomeSection.style.display = 'none';
     }
   } else {
-    // User is not logged in
     console.log('User is not logged in, showing auth buttons on predict page');
     authButtons.style.display = 'flex';
     userInfo.style.display = 'none';
@@ -190,27 +200,18 @@ function checkAuthStatus() {
 
 function logout() {
   console.log('Logout clicked from predict page');
-  
-  // Clear session storage
   sessionStorage.removeItem('user');
   sessionStorage.removeItem('token');
-  
   console.log('Session storage cleared');
-  
-  // Show notification
   showNotification('Logged out successfully!', 'success');
-  
-  // Update navigation
   setTimeout(() => {
     checkAuthStatus();
-    // Redirect to home page
-    window.location.href = 'index-chrom.html';
+    window.location.href = '/';
   }, 1000);
 }
 
 // Notification function
 function showNotification(message, type = 'info') {
-  // Remove existing notifications
   const existingNotification = document.querySelector('.notification');
   if (existingNotification) {
     existingNotification.remove();
@@ -241,7 +242,6 @@ function showNotification(message, type = 'info') {
 
   document.body.appendChild(notification);
 
-  // Auto remove after 5 seconds
   setTimeout(() => {
     if (notification.parentNode) {
       notification.remove();

@@ -1,9 +1,9 @@
-# app.py (unified)
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify, redirect, url_for
 from flask_cors import CORS
 import os
 import numpy as np
 import pickle
+import pandas as pd   
 from pymongo import MongoClient
 from bson import ObjectId
 
@@ -15,9 +15,10 @@ MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 OHE_PATH = os.path.join(BASE_DIR, "ohe.pkl")
 SCALER_PATH = os.path.join(BASE_DIR, "scaler.pkl")
 FEAT_PATH = os.path.join(BASE_DIR, "feature_order.pkl")
+AVG_GRADE_PATH = os.path.join(BASE_DIR, "avg_grade.pkl")
 
-if not (os.path.exists(MODEL_PATH) and os.path.exists(OHE_PATH) and os.path.exists(SCALER_PATH) and os.path.exists(FEAT_PATH)):
-    raise FileNotFoundError("Model, encoder, scaler, or feature order file missing.")
+if not (os.path.exists(MODEL_PATH) and os.path.exists(OHE_PATH) and os.path.exists(SCALER_PATH) and os.path.exists(FEAT_PATH) and os.path.exists(AVG_GRADE_PATH)):
+    raise FileNotFoundError("Model, encoder, scaler, feature order, or average grade file missing.")
 
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
@@ -27,6 +28,8 @@ with open(SCALER_PATH, "rb") as f:
     scaler = pickle.load(f)
 with open(FEAT_PATH, "rb") as f:
     FEATURE_ORDER = pickle.load(f)
+with open(AVG_GRADE_PATH, "rb") as f:
+    AVG_GRADES = pickle.load(f)  # could be float or dict
 
 CATEGORICAL = FEATURE_ORDER[:5]
 TARGETS = [
@@ -42,6 +45,19 @@ def score_to_grade(score):
     elif score >= 60: return "D", "Passing, but focus on strengthening this area."
     else: return "F", "Failed. Please review and seek support."
 
+def get_avg_for(target):
+    """Handle both dict (multiple subjects) and float (single subject) avg."""
+    if isinstance(AVG_GRADES, dict):
+        return float(AVG_GRADES.get(target, 0))
+    try:
+        return float(AVG_GRADES)
+    except Exception:
+        return 0.0
+
+@app.route('/')
+def redirect_to_index():
+    return redirect(url_for('static', filename='index-chrom.html'))
+
 @app.post("/api/predict")
 def api_predict():
     global latest_neighbors_result
@@ -50,36 +66,42 @@ def api_predict():
         target = data.get("target_subject")
         if not target or target not in TARGETS:
             return jsonify({"success": False, "error": f"Invalid or missing target_subject: {target}"}), 400
+
+        # Only the 7 other scores are features
         other_scores = [s for s in TARGETS if s != target]
+
         # Validate input
         for cat in CATEGORICAL:
             if cat.replace(" ", "_") not in data and cat not in data:
                 return jsonify({"success": False, "error": f"Missing field: {cat}"}), 400
-        for score in TARGETS:
+        for score in other_scores:
             if score.replace(" ", "_") not in data and score not in data:
                 return jsonify({"success": False, "error": f"Missing field: {score}"}), 400
+
         # Build input row
         row = []
         for cat in CATEGORICAL:
             val = data.get(cat.replace(" ", "_"), data.get(cat, ""))
             row.append(val)
-        for score in TARGETS:
+        for score in other_scores:   # ✅ only 7 values
             val = float(data.get(score.replace(" ", "_"), data.get(score, 0)))
             row.append(val)
+
         # One-hot encode categoricals
         X_cat = ohe.transform([row[:5]])
-        X_num = np.array([row[5:]], dtype=float)
+        X_num = np.array([row[5:]], dtype=float)  # shape (1,7)
         X = np.hstack([X_cat, X_num])
         X_scaled = scaler.transform(X)
+
         # Predict
         y_pred = model.predict(X_scaled)[0]
         y_pred_grade, message = score_to_grade(round(float(y_pred), 1))
-        # Find k=5 neighbors
+
+        # Find neighbors
         distances, indices = model.kneighbors(X_scaled, n_neighbors=5)
-        neighbors = []
-        for idx, dist in zip(indices[0], distances[0]):
-            neighbors.append({"index": int(idx), "distance": float(dist)})
-        # Store latest neighbors for admin (by user email if available)
+        neighbors = [{"index": int(idx), "distance": float(dist)} for idx, dist in zip(indices[0], distances[0])]
+
+        # Save to DB if email provided
         user_email = data.get("user_email")
         if user_email:
             MONGODB_URI = os.getenv("MONGODB_URI")
@@ -92,8 +114,10 @@ def api_predict():
                 "predicted_score": round(float(y_pred), 1),
                 "predicted_grade": y_pred_grade,
                 "message": message,
-                "neighbors": neighbors
+                "neighbors": neighbors,
+                "created_at": pd.Timestamp.now().isoformat()
             })
+
         latest_neighbors_result = {
             "neighbors": neighbors,
             "target_subject": target,
@@ -101,12 +125,14 @@ def api_predict():
             "predicted_grade": y_pred_grade,
             "message": message
         }
+
         return jsonify({
             "success": True,
             "predicted_score": round(float(y_pred), 1),
             "predicted_grade": y_pred_grade,
             "target_subject": target,
             "message": message,
+            "avg_grade": get_avg_for(target),
             "neighbors": neighbors,
             "info": f"Prediction for {target} generated successfully"
         })
@@ -137,7 +163,7 @@ def get_users():
     DB_NAME = os.getenv("DB_NAME", "grade_predictor")
     client = MongoClient(MONGODB_URI)
     db = client[DB_NAME]
-    users = list(db["users"].find({}, {"password": 0}))  # Exclude password
+    users = list(db["users"].find({}, {"password": 0}))
     for user in users:
         user["_id"] = str(user["_id"])
     return jsonify({"success": True, "users": users})
@@ -177,4 +203,4 @@ def health():
     return {"ok": True}
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5002, debug=True)

@@ -10,7 +10,7 @@ async function editUser(userId, currentName, currentEmail) {
     console.log('Sending update request for user:', userId); // Debug log
     console.log('Request data:', { name: newName.trim(), email: newEmail.trim() }); // Debug log
     
-    const response = await fetch(`http://localhost:5000/api/users/${userId}`, {
+    const response = await fetch(`http://localhost:5002/api/users/${userId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ async function deleteUser(userId) {
   if (!confirm('Are you sure you want to delete this user?')) return;
   
   try {
-    const response = await fetch(`http://localhost:5000/api/users/${userId}`, {
+    const response = await fetch(`http://localhost:5002/api/users/${userId}`, {
       method: 'DELETE'
     });
     
@@ -159,8 +159,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Fetch users and predictions in parallel
     const [usersRes, predsRes] = await Promise.all([
-      fetch('http://localhost:5000/api/users'),
-      fetch('http://localhost:5000/api/admin/predictions')
+      fetch('http://localhost:5002/api/users'),
+      fetch('http://localhost:5002/api/admin/predictions')
     ]);
     const usersData = await usersRes.json();
     const predsData = await predsRes.json();
@@ -180,15 +180,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         .filter(user => user.email.toLowerCase() !== 'admin@gmail.com')
         .map(user => {
           const userPreds = predictions.filter(p => p.user_email === user.email);
-          const latestPred = userPreds.length > 0 ? userPreds[userPreds.length - 1] : null;
+          const latestPred = userPreds.length > 0 ? userPreds.reduce((latest, current) => {
+            return new Date(latest.created_at) > new Date(current.created_at) ? latest : current;
+          }, userPreds[0]) : null;
+          let lastLogin = user.lastLogin ? new Date(user.lastLogin).toLocaleString() : 'Never';
           let historyHtml = latestPred
-            ? `<div><strong>${latestPred.target_subject}:</strong> ${latestPred.predicted_score}</div>`
+            ? `<div><strong>${latestPred.target_subject}:</strong> ${latestPred.predicted_score} (Predicted on ${new Date(latestPred.created_at).toLocaleString()})</div>`
             : '<div>No predictions</div>';
           return `
             <tr>
               <td>${user.name}</td>
               <td>${user.email}</td>
-              <td>${user.lastLogin ? new Date(user.lastLogin).toLocaleString() : 'Never'}</td>
+              <td>${lastLogin}</td>
               <td>${historyHtml}</td>
               <td>
                 <button onclick="editUser('${user._id}', '${user.name}', '${user.email}')" class="btn btn-sm btn-primary me-2">

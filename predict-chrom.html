@@ -79,11 +79,11 @@
               </label>
               <select name="race" id="race" class="form-control" required>
                 <option value="">Select Race/Ethnicity</option>
-                <option value="group A">Group A</option>
-                <option value="group B">Group B</option>
-                <option value="group C">Group C</option>
-                <option value="group D">Group D</option>
-                <option value="group E">Group E</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="asian">Asian</option>
+                <option value="hispanic">Hispanic</option>
+                <option value="other">Other</option>
               </select>
             </div>
           </div>
@@ -143,12 +143,13 @@
           <!-- Academic Scores Section -->
           <div class="form-section">
             <h3><i class="fas fa-chart-bar me-2"></i>Academic Scores</h3>
-            <p class="section-description">Enter your current scores (0-100) for all subjects. Select the subject you want to predict.</p>
+            <p class="section-description">Select the subject you want to predict, then enter your current scores (0-100) for the remaining subjects.</p>
             <div class="form-group">
               <label for="target_subject" class="form-label">
                 <i class="fas fa-bullseye me-2"></i>Subject to Predict:
               </label>
-              <select name="target_subject" id="target_subject" class="form-control" required>
+              <select name="target_subject" id="target_subject" class="form-control" onchange="updateScoreFields()" required>
+                <option value="">Select Subject to Predict</option>
                 <option value="math score">Math</option>
                 <option value="biology score">Biology</option>
                 <option value="physics score">Physics</option>
@@ -160,38 +161,7 @@
               </select>
             </div>
             <div class="scores-grid" id="scores-grid">
-              <div class="form-group">
-                <label for="math_score" class="form-label">Math Score:</label>
-                <input type="number" name="math_score" id="math_score" min="0" max="100" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="biology_score" class="form-label">Biology Score:</label>
-                <input type="number" name="biology_score" id="biology_score" min="0" max="100" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="physics_score" class="form-label">Physics Score:</label>
-                <input type="number" name="physics_score" id="physics_score" min="0" max="100" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="computer_science_score" class="form-label">Computer Science Score:</label>
-                <input type="number" name="computer_science_score" id="computer_science_score" min="0" max="100" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="psychology_score" class="form-label">Psychology Score:</label>
-                <input type="number" name="psychology_score" id="psychology_score" min="0" max="100" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="literature_score" class="form-label">Literature Score:</label>
-                <input type="number" name="literature_score" id="literature_score" min="0" max="100" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="economics_score" class="form-label">Economics Score:</label>
-                <input type="number" name="economics_score" id="economics_score" min="0" max="100" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label for="history_score" class="form-label">History Score:</label>
-                <input type="number" name="history_score" id="history_score" min="0" max="100" class="form-control" required>
-              </div>
+              <!-- Score fields will be dynamically updated here -->
             </div>
           </div>
         </div>
@@ -210,5 +180,35 @@
 
   <!-- Custom JavaScript -->
   <script src="predict.js"></script>
+  <script>
+    // Function to dynamically update score fields based on selected target subject
+    function updateScoreFields() {
+      const targetSubject = document.getElementById('target_subject').value;
+      const scoresGrid = document.getElementById('scores-grid');
+      scoresGrid.innerHTML = ''; // Clear existing fields
+
+      const subjects = [
+        "math score", "biology score", "physics score", "computer science score",
+        "psychology score", "literature score", "economics score", "history score"
+      ];
+
+      // Filter out the target subject
+      const remainingSubjects = subjects.filter(subject => subject !== targetSubject);
+
+      remainingSubjects.forEach(subject => {
+        const displayName = subject.replace(' score', '').charAt(0).toUpperCase() + subject.replace(' score', '').slice(1);
+        const div = document.createElement('div');
+        div.className = 'form-group';
+        div.innerHTML = `
+          <label for="${subject}" class="form-label">${displayName} Score:</label>
+          <input type="number" name="${subject}" id="${subject}" min="0" max="100" class="form-control" required>
+        `;
+        scoresGrid.appendChild(div);
+      });
+    }
+
+    // Initial call to set up fields when page loads
+    document.addEventListener('DOMContentLoaded', updateScoreFields);
+  </script>
 </body>
 </html>
