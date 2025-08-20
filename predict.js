@@ -122,7 +122,7 @@ async function checkResults() {
       return;
     }
 
-    const { predicted_score, predicted_grade, target_subject, message, avg_grade } = result;
+    const { predicted_score, predicted_grade, target_subject, message, avg_grade, recommendation } = result;
     let subjectLabel = target_subject.charAt(0).toUpperCase() + target_subject.slice(1).replace(' score', '');
     // Tailored advice section (using message from backend)
     document.getElementById("result").innerHTML = `
@@ -138,6 +138,7 @@ async function checkResults() {
         <div class="advice-section" style="margin-top:1rem;">
           <strong>Message:</strong> <span style="color:#51cf66;">${message}</span>
         </div>
+        ${recommendation ? `<div class="recommendation-box" style="margin-top:1.5rem;padding:1rem 1.5rem;background:linear-gradient(135deg,#e0e7ff,#c3fae8);border-radius:12px;font-weight:600;color:#5f3dc4;font-size:1.1rem;box-shadow:0 2px 8px rgba(102,126,234,0.08);display:flex;align-items:center;"><i class='fas fa-graduation-cap me-2'></i> ${recommendation}</div>` : ''}
       </div>
     `;
     document.getElementById("result").scrollIntoView({ behavior: 'smooth' });

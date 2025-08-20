@@ -26,6 +26,9 @@
       <div class="d-flex">
         <!-- Login/Register buttons (shown when not logged in) -->
         <div id="auth-buttons" class="d-flex">
+          <button class="btn btn-outline-primary me-2" onclick="window.location.href='about.html'">
+            <i class="fas fa-info-circle me-1"></i>About
+          </button>
           <button class="btn btn-outline-primary me-2" onclick="window.location.href='login-chrom.html'">
             <i class="fas fa-sign-in-alt me-1"></i>Login
           </button>
@@ -51,31 +54,29 @@
   <!-- Hero Section -->
   <div class="container hero">
     <div class="hero-content">
-      <h1>Predict Your Academic Success</h1>
-      <p>Leverage the power of machine learning to predict your course grades across 8 subjects and make informed decisions about your academic journey.</p>
+      <h1>Plan Smarter, Succeed Better</h1>
+      <p>Enter your past grades and let our AI forecast your performance—helping you pick the courses that match your strengths..</p>
       <div class="btn-group">
-        <a href="predict-chrom.html" class="btn btn-success btn-lg">
-          <i class="fas fa-rocket me-2"></i>Start Predicting
-        </a>
+        <!-- Start Predicting button removed -->
       </div>
     </div>
   </div>
 
-  <!-- Welcome Message Section (shown when logged in) -->
-  <div id="welcome-section" class="container mt-5" style="display: none;">
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <div class="welcome-card">
-          <i class="fas fa-user-circle welcome-icon"></i>
-          <h2 id="welcome-message">Welcome back!</h2>
-          <p class="text-muted">You're all set to start predicting your grades for 8 subjects</p>
-          <a href="predict-chrom.html" class="btn btn-primary btn-lg">
-            <i class="fas fa-chart-line me-2"></i>Go to Predictions
-          </a>
-        </div>
-      </div>
+  <!-- Example Usage Section -->
+  <div class="container example-section mt-4 mb-4" style="max-width: 700px; background: #f8f9fa; border-radius: 16px; box-shadow: 0 2px 8px rgba(102,126,234,0.08); padding: 2rem;">
+    <h3 style="font-weight:700; color:#667eea;"><i class="fas fa-lightbulb me-2"></i>Example: What Subjects Can You Predict?</h3>
+    <p>
+      You can use this web app to predict your grade in any of these subjects:<br>
+      <span style="display:inline-block;margin:0.5rem 0 1rem 0;font-weight:600;color:#764ba2;">
+        Math, Biology, Physics, Computer Science, Psychology, Literature, Economics, History
+      </span>
+    </p>
+    <div style="background:#e0e7ff; border-radius:10px; padding:1rem; margin-top:1rem;">
+      <strong>Example:</strong> "I want to predict my <b>Physics</b> grade. I select Physics, enter my other subject scores, and click <b>Check Results</b>. The system predicts my Physics grade and gives me advice for university!"
     </div>
   </div>
+
+  
 
   <!-- Features Section -->
   <div class="container mt-5">
@@ -84,21 +85,21 @@
         <div class="feature-card">
           <i class="fas fa-brain feature-icon"></i>
           <h4>AI-Powered</h4>
-          <p>Advanced machine learning algorithms analyze your academic patterns across 8 subjects</p>
+          <p>Harness advanced KNN-based machine learning to analyze your academic history and accurately predict your future grades.</p>
         </div>
       </div>
       <div class="col-md-4 text-center mb-4">
         <div class="feature-card">
           <i class="fas fa-chart-bar feature-icon"></i>
           <h4>Data-Driven</h4>
-          <p>Make decisions based on comprehensive data analysis and insights from 8 subjects</p>
+          <p>Make smarter decisions with insights drawn from real academic data, helping you choose the right electives with confidence.</p>
         </div>
       </div>
       <div class="col-md-4 text-center mb-4">
         <div class="feature-card">
           <i class="fas fa-shield-alt feature-icon"></i>
           <h4>Secure & Private</h4>
-          <p>Your academic data is protected with industry-standard security</p>
+          <p>Your academic data is fully protected with industry-standard security measures, ensuring privacy at every step.</p>
         </div>
       </div>
     </div>

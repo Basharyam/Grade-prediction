@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About • GradePredictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+    <div class="container">
+      <span class="navbar-brand">
+        <i class="fas fa-chart-line me-2"></i>GradePredictor
+      </span>
+      <div class="d-flex ms-auto">
+        <button class="btn btn-outline-primary me-2" onclick="window.location.href='index-chrom.html'">
+          <i class="fas fa-home me-1"></i>Home
+        </button>
+        <button class="btn btn-outline-primary me-2" onclick="window.location.href='login-chrom.html'">
+          <i class="fas fa-sign-in-alt me-1"></i>Login
+        </button>
+        <button class="btn btn-primary" onclick="window.location.href='register-chrom.html'">
+          <i class="fas fa-user-plus me-1"></i>Register
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <h1>📘 About GradePredictor</h1>
+
+    <!-- Project Overview -->
+    <section>
+      <h2>🔎 A Brief Overview</h2>
+      <p>
+        <strong>GradePredictor</strong> is a student-focused system that uses the power of machine learning 
+        to forecast academic performance. The goal is to help students make smarter, faster, and more informed 
+        decisions about their study paths by predicting course grades in advance.
+      </p>
+      <p>
+        Instead of guessing or relying only on past performance, students can receive data-driven predictions 
+        about upcoming courses and plan their academic journey with greater confidence. 
+      </p>
+    </section>
+
+    <!-- Key Goals -->
+    <section>
+      <h2>🎯 Key Goals</h2>
+      <ul>
+        <li><strong>High accuracy:</strong> Deliver reliable grade predictions for future courses.</li>
+        <li><strong>Faster decisions:</strong> Provide quick recommendations to support timely planning.</li>
+        <li><strong>Scalability:</strong> Serve a growing number of students while keeping the system responsive.</li>
+        <li><strong>Big-data ready:</strong> Handle large histories of grades and academic records without slowing down.</li>
+        <li><strong>Fast response:</strong> Return results almost instantly for an efficient user experience.</li>
+      </ul>
+    </section>
+
+    <!-- Model Explanation -->
+    <section>
+      <h2>🧠 The Model Behind GradePredictor</h2>
+      <p>
+        Our system currently uses the <strong>K-Nearest Neighbors (KNN)</strong> algorithm to make predictions.
+      </p>
+      <ul>
+        <li><strong>How it works:</strong> KNN looks at past students with similar profiles (neighbors) 
+            and uses their grades to estimate the most likely outcome for a new student.</li>
+        <li><strong>Why KNN:</strong> It’s simple, effective, and works well with academic data where 
+            similarities between students matter.</li>
+        <li><strong>Flexibility:</strong> KNN can adapt to new data, improving predictions as more student 
+            records are added.</li>
+      </ul>
+      <p>
+        By combining KNN with preprocessing steps like feature encoding and scaling, 
+        GradePredictor can generate meaningful insights from raw academic data.
+      </p>
+    </section>
+
+    <!-- Why It Matters -->
+    <section>
+      <h2>💡 Why It Matters</h2>
+      <p>
+        GradePredictor empowers students to:
+      </p>
+      <ul>
+        <li>Understand their potential outcomes before starting a course.</li>
+        <li>Plan their academic journey based on data, not guesswork.</li>
+        <li>Improve time management and study strategies with early insights.</li>
+        <li>Build confidence when making critical academic decisions.</li>
+      </ul>
+      <p>
+        At its heart, the project is about supporting student success and helping learners achieve their goals 
+        with clarity and foresight.
+      </p>
+    </section>
+
+    <!-- Back -->
+    <!-- Removed old Back to Home button -->
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 GradePredictor Project</p>
+    </footer>
+  </main>
+</body>
+</html>

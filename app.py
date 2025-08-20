@@ -38,12 +38,84 @@ TARGETS = [
 ]
 latest_neighbors_result = None
 
-def score_to_grade(score):
-    if score >= 90: return "A", "Excellent work! Keep it up!"
-    elif score >= 80: return "B", "Good job! Consider refining your skills."
-    elif score >= 70: return "C", "Satisfactory, but room for improvement."
-    elif score >= 60: return "D", "Passing, but focus on strengthening this area."
-    else: return "F", "Failed. Please review and seek support."
+def score_to_grade(score, subject=None):
+    subject_recommendations = {
+        "math score": {
+            "A": "Consider studying Mathematics, Engineering, or Data Science at university!",
+            "B": "You have a strong foundation in Math. Explore advanced math courses or engineering!",
+            "C": "Consider extra practice or tutoring in Math to boost your skills for STEM fields.",
+            "D": "Focus on strengthening your math basics. Remedial courses can help you prepare for college-level math.",
+            "F": "Seek support in Math. Foundational skills are important for many university programs."
+        },
+        "biology score": {
+            "A": "Consider studying Biology, Medicine, or Environmental Science!",
+            "B": "You have a good grasp of Biology. Explore advanced courses or health sciences!",
+            "C": "Consider extra study in Biology to prepare for life sciences in college.",
+            "D": "Strengthen your biology knowledge for future opportunities in health or science.",
+            "F": "Seek support in Biology. Understanding basics is key for science fields."
+        },
+        "physics score": {
+            "A": "Consider studying Physics, Engineering, or Astronomy!",
+            "B": "You have a solid understanding of Physics. Try advanced physics or engineering courses!",
+            "C": "Extra practice in Physics can help you pursue STEM majors.",
+            "D": "Focus on physics fundamentals to prepare for college-level science.",
+            "F": "Seek help in Physics. Strong basics are needed for science and tech fields."
+        },
+        "computer science score": {
+            "A": "Consider Computer Science, Software Engineering, or AI!",
+            "B": "You have a good base in Computer Science. Explore coding bootcamps or advanced courses!",
+            "C": "Practice coding and algorithms to prepare for tech majors.",
+            "D": "Strengthen your programming skills for future opportunities in tech.",
+            "F": "Seek support in Computer Science. Basics are important for tech careers."
+        },
+        "psychology score": {
+            "A": "Consider Psychology, Cognitive Science, or Social Work!",
+            "B": "You have a good understanding of Psychology. Explore advanced courses or related fields!",
+            "C": "Extra study in Psychology can help you prepare for social sciences.",
+            "D": "Focus on psychology basics to prepare for college-level courses.",
+            "F": "Seek help in Psychology. Understanding people is key for many fields."
+        },
+        "literature score": {
+            "A": "Consider Literature, Journalism, or Creative Writing!",
+            "B": "You have a strong base in Literature. Try advanced writing or journalism courses!",
+            "C": "Extra reading and writing can help you prepare for humanities majors.",
+            "D": "Strengthen your reading and writing skills for future studies.",
+            "F": "Seek support in Literature. Communication skills are important for all fields."
+        },
+        "economics score": {
+            "A": "Consider Economics, Business, or Finance!",
+            "B": "You have a good understanding of Economics. Explore business or finance courses!",
+            "C": "Extra study in Economics can help you prepare for business majors.",
+            "D": "Focus on economics basics to prepare for college-level courses.",
+            "F": "Seek help in Economics. Understanding markets is key for many careers."
+        },
+        "history score": {
+            "A": "Consider History, Archaeology, or Political Science!",
+            "B": "You have a good grasp of History. Try advanced history or social science courses!",
+            "C": "Extra study in History can help you prepare for humanities majors.",
+            "D": "Strengthen your history knowledge for future studies.",
+            "F": "Seek support in History. Understanding the past is important for many fields."
+        },
+    }
+    if score >= 90:
+        grade = "A"
+        message = "Excellent work! Keep it up!"
+    elif score >= 80:
+        grade = "B"
+        message = "Good job! Consider refining your skills."
+    elif score >= 70:
+        grade = "C"
+        message = "Satisfactory, but room for improvement."
+    elif score >= 60:
+        grade = "D"
+        message = "Passing, but focus on strengthening this area."
+    else:
+        grade = "F"
+        message = "Failed. Please review and seek support."
+    recommendation = None
+    if subject and subject in subject_recommendations:
+        recommendation = subject_recommendations[subject].get(grade)
+    return grade, message, recommendation
 
 def get_avg_for(target):
     """Handle both dict (multiple subjects) and float (single subject) avg."""
@@ -95,7 +167,7 @@ def api_predict():
 
         # Predict
         y_pred = model.predict(X_scaled)[0]
-        y_pred_grade, message = score_to_grade(round(float(y_pred), 1))
+        y_pred_grade, message, recommendation = score_to_grade(round(float(y_pred), 1), target)
 
         # Find neighbors
         distances, indices = model.kneighbors(X_scaled, n_neighbors=5)
@@ -132,6 +204,7 @@ def api_predict():
             "predicted_grade": y_pred_grade,
             "target_subject": target,
             "message": message,
+            "recommendation": recommendation,
             "avg_grade": get_avg_for(target),
             "neighbors": neighbors,
             "info": f"Prediction for {target} generated successfully"
