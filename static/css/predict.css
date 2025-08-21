@@ -178,3 +178,27 @@
   @media (max-width: 991px){
     .display-6{font-size:1.8rem}
   }
+
+  /* ---------- Force light text on dark background ---------- */
+.text-muted,
+p.small.text-muted,
+.small.text-muted {
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+/* אם יש טקסטי הסבר נוספים */
+.section-description,
+.hero-card .lead,
+.text-muted-strong {
+  color: #eaeef7 !important;
+}
+
+/* לוודא שגם לינקים ו־placeholder קריאים */
+a { color: #bcd7ff; }
+a:hover { color: #e6f0ff; }
+
+.form-control::placeholder {
+  color: #c7d2e0;
+  opacity: 0.9;
+}

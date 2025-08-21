@@ -23,7 +23,7 @@ def main():
         die("MONGODB_URI is not set. Ensure .env exists and includes MONGODB_URI.")
 
     # 2) CSV path from argv or default
-    csv_path = sys.argv[1] if len(sys.argv) > 1 else "Data.csv"
+    csv_path = sys.argv[1] if len(sys.argv) > 1 else "Data/Data.csv"
     if not os.path.exists(csv_path):
         die(f"CSV file not found: {csv_path}. Pass a path, e.g.: python add_csv_file_to_DB.py data.csv")
 
