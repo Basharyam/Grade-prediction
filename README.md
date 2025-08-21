@@ -97,7 +97,27 @@ Grade-prediction/
 
 ## Setup Instructions
 
-1. **Install Dependencies**:
+
+
+
+1.**Create a `.env` file in the project root with the following keys**:
+
+```env
+# MongoDB connection string (replace <username> and <password> with your own)
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.adkazmg.mongodb.net/grade_predictor?retryWrites=true&w=majority&appName=Cluster0
+
+# Node.js server port
+PORT=3000
+
+# Secret key for JWT authentication
+JWT_SECRET=your_super_secret_key
+
+# Database and collection names
+DB_NAME=grade_predictor
+COLLECTION=grades
+
+
+2. **Install Dependencies**:
    ```bash
    # Python dependencies
    pip install flask flask-cors numpy pandas scikit-learn pymongo
@@ -106,19 +126,23 @@ Grade-prediction/
    npm install
    ```
 
-2. **Database Setup**:
+3. **Database Setup**:
    - Install MongoDB
    - Set environment variables:
      - MONGODB_URI
      - DB_NAME
 
-3. **Train Model**:
+4.**CSV TO DB **:
+ ```bash
+   cd backend/python
+   python add_csv_file_to_DB.py
+   ```
+5. **Train Model**:
    ```bash
    cd backend/python
    python train_model.py
    ```
-
-4. **Start Servers**:
+6. **Start Servers**:
    ```bash
    # Start Node.js server (port 3000)
    node server.js
@@ -127,7 +151,7 @@ Grade-prediction/
    python backend/python/app.py
    ```
 
-5. **Access Application**:
+7. **Access Application**:
    - Open browser and navigate to: `http://localhost:3000`
    - Admin access: Use admin credentials
 
@@ -147,9 +171,6 @@ Grade-prediction/
 
 ## Contributors
 
-- [Your Name]
-- [Other Contributors]
+- Mohamad Lahwani
+- Bashar Yamin
 
-## License
-
-[Your License]
