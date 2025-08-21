@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, redirect, url_for
+from flask import Flask, request, jsonify, redirect, url_for, send_from_directory
 from flask_cors import CORS
 import os
 import numpy as np
@@ -7,7 +7,12 @@ import pandas as pd
 from pymongo import MongoClient
 from bson import ObjectId
 
-app = Flask(__name__)
+# Set static and template folders for new structure
+app = Flask(
+    __name__,
+    static_folder='../../static',
+    template_folder='../../static/html'
+)
 CORS(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -126,9 +131,43 @@ def get_avg_for(target):
     except Exception:
         return 0.0
 
+# Serve static assets (css, js, images)
+@app.route('/css/<path:filename>')
+def serve_css(filename):
+    return send_from_directory(app.static_folder + '/css', filename)
+
+@app.route('/js/<path:filename>')
+def serve_js(filename):
+    return send_from_directory(app.static_folder + '/js', filename)
+
+@app.route('/images/<path:filename>')
+def serve_images(filename):
+    return send_from_directory(app.static_folder + '/images', filename)
+
+# Serve HTML pages
 @app.route('/')
-def redirect_to_index():
-    return redirect(url_for('static', filename='index-chrom.html'))
+def home():
+    return send_from_directory(app.template_folder, 'index.html')
+
+@app.route('/about')
+def about():
+    return send_from_directory(app.template_folder, 'about.html')
+
+@app.route('/admin')
+def admin():
+    return send_from_directory(app.template_folder, 'admin.html')
+
+@app.route('/login')
+def login():
+    return send_from_directory(app.template_folder, 'login.html')
+
+@app.route('/predict')
+def predict():
+    return send_from_directory(app.template_folder, 'predict.html')
+
+@app.route('/register')
+def register():
+    return send_from_directory(app.template_folder, 'register.html')
 
 @app.post("/api/predict")
 def api_predict():
@@ -266,10 +305,19 @@ def delete_user(user_id):
     DB_NAME = os.getenv("DB_NAME", "grade_predictor")
     client = MongoClient(MONGODB_URI)
     db = client[DB_NAME]
-    result = db["users"].delete_one({"_id": ObjectId(user_id)})
-    if result.deleted_count == 0:
+    
+    # First get the user's email
+    user = db["users"].find_one({"_id": ObjectId(user_id)})
+    if not user:
         return jsonify({"success": False, "message": "User not found."}), 404
-    return jsonify({"success": True, "message": "User deleted."})
+        
+    # Delete all predictions for this user
+    db["predictions"].delete_many({"user_email": user["email"]})
+    
+    # Delete the user
+    db["users"].delete_one({"_id": ObjectId(user_id)})
+    
+    return jsonify({"success": True, "message": "User and all predictions deleted."})
 
 @app.get("/health")
 def health():

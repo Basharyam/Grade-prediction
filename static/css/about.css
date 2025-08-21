@@ -1,0 +1,124 @@
+/* Same theme as index.css */
+:root{
+  --bg: #0b1021;
+  --fg: #e5e7eb;
+  --muted: #9aa4b2;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.14);
+  --shadow: 0 20px 50px rgba(0,0,0,0.35);
+
+  --brand-1:#7c3aed;
+  --brand-2:#06b6d4;
+
+  --r-md: 16px;
+  --r-lg: 22px;
+  --tr: 220ms cubic-bezier(.2,.7,.2,1);
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--fg);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,0.28), transparent 60%),
+    radial-gradient(900px 500px at 110% 20%, rgba(6,182,212,0.22), transparent 50%),
+    linear-gradient(180deg, #0a0f20, #0b1021 60%, #0f172a);
+  background-attachment: fixed;
+}
+
+.bg-ambient{
+  position: fixed; inset:0; pointer-events:none; z-index:-1;
+  background:
+    radial-gradient(700px 400px at 80% 0%, rgba(124,58,237,0.18), transparent 60%),
+    radial-gradient(700px 400px at 0% 30%, rgba(6,182,212,0.18), transparent 60%);
+}
+
+/* Navbar (same look as index) */
+.navbar-sheen{
+  background: rgba(17,24,39,0.55);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow: var(--shadow);
+}
+.navbar-brand{color:#fff}
+.brand-text{font-weight:800; letter-spacing:.2px}
+.logo-dot{
+  width:14px; height:14px; border-radius:50%;
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+  box-shadow: 0 0 20px rgba(124,58,237,.6), 0 0 36px rgba(6,182,212,.5);
+}
+.btn{border-radius:14px; font-weight:700; transition: transform var(--tr), box-shadow var(--tr), opacity var(--tr)}
+.btn-ghost{
+  background:transparent; color:#d1d5db; border:1px solid var(--border);
+}
+.btn-ghost:hover{border-color:#d1d5db; color:#fff}
+.btn-primary-gradient{
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  border:none; color:#fff;
+  box-shadow: 0 10px 30px rgba(124,58,237,.25);
+}
+.user-pill{
+  background:rgba(255,255,255,.07);
+  border:1px solid var(--border);
+  padding:8px 12px; border-radius:999px;
+}
+
+/* Header */
+.page-intro{padding-block: clamp(36px, 7vw, 72px)}
+.text-gradient{
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.fw-extrabold{font-weight:800}
+.glass{
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+}
+
+/* Content layout */
+.content-grid{
+  display:grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  padding-bottom: 48px;
+}
+.section-card{
+  padding: 20px;
+}
+.section-card h2{margin-bottom:10px}
+.section-card p, .section-card li{color:var(--muted)}
+
+/* KPI tiles (model details) */
+.kpi-grid{
+  display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  margin-top:12px;
+}
+.kpi{
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  border-radius:14px; padding:10px 12px;
+}
+.kpi span{color:var(--muted); font-weight:600}
+.kpi strong{font-weight:800; color:#fff}
+
+/* Footer */
+footer{color:#ffffff}
+
+/* Responsive */
+@media (max-width: 991px){
+  .display-6{font-size:1.75rem}
+}
+
+body, .container, .hero-card, .glass, .section, .example-section,
+h1, h2, h3, h4, h5, h6, p, li, .lead, .fw-bold, .fw-extrabold, .text-muted, .text-light-strong, .brand-text, .tip-box, .step, .feature, .cta, .user-pill, .navbar, .navbar-brand, .btn, .btn-ghost, .btn-primary-gradient {
+  color: #fff !important;
+}

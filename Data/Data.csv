@@ -1,0 +1,2001 @@
+ID,gender,race,parental level of education,lunch,test preparation course,math score,physics score,computer science score,economics score,biology score,literature score,psychology score,history score
+1,female,European,some high school,standard,none,59,52,60,63,65,69,62,71
+2,male,European,bachelor's degree,standard,completed,74,69,75,75,69,69,70,70
+3,male,European,some high school,standard,none,73,74,89,73,74,83,85,81
+4,female,European,high school,free/reduced,none,79,77,81,81,76,82,82,71
+5,female,Asian,master's degree,free/reduced,none,94,87,93,93,93,86,90,89
+6,female,European,bachelor's degree,standard,completed,68,70,74,76,71,90,83,86
+7,male,European,some college,standard,none,65,68,75,69,70,77,81,79
+8,female,European,associate's degree,standard,none,62,63,66,64,65,76,76,80
+9,male,European,associate's degree,free/reduced,none,85,88,88,86,88,80,79,82
+10,male,European,doctorate,standard,none,72,70,72,76,74,85,83,76
+11,male,European,some college,standard,none,70,80,75,77,78,81,79,77
+12,male,African,some high school,standard,none,69,66,68,67,66,72,74,67
+13,male,American,high school,standard,completed,57,60,59,63,58,77,71,72
+14,male,European,some high school,standard,completed,83,80,80,84,83,98,91,95
+15,female,European,doctorate,standard,none,73,80,83,82,75,88,86,90
+16,female,Asian,some high school,standard,completed,79,83,88,80,84,87,86,84
+17,female,Asian,associate's degree,standard,none,78,75,82,81,71,81,83,84
+18,male,Asian,some college,standard,none,77,84,83,74,73,63,62,65
+19,female,American,doctorate,free/reduced,none,89,93,97,97,96,87,88,91
+20,male,European,master's degree,standard,none,67,54,63,69,67,80,86,79
+21,male,Asian,bachelor's degree,standard,completed,70,77,77,80,84,81,77,83
+22,female,European,doctorate,free/reduced,none,85,85,86,79,78,87,83,83
+23,female,European,some college,standard,none,51,47,60,57,56,58,60,61
+24,female,European,associate's degree,standard,completed,95,97,90,96,95,100,98,94
+25,female,European,bachelor's degree,standard,completed,76,81,80,82,72,95,83,85
+26,female,European,doctorate,standard,completed,63,71,75,66,73,73,67,68
+27,female,European,doctorate,free/reduced,none,71,62,74,72,65,75,76,79
+28,female,European,bachelor's degree,free/reduced,completed,98,95,100,93,95,91,96,93
+29,male,European,associate's degree,free/reduced,none,75,76,82,74,74,77,79,74
+30,female,Asian,high school,standard,none,51,45,51,64,49,70,71,68
+31,male,European,associate's degree,free/reduced,none,75,70,68,66,70,73,79,74
+32,female,European,doctorate,standard,completed,79,75,84,73,77,79,75,74
+33,female,European,some high school,standard,none,63,64,64,73,63,78,75,81
+34,male,European,some high school,standard,completed,86,80,87,77,85,73,65,71
+35,female,European,some high school,standard,completed,89,89,86,82,81,87,92,86
+36,male,European,bachelor's degree,standard,none,79,69,78,83,78,81,83,83
+37,male,European,some high school,standard,none,75,76,76,72,77,83,76,73
+38,female,American,high school,standard,none,80,76,69,76,73,72,80,71
+39,male,European,associate's degree,standard,none,80,75,77,74,76,84,82,84
+40,male,European,some college,free/reduced,none,72,67,79,81,73,75,76,77
+41,female,American,some high school,standard,none,82,71,82,78,82,78,77,80
+42,male,European,high school,standard,completed,75,76,81,84,75,90,82,84
+43,female,European,master's degree,standard,none,93,88,92,93,87,94,92,94
+44,male,European,master's degree,standard,completed,74,87,79,74,73,75,73,70
+45,male,European,doctorate,standard,none,77,88,91,93,84,95,94,90
+46,male,American,master's degree,free/reduced,completed,89,85,94,95,93,100,100,95
+47,female,European,some college,standard,none,60,65,72,62,73,67,69,68
+48,male,European,some college,standard,completed,78,72,81,78,77,90,87,88
+49,female,European,doctorate,free/reduced,none,82,89,82,88,78,77,81,76
+50,female,European,some college,free/reduced,completed,82,80,83,82,75,83,83,83
+51,male,European,doctorate,standard,none,71,79,70,77,69,68,73,73
+52,male,European,associate's degree,standard,completed,77,79,77,75,78,67,65,70
+53,male,European,master's degree,standard,completed,57,66,61,62,60,57,52,62
+54,female,European,doctorate,standard,none,94,97,93,90,90,88,85,88
+55,female,Asian,doctorate,standard,none,38,24,37,48,43,60,62,59
+56,male,European,associate's degree,standard,none,71,74,80,80,79,83,79,71
+57,female,European,doctorate,standard,completed,86,86,86,85,82,85,86,83
+58,male,European,some high school,free/reduced,none,62,59,67,66,68,85,78,82
+59,female,European,associate's degree,standard,completed,84,87,79,78,80,81,82,75
+60,male,European,some high school,standard,none,85,78,85,82,80,82,85,79
+61,male,European,high school,standard,completed,93,96,97,97,97,97,97,88
+62,female,American,high school,free/reduced,none,62,67,66,63,65,76,76,69
+63,male,Asian,some college,standard,none,75,68,84,78,79,85,80,79
+64,male,European,some college,standard,completed,81,80,81,84,85,73,76,75
+65,male,European,master's degree,free/reduced,none,63,59,71,66,66,81,78,71
+66,female,European,some college,standard,none,81,79,81,85,75,92,95,88
+67,male,European,doctorate,standard,completed,79,78,80,78,80,93,91,88
+68,male,African,bachelor's degree,standard,completed,78,66,78,71,75,76,75,75
+69,female,European,some high school,standard,none,68,64,74,77,67,83,80,84
+70,female,European,master's degree,standard,none,78,73,75,75,80,81,74,81
+71,male,Asian,high school,standard,none,71,66,72,72,73,76,80,76
+72,male,Asian,master's degree,standard,none,76,81,85,89,84,86,85,83
+73,female,European,some college,standard,none,75,66,77,74,69,83,84,79
+74,female,European,bachelor's degree,free/reduced,none,78,83,80,85,84,75,80,77
+75,female,American,high school,standard,completed,79,81,85,77,83,84,82,74
+76,male,Asian,some college,standard,none,83,84,81,82,86,91,84,87
+77,male,European,some high school,standard,none,75,75,73,78,69,80,77,78
+78,female,Asian,associate's degree,standard,completed,84,83,86,82,82,74,71,71
+79,female,European,master's degree,standard,none,84,78,82,81,74,84,80,82
+80,female,American,some college,standard,none,73,85,78,74,78,77,77,74
+81,male,American,bachelor's degree,standard,none,68,72,73,75,69,79,83,81
+82,male,European,bachelor's degree,free/reduced,none,85,80,79,84,80,90,95,87
+83,female,European,bachelor's degree,free/reduced,none,92,94,100,91,95,88,86,85
+84,female,European,doctorate,standard,completed,57,57,64,66,61,76,74,78
+85,female,Asian,high school,standard,none,100,100,100,100,97,100,100,97
+86,male,Asian,some college,standard,none,83,90,90,85,86,85,93,82
+87,female,European,high school,free/reduced,none,87,82,80,79,82,78,81,81
+88,male,American,some college,standard,none,100,100,100,100,98,100,99,96
+89,male,European,bachelor's degree,standard,none,81,81,81,81,77,78,72,71
+90,male,European,high school,free/reduced,completed,86,89,84,87,87,91,84,85
+91,male,American,high school,standard,none,100,100,98,100,97,79,86,95
+92,male,European,some high school,standard,completed,85,87,78,81,79,75,78,76
+93,female,Asian,bachelor's degree,standard,completed,69,67,67,66,59,71,74,63
+94,male,Asian,master's degree,standard,completed,86,92,87,80,85,76,78,78
+95,female,European,some high school,standard,completed,74,75,73,80,74,88,82,80
+96,female,Asian,some high school,standard,none,89,86,92,97,89,96,90,90
+97,male,European,master's degree,free/reduced,completed,88,87,93,87,77,88,81,83
+98,male,European,associate's degree,standard,none,91,86,90,88,84,83,85,82
+99,female,Asian,some high school,standard,none,74,61,64,71,66,77,69,78
+100,male,African,some college,standard,none,71,59,81,69,73,58,62,59
+101,female,European,high school,standard,none,93,84,95,87,84,87,88,84
+102,male,European,bachelor's degree,standard,none,82,80,79,79,74,74,78,74
+103,female,European,doctorate,free/reduced,none,77,82,92,85,77,79,83,85
+104,male,European,associate's degree,free/reduced,none,54,45,63,52,49,71,67,60
+105,male,Asian,some college,standard,none,85,90,87,87,87,95,76,84
+106,female,Asian,master's degree,standard,none,80,85,84,78,77,81,80,79
+107,male,European,some college,free/reduced,none,67,61,65,68,61,77,70,76
+108,male,American,master's degree,free/reduced,completed,100,100,100,100,100,99,91,97
+109,female,European,doctorate,standard,completed,68,75,78,76,73,85,83,78
+110,female,American,some high school,standard,completed,93,77,87,83,88,88,92,89
+111,female,European,doctorate,standard,none,71,74,74,78,80,81,82,78
+112,female,European,master's degree,standard,completed,60,66,71,69,71,78,85,79
+113,female,European,high school,standard,none,62,51,59,59,60,73,74,70
+114,female,Asian,bachelor's degree,standard,completed,79,78,82,75,79,89,86,81
+115,female,European,doctorate,standard,completed,67,59,70,63,63,71,73,77
+116,female,European,doctorate,standard,none,81,81,86,71,78,84,74,78
+117,female,European,some college,standard,none,67,72,73,74,73,82,78,78
+118,male,European,some high school,free/reduced,none,84,74,82,74,76,81,77,82
+119,female,European,doctorate,standard,completed,78,81,80,87,82,98,95,92
+120,female,European,associate's degree,standard,none,74,73,78,78,85,81,79,83
+121,male,Asian,bachelor's degree,standard,completed,82,81,89,86,91,99,97,94
+122,female,American,associate's degree,standard,none,79,79,82,80,70,97,90,88
+123,male,European,bachelor's degree,free/reduced,completed,78,65,70,71,68,83,78,82
+124,female,Asian,master's degree,standard,none,83,91,89,79,88,83,85,90
+125,male,European,high school,standard,none,86,90,90,88,87,82,74,82
+126,female,European,bachelor's degree,free/reduced,completed,94,89,98,88,88,82,85,77
+127,male,American,master's degree,standard,completed,80,81,90,86,81,86,94,88
+128,male,European,doctorate,standard,completed,97,93,88,91,93,92,91,96
+129,male,European,some college,standard,none,60,64,65,66,63,53,58,56
+130,female,Asian,doctorate,standard,completed,79,80,86,80,69,84,82,82
+131,male,European,bachelor's degree,standard,completed,81,75,81,84,79,98,90,87
+132,male,European,bachelor's degree,standard,none,85,76,83,89,81,95,88,84
+133,male,European,associate's degree,standard,none,79,89,85,77,79,69,77,72
+134,female,European,some high school,free/reduced,completed,89,94,98,93,91,89,83,96
+135,female,European,associate's degree,free/reduced,completed,88,90,93,89,85,80,76,81
+136,female,European,master's degree,standard,none,88,78,82,82,86,92,93,89
+137,male,European,high school,free/reduced,none,83,80,80,83,82,100,91,93
+138,female,European,high school,standard,completed,67,70,65,74,72,75,71,72
+139,male,European,master's degree,standard,completed,83,91,90,86,80,80,74,76
+140,female,American,some high school,standard,none,78,76,78,76,70,85,84,82
+141,male,European,master's degree,standard,none,82,85,74,84,84,79,80,78
+142,female,Asian,master's degree,standard,none,97,98,93,86,92,82,76,80
+143,male,European,doctorate,free/reduced,none,78,74,75,73,73,76,78,72
+144,female,Asian,master's degree,standard,none,71,63,67,76,63,76,74,72
+145,male,American,master's degree,standard,completed,79,76,81,80,76,74,79,76
+146,male,European,some high school,free/reduced,none,80,81,92,86,84,92,79,88
+147,male,European,some high school,free/reduced,none,74,68,85,70,73,93,84,92
+148,female,European,some college,standard,completed,84,82,83,85,81,83,85,80
+149,male,European,some college,standard,none,71,65,74,69,66,85,77,79
+150,female,American,high school,free/reduced,none,87,92,89,93,88,93,89,89
+151,male,European,master's degree,standard,none,89,85,92,84,84,100,93,94
+152,male,European,some college,standard,completed,87,83,88,80,82,73,73,74
+153,female,European,high school,standard,none,75,79,81,79,63,73,72,69
+154,male,European,high school,standard,none,91,96,91,90,92,85,82,87
+155,female,European,master's degree,standard,completed,66,69,79,75,77,78,81,83
+156,female,Asian,high school,standard,none,81,69,72,80,73,87,84,77
+157,male,Asian,high school,standard,none,83,92,83,88,88,90,88,87
+158,male,European,some college,free/reduced,none,100,100,100,93,100,100,97,97
+159,male,American,some high school,standard,none,70,65,73,67,67,70,68,68
+160,male,European,high school,standard,none,79,75,75,74,77,77,76,74
+161,female,European,bachelor's degree,free/reduced,completed,74,74,75,70,79,73,79,70
+162,male,American,some college,free/reduced,none,73,75,78,70,76,69,65,73
+163,male,Asian,associate's degree,standard,completed,60,47,63,55,59,63,62,64
+164,female,Asian,some high school,standard,none,51,47,54,51,48,60,56,58
+165,male,European,doctorate,free/reduced,none,64,63,72,69,73,81,73,75
+166,male,African,bachelor's degree,standard,completed,73,66,67,75,68,74,73,65
+167,female,European,associate's degree,standard,none,78,79,83,76,76,85,90,78
+168,female,American,some high school,standard,completed,68,68,67,69,71,81,85,72
+169,female,European,associate's degree,free/reduced,none,79,78,84,85,83,94,94,88
+170,male,European,associate's degree,standard,none,94,93,97,89,87,88,88,85
+171,female,European,associate's degree,standard,none,85,84,84,82,86,80,75,75
+172,female,Asian,some high school,standard,none,65,56,66,70,65,75,70,72
+173,female,European,master's degree,standard,completed,99,100,100,94,86,92,91,97
+174,female,European,master's degree,standard,completed,75,78,73,70,76,79,73,76
+175,female,European,master's degree,standard,none,93,83,90,91,82,83,91,86
+176,male,European,high school,free/reduced,none,90,97,90,100,89,100,100,95
+177,male,American,some college,free/reduced,none,75,68,79,73,74,67,75,72
+178,female,European,some high school,free/reduced,none,78,80,74,79,71,76,78,72
+179,female,European,high school,free/reduced,none,84,79,83,79,72,73,66,75
+180,female,European,some college,standard,completed,74,65,73,67,70,70,63,59
+181,male,Asian,associate's degree,standard,none,93,85,83,89,84,100,100,98
+182,male,European,bachelor's degree,standard,none,54,56,62,64,61,58,61,64
+183,female,European,associate's degree,standard,none,72,71,68,73,75,83,88,79
+184,female,American,some college,standard,completed,83,84,86,80,80,75,75,70
+185,female,European,some college,standard,none,100,100,98,97,90,98,94,91
+186,female,European,master's degree,standard,completed,77,87,83,89,81,85,83,85
+187,male,American,associate's degree,standard,completed,61,63,61,69,63,64,67,62
+188,male,Asian,associate's degree,standard,completed,85,81,93,87,86,81,81,84
+189,male,European,bachelor's degree,standard,none,72,65,72,77,74,86,89,87
+190,female,European,high school,standard,completed,78,86,80,79,87,89,82,84
+191,male,European,some college,standard,none,58,58,60,67,67,67,71,69
+192,female,African,high school,free/reduced,none,87,84,90,82,91,85,89,82
+193,male,Asian,bachelor's degree,standard,none,78,86,84,84,85,92,92,87
+194,male,European,some high school,standard,completed,67,61,67,74,67,86,87,86
+195,female,American,some college,standard,none,76,81,83,66,71,67,63,76
+196,female,European,some college,standard,none,73,75,80,79,78,76,77,78
+197,male,American,bachelor's degree,standard,completed,96,96,96,90,88,97,86,87
+198,male,European,associate's degree,standard,completed,100,100,100,98,94,90,91,88
+199,male,African,high school,free/reduced,completed,58,49,59,67,57,77,74,79
+200,male,Asian,some college,standard,none,73,86,75,80,89,91,78,78
+201,female,European,some high school,standard,none,92,95,100,98,93,85,88,85
+202,male,European,master's degree,free/reduced,none,82,82,82,86,81,78,79,80
+203,female,Asian,some high school,standard,none,94,92,89,99,93,95,92,88
+204,female,Asian,master's degree,standard,none,69,63,69,76,72,78,77,83
+205,male,African,high school,free/reduced,completed,76,70,73,68,76,87,78,81
+206,male,European,associate's degree,standard,none,72,80,82,81,74,90,85,82
+207,male,European,doctorate,standard,completed,79,85,86,85,80,75,71,75
+208,female,Asian,master's degree,free/reduced,none,51,36,59,64,51,75,67,64
+209,male,Asian,master's degree,standard,none,65,68,75,66,71,80,69,70
+210,female,African,associate's degree,free/reduced,none,41,41,54,53,46,51,52,50
+211,female,European,some college,free/reduced,none,86,85,85,88,85,100,100,100
+212,male,European,bachelor's degree,free/reduced,none,89,83,89,90,80,90,90,87
+213,male,American,some high school,standard,none,79,83,81,82,79,83,80,85
+214,female,European,some college,standard,none,74,77,72,75,76,76,69,74
+215,male,European,bachelor's degree,free/reduced,completed,83,81,79,75,73,90,76,79
+216,female,African,some college,standard,none,81,81,87,86,79,84,75,88
+217,female,European,associate's degree,standard,none,67,70,78,71,69,72,66,66
+218,male,American,bachelor's degree,standard,none,66,67,71,69,61,68,67,71
+219,male,Asian,associate's degree,standard,completed,61,66,73,68,70,63,70,65
+220,male,European,doctorate,standard,completed,92,88,88,94,92,100,100,100
+221,female,European,doctorate,standard,none,69,58,62,65,62,72,67,67
+222,female,American,high school,standard,none,66,67,77,70,74,75,68,74
+223,male,Asian,bachelor's degree,standard,completed,80,82,86,84,70,69,72,70
+224,female,European,doctorate,free/reduced,none,75,78,79,81,76,69,74,79
+225,female,European,bachelor's degree,free/reduced,none,84,78,80,85,76,76,79,78
+226,female,European,bachelor's degree,standard,completed,78,76,80,80,73,70,75,68
+227,female,Asian,doctorate,standard,none,83,84,86,80,82,83,73,78
+228,male,European,some college,free/reduced,none,83,89,91,90,86,80,78,79
+229,female,European,associate's degree,standard,completed,75,71,79,86,79,85,83,86
+230,male,European,high school,free/reduced,completed,59,69,63,64,63,80,76,74
+231,female,European,some high school,free/reduced,none,82,91,87,86,87,89,84,81
+232,female,European,high school,standard,none,70,56,68,67,61,72,67,64
+233,male,African,doctorate,free/reduced,completed,83,85,89,80,86,79,73,80
+234,male,European,doctorate,standard,none,86,94,91,95,93,93,89,85
+235,male,European,some college,standard,completed,82,75,85,76,79,73,79,77
+236,male,American,high school,standard,none,75,67,75,77,74,89,82,86
+237,female,European,bachelor's degree,free/reduced,none,80,70,78,79,78,89,91,86
+238,male,European,doctorate,standard,completed,91,90,90,86,87,80,78,76
+239,male,European,associate's degree,standard,none,64,65,63,67,65,67,61,64
+240,female,European,some college,free/reduced,none,76,83,85,82,84,83,89,83
+241,female,European,doctorate,standard,none,80,77,84,80,77,75,77,76
+242,male,European,high school,free/reduced,completed,77,79,89,85,87,93,90,84
+243,male,Asian,associate's degree,standard,completed,84,84,81,81,84,82,83,86
+244,female,European,some college,standard,none,68,72,74,77,70,77,78,72
+245,male,European,some high school,free/reduced,completed,71,56,68,64,65,76,81,77
+246,male,American,bachelor's degree,standard,none,76,74,81,69,74,78,83,80
+247,male,European,bachelor's degree,standard,none,89,86,88,89,89,87,85,86
+248,female,Asian,bachelor's degree,standard,completed,72,74,74,70,72,67,66,66
+249,female,African,associate's degree,free/reduced,none,78,69,77,76,75,80,86,77
+250,male,African,some college,standard,none,93,90,95,93,89,100,94,97
+251,male,American,high school,free/reduced,completed,80,83,83,80,84,76,71,71
+252,female,European,some college,standard,completed,86,84,87,87,82,96,91,90
+253,female,Asian,some college,standard,none,90,83,83,93,86,95,94,92
+254,female,European,associate's degree,standard,completed,80,83,81,82,74,100,100,92
+255,male,European,associate's degree,standard,completed,70,69,84,76,75,75,74,72
+256,female,American,some high school,free/reduced,none,100,100,99,98,94,80,69,80
+257,male,European,some high school,free/reduced,none,88,90,88,87,89,94,90,89
+258,male,European,associate's degree,standard,completed,68,67,75,82,77,79,76,83
+259,female,European,some college,standard,none,90,82,82,84,84,90,88,81
+260,female,African,bachelor's degree,standard,completed,80,78,75,87,81,84,73,72
+261,male,European,master's degree,standard,none,96,96,90,89,90,85,87,90
+262,male,European,master's degree,standard,completed,72,78,83,82,81,89,86,81
+263,male,European,master's degree,standard,none,84,71,68,69,70,77,74,76
+264,male,European,some college,standard,none,76,67,78,76,73,78,83,75
+265,female,European,bachelor's degree,free/reduced,none,85,81,90,85,83,81,77,82
+266,female,African,bachelor's degree,standard,none,91,88,91,88,82,92,87,92
+267,male,Asian,some college,standard,completed,69,56,59,58,62,68,70,61
+268,male,European,some high school,standard,none,88,83,85,84,83,100,99,98
+269,male,European,some college,standard,none,65,63,65,64,66,73,72,70
+270,male,European,associate's degree,free/reduced,none,75,75,72,76,71,76,68,70
+271,male,European,high school,free/reduced,completed,71,76,67,79,77,86,80,78
+272,female,European,associate's degree,standard,none,89,79,90,91,87,83,84,84
+273,male,American,master's degree,standard,none,61,55,63,61,60,64,61,63
+274,male,European,associate's degree,standard,none,75,74,81,79,77,66,63,62
+275,male,Asian,bachelor's degree,standard,none,100,99,100,100,98,100,100,100
+276,male,Asian,associate's degree,standard,none,91,95,93,86,83,89,84,81
+277,male,European,associate's degree,standard,completed,100,100,100,100,97,94,93,95
+278,male,European,doctorate,standard,none,69,67,79,76,79,71,72,78
+279,female,European,some college,standard,none,91,90,89,92,83,97,85,87
+280,female,European,master's degree,standard,completed,82,73,78,78,82,85,86,82
+281,male,European,master's degree,standard,completed,72,85,76,71,79,83,85,81
+282,female,European,high school,free/reduced,completed,52,54,57,61,62,67,64,66
+283,male,American,master's degree,free/reduced,completed,81,83,82,79,80,87,81,84
+284,male,European,some high school,standard,completed,66,66,64,65,62,76,66,73
+285,female,European,master's degree,standard,completed,47,38,52,56,54,69,67,58
+286,male,European,some college,standard,none,66,66,69,60,65,64,65,59
+287,male,Asian,high school,standard,completed,86,85,92,88,84,82,83,78
+288,female,European,bachelor's degree,free/reduced,none,70,65,71,70,66,81,77,72
+289,female,Asian,bachelor's degree,standard,none,89,95,91,89,88,87,86,86
+290,male,European,doctorate,standard,completed,64,56,68,57,63,68,67,62
+291,female,American,high school,standard,none,85,83,85,78,79,72,78,71
+292,male,American,doctorate,free/reduced,completed,82,86,87,89,89,87,81,90
+293,female,European,master's degree,standard,completed,87,71,84,81,79,92,94,82
+294,female,European,doctorate,free/reduced,completed,57,57,68,58,59,66,61,70
+295,male,Asian,bachelor's degree,free/reduced,none,79,77,78,80,74,91,86,79
+296,female,Asian,bachelor's degree,standard,none,65,58,73,71,70,77,74,66
+297,male,American,high school,free/reduced,none,50,37,55,50,46,65,72,64
+298,male,American,high school,standard,completed,69,70,73,66,61,72,72,74
+299,male,European,some college,standard,none,83,74,73,76,73,81,83,86
+300,female,European,some high school,free/reduced,none,82,90,91,78,83,81,77,92
+301,female,European,some high school,free/reduced,completed,60,48,62,60,56,57,55,61
+302,male,European,master's degree,free/reduced,none,80,80,85,81,79,87,83,84
+303,male,European,doctorate,standard,none,91,92,91,88,91,87,82,85
+304,female,American,some high school,standard,completed,66,67,66,77,68,76,78,74
+305,male,European,master's degree,standard,none,73,62,74,72,68,77,78,74
+306,female,European,high school,standard,completed,79,71,72,79,75,78,67,75
+307,male,Asian,high school,standard,completed,78,89,86,83,80,86,88,85
+308,male,European,associate's degree,standard,none,85,81,89,82,84,75,82,78
+309,female,Asian,doctorate,standard,none,80,69,82,79,73,72,77,77
+310,female,Asian,some high school,standard,completed,81,83,86,81,87,63,62,67
+311,male,European,bachelor's degree,free/reduced,none,66,69,64,72,66,72,75,68
+312,male,Asian,high school,free/reduced,none,80,79,81,80,79,82,80,77
+313,female,Asian,high school,free/reduced,none,70,55,62,61,54,49,56,53
+314,female,European,associate's degree,standard,none,78,79,82,78,77,88,87,88
+315,male,European,high school,standard,completed,76,81,85,86,88,87,89,88
+316,male,American,master's degree,free/reduced,completed,72,64,70,74,66,76,77,76
+317,male,European,associate's degree,free/reduced,none,66,75,73,71,74,87,79,82
+318,male,American,high school,free/reduced,completed,81,88,85,82,80,74,76,71
+319,male,American,some college,standard,none,63,59,66,63,63,72,75,71
+320,male,European,master's degree,free/reduced,none,81,71,82,74,75,74,72,71
+321,male,European,high school,standard,none,91,87,92,82,88,85,84,83
+322,male,European,associate's degree,standard,none,75,73,76,76,74,81,83,79
+323,male,European,high school,free/reduced,none,71,64,72,73,71,72,77,68
+324,female,European,doctorate,standard,none,79,77,79,82,70,100,94,96
+325,male,European,high school,free/reduced,none,89,73,84,87,83,98,95,93
+326,male,Asian,high school,free/reduced,none,81,87,89,89,92,100,97,96
+327,male,European,doctorate,standard,completed,71,79,77,76,69,73,74,72
+328,male,American,master's degree,standard,completed,58,63,60,61,58,61,58,59
+329,female,European,bachelor's degree,standard,completed,64,75,71,75,73,76,82,76
+330,male,Asian,master's degree,standard,none,48,55,60,66,57,66,63,69
+331,male,European,associate's degree,free/reduced,none,60,62,72,73,69,74,72,61
+332,male,Asian,master's degree,standard,completed,75,71,77,75,74,86,85,83
+333,female,European,doctorate,free/reduced,none,63,70,72,65,61,78,69,70
+334,male,European,some high school,standard,none,53,52,63,65,70,65,66,66
+335,female,Asian,master's degree,standard,none,81,79,82,77,74,88,82,78
+336,female,European,doctorate,standard,none,100,100,100,95,100,100,95,93
+337,female,European,bachelor's degree,standard,none,85,89,96,93,95,96,95,88
+338,female,American,doctorate,standard,none,94,88,96,85,90,75,69,73
+339,female,European,bachelor's degree,standard,none,91,90,92,92,87,94,90,89
+340,female,European,some college,standard,none,66,62,77,72,67,80,80,76
+341,female,Asian,some high school,free/reduced,completed,65,60,69,68,70,70,66,64
+342,male,Asian,associate's degree,standard,none,93,92,90,94,93,99,97,96
+343,male,Asian,master's degree,standard,completed,78,80,70,82,78,93,95,95
+344,female,European,high school,standard,completed,92,83,84,85,83,83,89,85
+345,female,European,doctorate,standard,completed,79,74,82,78,73,75,75,73
+346,female,European,doctorate,standard,completed,90,90,97,85,81,87,89,90
+347,male,European,doctorate,standard,none,74,65,72,74,74,78,71,77
+348,male,European,bachelor's degree,free/reduced,completed,87,77,82,91,81,100,97,91
+349,male,European,some high school,standard,completed,69,72,68,71,67,74,75,72
+350,female,American,some college,standard,completed,74,63,68,72,70,80,77,83
+351,male,European,some college,free/reduced,none,96,96,100,96,92,100,100,95
+352,male,European,doctorate,standard,completed,68,59,77,75,67,88,85,83
+353,male,European,master's degree,standard,completed,85,83,92,88,90,92,100,97
+354,male,European,associate's degree,free/reduced,none,69,68,67,75,71,75,75,78
+355,male,Asian,master's degree,standard,none,71,58,74,72,63,71,69,71
+356,female,European,associate's degree,free/reduced,none,70,62,66,71,75,84,82,77
+357,female,European,doctorate,free/reduced,none,59,50,58,61,67,68,70,67
+358,male,European,some college,standard,none,59,52,57,63,51,71,73,72
+359,female,Asian,doctorate,standard,completed,63,61,75,76,80,82,81,86
+360,male,European,some college,standard,none,68,59,64,66,60,78,74,72
+361,female,European,doctorate,standard,none,63,68,65,71,69,76,75,72
+362,male,American,bachelor's degree,standard,none,67,62,69,68,65,65,63,65
+363,female,European,bachelor's degree,free/reduced,none,74,75,83,82,71,74,78,80
+364,female,European,master's degree,standard,none,79,87,84,84,89,83,89,86
+365,female,European,some high school,standard,completed,72,69,80,78,72,86,84,83
+366,male,European,high school,standard,none,77,75,73,73,70,77,75,80
+367,female,European,high school,standard,none,81,84,81,86,86,84,89,81
+368,female,Asian,some high school,standard,none,82,87,89,86,75,87,85,84
+369,female,European,some high school,standard,completed,93,80,84,83,82,79,77,79
+370,female,American,some high school,standard,none,49,43,60,60,57,71,62,67
+371,male,European,some college,standard,none,67,63,73,74,66,77,77,71
+372,female,European,high school,standard,completed,79,78,84,75,79,85,83,81
+373,male,European,some college,free/reduced,none,71,80,70,73,75,91,83,86
+374,male,European,associate's degree,standard,completed,95,93,100,100,95,99,98,94
+375,female,Asian,master's degree,standard,completed,97,97,92,97,95,100,92,91
+376,female,American,master's degree,standard,none,89,89,91,85,87,85,91,88
+377,female,European,associate's degree,standard,none,65,58,61,62,64,84,74,74
+378,female,European,some college,standard,completed,76,68,81,75,76,77,80,77
+379,female,Asian,doctorate,free/reduced,completed,72,67,69,71,71,87,89,83
+380,male,European,some high school,standard,completed,67,70,64,74,66,75,77,73
+381,female,European,associate's degree,standard,none,100,96,100,90,95,86,89,84
+382,male,European,doctorate,standard,none,57,51,57,60,54,70,72,68
+383,male,American,high school,standard,none,76,71,83,77,71,76,80,82
+384,male,European,master's degree,standard,none,94,86,83,87,86,85,89,87
+385,female,European,associate's degree,standard,none,100,100,100,95,100,90,87,96
+386,male,European,master's degree,free/reduced,completed,82,90,88,82,82,85,79,77
+387,male,European,master's degree,free/reduced,none,63,65,72,68,64,63,63,63
+388,male,European,doctorate,standard,none,70,71,78,66,67,62,70,67
+389,male,European,bachelor's degree,standard,none,93,87,92,97,85,97,97,96
+390,female,European,bachelor's degree,free/reduced,none,84,70,84,84,76,82,83,85
+391,female,Asian,some high school,standard,none,66,67,72,68,66,65,65,71
+392,female,European,some high school,free/reduced,none,66,68,72,71,60,85,83,78
+393,female,European,bachelor's degree,free/reduced,none,67,66,69,73,67,74,78,74
+394,female,European,bachelor's degree,standard,none,72,72,79,77,71,79,80,82
+395,female,European,high school,standard,completed,61,57,69,69,69,80,87,79
+396,female,European,high school,free/reduced,none,62,59,71,75,67,78,79,74
+397,male,European,doctorate,standard,none,75,64,69,80,74,93,90,83
+398,male,American,high school,free/reduced,none,85,88,87,84,85,86,86,79
+399,male,European,associate's degree,standard,completed,70,69,69,81,76,87,80,83
+400,male,European,high school,standard,none,97,94,100,99,91,91,96,86
+401,female,African,bachelor's degree,standard,none,71,64,71,71,72,69,71,70
+402,male,American,doctorate,standard,none,96,93,100,99,100,100,100,100
+403,female,European,associate's degree,standard,completed,83,87,83,86,86,98,92,95
+404,male,European,bachelor's degree,free/reduced,completed,97,100,100,94,98,93,89,94
+405,female,European,doctorate,free/reduced,none,61,58,63,66,63,60,59,64
+406,male,European,associate's degree,free/reduced,completed,73,68,73,72,75,70,71,66
+407,female,American,associate's degree,standard,completed,76,76,87,83,80,84,92,86
+408,female,European,associate's degree,free/reduced,completed,64,70,69,67,64,73,74,69
+409,female,American,some college,standard,none,59,51,49,52,47,64,61,68
+410,female,European,doctorate,standard,completed,72,78,83,77,76,85,81,90
+411,male,American,bachelor's degree,standard,completed,79,89,89,91,90,92,83,85
+412,female,European,bachelor's degree,standard,none,78,76,77,84,79,87,88,82
+413,male,Asian,bachelor's degree,standard,completed,72,60,74,79,72,87,87,87
+414,female,European,some high school,standard,completed,70,68,78,77,70,84,84,81
+415,male,American,associate's degree,free/reduced,none,86,72,86,77,75,82,73,81
+416,female,Asian,high school,standard,none,85,85,88,83,88,90,82,86
+417,male,European,master's degree,standard,none,76,77,80,76,78,85,76,82
+418,female,Asian,doctorate,standard,completed,83,83,92,89,83,98,93,92
+419,male,European,associate's degree,standard,completed,63,61,62,59,67,66,63,71
+420,female,African,bachelor's degree,standard,completed,73,66,76,70,71,81,72,83
+421,male,European,some high school,standard,none,83,85,90,85,74,86,91,84
+422,male,Asian,doctorate,standard,none,68,61,78,74,68,73,74,74
+423,male,Asian,high school,standard,completed,48,51,59,57,52,74,69,70
+424,male,European,associate's degree,free/reduced,none,79,75,72,71,72,81,78,74
+425,female,American,some high school,standard,none,91,100,100,94,96,83,83,80
+426,male,European,some high school,standard,none,77,76,77,80,73,86,79,84
+427,female,European,bachelor's degree,standard,none,82,71,86,81,80,90,86,93
+428,female,European,bachelor's degree,standard,none,83,68,86,79,72,80,90,83
+429,female,European,bachelor's degree,standard,completed,84,87,94,89,93,93,84,86
+430,female,European,doctorate,standard,none,85,81,85,84,79,86,89,79
+431,male,American,some college,standard,completed,87,91,89,84,81,75,72,76
+432,female,European,master's degree,free/reduced,none,74,68,83,77,70,79,77,78
+433,female,European,doctorate,standard,none,72,62,76,78,72,83,80,74
+434,female,European,high school,standard,none,93,91,96,79,86,75,73,78
+435,female,Asian,master's degree,standard,completed,87,79,78,75,77,77,76,81
+436,female,Asian,high school,free/reduced,completed,85,84,89,85,89,95,89,93
+437,female,European,doctorate,standard,none,62,55,66,65,59,74,76,66
+438,male,European,associate's degree,free/reduced,none,82,85,84,82,84,74,86,81
+439,male,European,doctorate,standard,none,77,80,77,77,81,79,81,82
+440,female,European,associate's degree,standard,none,82,87,81,85,86,87,89,85
+441,female,European,doctorate,standard,none,94,99,100,94,93,88,91,87
+442,male,Asian,doctorate,free/reduced,none,84,78,85,79,77,81,83,81
+443,female,Asian,some college,free/reduced,none,72,77,74,70,70,77,71,77
+444,female,European,associate's degree,standard,completed,72,71,71,70,70,70,68,75
+445,male,European,bachelor's degree,free/reduced,none,40,43,50,49,49,54,51,52
+446,male,American,some college,free/reduced,none,81,85,88,72,84,79,78,78
+447,male,American,high school,standard,completed,73,79,82,79,71,83,81,78
+448,male,Asian,some college,standard,none,58,47,57,56,58,77,79,69
+449,male,American,associate's degree,standard,completed,75,76,71,68,70,73,67,69
+450,female,European,master's degree,standard,none,64,61,71,72,65,72,71,69
+451,female,Asian,some high school,standard,none,76,74,73,74,68,72,74,76
+452,female,American,bachelor's degree,standard,none,91,97,94,87,98,77,74,85
+453,female,Asian,bachelor's degree,standard,none,70,66,73,74,69,78,78,76
+454,male,European,high school,standard,none,84,83,83,80,80,90,90,81
+455,male,European,some college,standard,none,85,93,89,84,86,72,79,76
+456,male,European,master's degree,standard,completed,74,74,77,81,79,85,84,86
+457,female,European,associate's degree,standard,completed,90,94,91,95,84,90,85,88
+458,male,European,associate's degree,free/reduced,none,71,73,75,86,69,86,90,80
+459,female,Asian,bachelor's degree,standard,completed,72,64,78,72,73,73,80,76
+460,female,European,doctorate,standard,none,66,69,72,68,70,71,77,74
+461,male,European,some college,standard,completed,65,59,72,67,62,77,77,76
+462,male,European,high school,standard,none,71,78,77,80,72,78,79,75
+463,male,American,some college,standard,none,81,78,82,77,80,77,77,74
+464,female,European,doctorate,standard,none,69,74,75,75,69,84,80,84
+465,male,European,associate's degree,free/reduced,none,84,91,86,80,81,80,82,81
+466,female,European,associate's degree,standard,none,70,68,67,74,75,78,69,78
+467,male,European,some high school,standard,none,88,90,90,88,92,95,86,88
+468,female,African,associate's degree,free/reduced,none,82,81,81,73,78,68,69,71
+469,female,European,high school,free/reduced,completed,90,85,80,82,88,84,87,86
+470,female,European,bachelor's degree,standard,none,80,75,81,83,84,78,77,77
+471,male,European,doctorate,free/reduced,none,90,93,96,90,94,90,90,90
+472,male,European,doctorate,standard,none,79,67,74,77,70,86,83,77
+473,female,European,some high school,standard,completed,72,75,81,75,70,70,72,68
+474,female,Asian,associate's degree,free/reduced,none,61,58,58,60,58,70,68,67
+475,female,European,high school,standard,none,73,77,77,76,76,89,84,78
+476,female,American,some high school,standard,none,73,65,66,76,67,77,80,72
+477,male,European,doctorate,standard,completed,93,79,85,84,87,97,97,91
+478,female,European,master's degree,standard,none,87,95,85,82,87,77,78,79
+479,male,Asian,bachelor's degree,standard,none,95,93,95,86,90,96,91,87
+480,male,Asian,doctorate,standard,none,63,68,72,68,65,86,85,84
+481,male,European,associate's degree,standard,completed,82,80,92,79,81,96,86,86
+482,male,Asian,high school,standard,completed,70,72,69,67,70,75,69,65
+483,male,American,master's degree,standard,none,54,52,55,60,58,65,61,61
+484,female,European,doctorate,free/reduced,none,62,59,65,67,55,79,73,79
+485,male,American,bachelor's degree,free/reduced,completed,81,76,87,79,91,94,94,91
+486,female,African,high school,free/reduced,none,100,99,100,100,94,100,100,100
+487,female,European,master's degree,free/reduced,completed,79,82,81,81,85,89,85,85
+488,male,European,associate's degree,standard,completed,62,54,63,66,66,80,76,77
+489,female,European,doctorate,standard,completed,68,71,74,76,70,85,84,82
+490,female,American,some high school,standard,none,65,56,73,69,60,77,72,73
+491,female,European,associate's degree,standard,none,73,76,79,76,78,79,79,74
+492,male,European,some college,standard,completed,84,81,90,83,67,79,75,79
+493,female,European,doctorate,standard,none,73,72,81,79,78,92,91,90
+494,male,European,doctorate,standard,none,64,64,61,64,63,77,75,73
+495,male,European,doctorate,standard,none,95,89,93,88,87,91,92,88
+496,male,European,high school,free/reduced,none,79,74,78,77,70,71,68,74
+497,male,European,high school,free/reduced,none,60,50,61,60,57,75,71,72
+498,male,European,some high school,standard,none,59,57,69,74,57,79,76,73
+499,male,European,doctorate,standard,completed,81,75,82,76,81,87,83,82
+500,female,American,associate's degree,standard,completed,85,85,92,90,84,84,88,82
+501,female,European,high school,standard,completed,58,57,56,57,62,70,65,70
+502,male,European,doctorate,standard,none,88,91,91,90,91,84,90,85
+503,male,Asian,master's degree,free/reduced,completed,78,81,80,77,80,75,78,70
+504,female,European,high school,standard,none,95,86,92,93,88,96,93,93
+505,female,European,master's degree,standard,completed,77,80,79,76,78,75,67,75
+506,male,Asian,some college,free/reduced,none,100,100,84,99,91,99,92,96
+507,female,American,high school,free/reduced,none,83,93,92,91,84,81,85,83
+508,female,European,doctorate,standard,completed,71,70,76,74,77,71,71,71
+509,female,European,some college,free/reduced,completed,88,87,95,90,90,92,91,81
+510,female,Asian,master's degree,standard,none,89,91,90,92,83,88,91,83
+511,male,European,associate's degree,standard,completed,81,80,75,74,76,65,66,71
+512,male,Asian,doctorate,standard,none,77,70,73,77,73,84,77,71
+513,male,American,bachelor's degree,standard,none,69,57,67,64,58,64,66,62
+514,male,European,associate's degree,standard,none,55,55,55,58,55,60,60,65
+515,male,European,some college,free/reduced,none,86,91,82,87,81,89,91,89
+516,male,American,bachelor's degree,free/reduced,none,81,83,93,86,86,77,80,70
+517,male,European,some college,free/reduced,completed,69,78,78,73,72,79,79,73
+518,female,American,high school,free/reduced,completed,74,62,78,73,70,72,68,76
+519,female,European,bachelor's degree,standard,none,49,51,53,61,51,77,78,69
+520,female,Asian,master's degree,standard,none,93,93,95,86,91,77,69,78
+521,female,American,bachelor's degree,standard,completed,69,73,78,74,79,82,74,76
+522,female,Asian,doctorate,free/reduced,completed,65,66,73,70,72,78,70,76
+523,male,European,some high school,standard,completed,56,49,60,53,53,58,56,56
+524,female,Asian,bachelor's degree,standard,none,81,84,79,87,79,82,88,79
+525,male,European,some high school,standard,none,97,92,99,93,85,86,84,87
+526,male,American,bachelor's degree,standard,completed,93,89,90,87,93,92,91,91
+527,male,Asian,high school,standard,completed,77,72,80,79,78,89,89,93
+528,female,European,master's degree,standard,completed,70,68,81,71,74,87,84,77
+529,female,European,doctorate,free/reduced,completed,84,75,77,73,75,69,78,71
+530,male,American,some college,standard,none,53,42,51,58,56,64,64,64
+531,female,European,doctorate,standard,completed,67,62,66,74,75,74,73,70
+532,male,European,master's degree,free/reduced,none,82,76,83,76,80,86,84,80
+533,female,European,some high school,standard,completed,66,64,74,58,67,70,67,64
+534,female,Asian,high school,free/reduced,completed,55,59,58,59,66,63,63,67
+535,female,European,doctorate,free/reduced,completed,61,50,59,66,59,72,76,74
+536,male,Asian,associate's degree,standard,none,61,50,67,64,63,85,83,74
+537,female,Asian,master's degree,standard,none,73,68,80,77,77,80,81,81
+538,male,European,associate's degree,free/reduced,none,72,68,72,70,76,69,69,67
+539,female,European,associate's degree,free/reduced,none,75,70,68,73,67,75,71,74
+540,female,American,doctorate,standard,completed,76,69,74,69,73,86,81,78
+541,female,European,high school,standard,none,68,74,75,72,67,67,63,75
+542,female,European,associate's degree,standard,none,84,82,91,75,76,76,71,74
+543,female,African,associate's degree,free/reduced,none,67,64,72,74,69,69,71,69
+544,male,European,some college,standard,none,78,61,82,80,72,97,93,86
+545,male,European,master's degree,standard,completed,79,69,75,79,80,77,77,75
+546,male,African,bachelor's degree,free/reduced,completed,81,72,81,78,71,80,77,79
+547,male,European,associate's degree,free/reduced,none,66,57,68,63,60,77,81,77
+548,male,European,some college,standard,completed,55,57,61,63,58,66,73,68
+549,female,Asian,master's degree,standard,none,82,81,82,87,80,82,82,84
+550,female,African,some high school,standard,none,70,69,69,76,72,78,88,83
+551,male,European,doctorate,standard,completed,64,54,62,59,59,75,70,70
+552,male,African,some high school,standard,none,74,73,77,80,79,77,72,80
+553,female,European,high school,free/reduced,none,72,66,77,75,69,77,82,72
+554,male,European,master's degree,standard,none,93,90,93,95,90,79,82,73
+555,female,American,some college,standard,none,92,91,95,92,94,94,92,87
+556,female,American,master's degree,standard,none,91,100,96,100,100,100,100,100
+557,male,European,some college,standard,completed,69,69,72,73,73,75,65,70
+558,male,European,some high school,standard,none,69,72,72,75,64,82,78,73
+559,male,European,associate's degree,standard,completed,81,82,84,85,88,94,87,89
+560,female,European,high school,standard,completed,55,56,61,61,57,60,60,57
+561,female,American,some high school,standard,none,52,56,59,60,56,68,66,69
+562,male,Asian,associate's degree,free/reduced,completed,55,51,60,59,59,63,62,60
+563,female,American,some high school,standard,none,73,66,71,77,68,83,81,80
+564,male,American,high school,standard,completed,75,75,84,77,70,78,74,73
+565,male,European,high school,standard,none,98,100,100,97,99,93,92,94
+566,male,European,doctorate,standard,completed,80,92,88,79,86,68,69,70
+567,female,European,associate's degree,standard,none,94,86,90,93,83,92,93,96
+568,male,American,some college,standard,none,78,79,77,84,73,93,88,85
+569,female,European,some high school,free/reduced,none,100,100,100,100,100,98,97,95
+570,female,European,high school,standard,completed,53,51,54,49,49,57,54,56
+571,male,American,doctorate,free/reduced,none,91,80,92,90,88,95,88,95
+572,female,African,high school,free/reduced,completed,60,60,66,66,64,80,73,62
+573,female,European,some high school,free/reduced,completed,88,87,90,79,90,81,84,81
+574,male,European,master's degree,free/reduced,completed,93,97,93,86,89,82,82,87
+575,male,European,associate's degree,standard,none,71,71,81,74,68,63,68,66
+576,female,European,high school,free/reduced,none,64,71,70,73,60,76,73,73
+577,male,European,bachelor's degree,standard,none,91,93,91,93,83,87,89,88
+578,female,European,associate's degree,free/reduced,completed,73,73,78,77,81,86,86,84
+579,male,European,associate's degree,standard,none,72,76,81,81,76,97,90,89
+580,male,European,associate's degree,free/reduced,completed,90,93,99,98,92,92,89,90
+581,male,Asian,high school,standard,completed,100,100,100,100,100,100,98,100
+582,female,American,associate's degree,free/reduced,none,82,77,78,82,76,82,86,76
+583,female,Asian,some high school,free/reduced,completed,55,65,65,65,58,76,76,76
+584,female,European,associate's degree,standard,none,81,79,86,76,74,79,80,74
+585,male,European,master's degree,standard,completed,89,75,85,91,85,75,77,72
+586,female,European,associate's degree,free/reduced,completed,85,91,90,84,82,90,93,89
+587,female,European,master's degree,standard,completed,68,70,70,67,73,87,74,76
+588,female,American,bachelor's degree,free/reduced,none,50,51,61,64,57,66,64,61
+589,male,European,bachelor's degree,standard,none,82,82,81,87,86,94,90,86
+590,male,European,high school,free/reduced,none,77,83,77,77,72,80,82,83
+591,male,European,some college,standard,none,67,63,68,71,69,91,84,86
+592,female,Asian,doctorate,standard,none,76,74,79,79,75,79,79,83
+593,female,European,doctorate,standard,completed,81,85,80,77,72,85,75,76
+594,female,European,high school,standard,completed,83,94,90,91,90,87,84,86
+595,male,European,master's degree,standard,completed,100,100,100,100,100,99,100,99
+596,male,American,bachelor's degree,standard,completed,88,92,94,86,90,89,92,86
+597,female,European,bachelor's degree,standard,none,77,75,81,79,79,78,79,78
+598,male,American,associate's degree,standard,completed,61,61,65,66,67,89,83,73
+599,male,European,doctorate,standard,none,81,75,79,79,81,75,72,73
+600,male,European,bachelor's degree,standard,none,64,65,71,71,67,85,79,84
+601,female,European,high school,standard,completed,71,70,77,74,68,67,77,67
+602,male,Asian,associate's degree,standard,completed,87,91,88,89,92,82,77,80
+603,male,African,associate's degree,free/reduced,none,57,41,64,55,60,70,73,74
+604,female,European,high school,standard,completed,87,69,84,80,85,88,88,90
+605,female,European,some high school,standard,none,81,88,79,83,80,88,94,91
+606,male,American,associate's degree,free/reduced,none,68,60,82,71,75,73,72,75
+607,female,European,doctorate,standard,none,67,58,71,66,71,65,63,72
+608,female,Asian,master's degree,standard,completed,79,75,77,77,79,72,87,72
+609,male,European,some college,standard,none,88,88,85,88,83,90,83,90
+610,female,American,some college,free/reduced,completed,71,71,80,80,77,86,87,91
+611,male,European,doctorate,standard,none,90,84,86,94,82,90,92,89
+612,male,European,some high school,free/reduced,none,65,58,71,63,66,69,71,70
+613,female,European,doctorate,standard,completed,95,100,100,100,100,93,93,97
+614,male,European,master's degree,standard,none,78,76,78,78,70,80,84,77
+615,female,European,some college,standard,none,91,91,87,88,86,87,84,86
+616,female,American,associate's degree,standard,none,91,84,94,98,87,100,99,96
+617,female,European,bachelor's degree,standard,none,68,51,61,69,71,78,67,73
+618,male,European,bachelor's degree,free/reduced,none,93,81,84,88,81,86,81,81
+619,female,European,some college,standard,none,71,69,79,72,74,77,76,73
+620,male,European,master's degree,standard,completed,76,82,87,82,74,88,76,80
+621,male,Asian,some college,standard,completed,96,87,95,87,84,88,87,90
+622,female,European,doctorate,standard,none,66,64,68,70,62,76,80,76
+623,male,European,some high school,free/reduced,none,72,80,86,85,79,97,97,93
+624,female,European,some high school,free/reduced,none,89,94,89,89,84,84,80,83
+625,male,European,associate's degree,standard,none,80,72,72,78,75,94,92,82
+626,male,European,some high school,standard,none,94,100,95,96,92,85,91,84
+627,male,European,high school,standard,none,75,71,74,74,70,71,81,72
+628,female,African,associate's degree,free/reduced,none,85,89,96,91,83,95,90,96
+629,female,European,high school,standard,completed,89,95,87,90,84,92,86,83
+630,female,European,some college,standard,none,86,87,82,84,89,74,73,78
+631,female,European,some college,standard,none,67,58,70,73,70,79,80,76
+632,female,European,doctorate,standard,none,90,90,95,89,91,78,81,76
+633,male,European,some high school,standard,none,70,69,78,79,72,87,80,85
+634,male,Asian,master's degree,standard,none,88,84,88,91,90,99,96,94
+635,male,European,some high school,free/reduced,completed,52,47,42,56,48,60,65,60
+636,female,American,associate's degree,free/reduced,none,99,100,99,100,97,90,91,92
+637,female,European,bachelor's degree,standard,completed,74,73,82,80,76,80,84,84
+638,male,European,high school,standard,none,68,63,68,77,60,72,73,72
+639,male,European,associate's degree,standard,completed,83,92,98,91,94,100,95,89
+640,female,American,doctorate,standard,none,94,93,100,96,83,86,79,86
+641,male,European,bachelor's degree,free/reduced,none,87,84,88,84,82,85,87,82
+642,male,European,master's degree,standard,none,91,92,91,87,88,94,86,84
+643,female,European,some college,free/reduced,none,72,65,77,74,65,53,59,61
+644,female,European,some high school,free/reduced,completed,58,56,61,55,62,55,63,57
+645,male,European,some high school,free/reduced,completed,55,50,56,59,58,56,61,60
+646,female,European,master's degree,standard,none,90,84,88,90,89,100,100,92
+647,female,European,some college,standard,completed,88,80,87,86,80,89,89,86
+648,female,African,bachelor's degree,standard,none,73,73,86,75,77,81,82,81
+649,male,European,bachelor's degree,free/reduced,none,85,87,86,82,84,82,79,74
+650,male,European,master's degree,standard,completed,85,81,87,81,85,89,89,90
+651,male,European,bachelor's degree,standard,none,69,67,74,79,74,68,66,67
+652,male,American,some college,standard,none,74,70,79,78,76,83,80,81
+653,male,European,master's degree,free/reduced,none,82,80,86,84,81,87,86,80
+654,male,European,master's degree,standard,none,67,68,79,76,73,77,72,74
+655,female,European,bachelor's degree,standard,none,93,97,100,100,95,100,98,91
+656,female,European,bachelor's degree,standard,none,92,86,81,88,89,94,88,84
+657,male,American,master's degree,standard,none,90,94,93,83,86,76,77,81
+658,male,Asian,master's degree,standard,none,97,99,95,100,88,92,89,81
+659,female,European,master's degree,standard,completed,85,85,86,83,82,71,64,68
+660,male,Asian,doctorate,standard,none,80,80,74,77,75,92,85,84
+661,male,African,some college,standard,none,56,51,66,66,64,79,79,80
+662,male,Asian,associate's degree,standard,completed,86,90,89,77,86,70,66,70
+663,female,European,associate's degree,free/reduced,completed,86,76,84,90,79,98,97,93
+664,male,American,doctorate,free/reduced,completed,53,44,57,60,59,76,81,67
+665,female,European,associate's degree,standard,completed,83,85,84,78,78,74,74,71
+666,male,American,bachelor's degree,standard,completed,90,80,89,88,84,85,84,85
+667,male,European,some high school,standard,none,72,71,68,72,74,77,69,80
+668,male,Asian,associate's degree,standard,none,100,100,100,98,97,94,96,88
+669,male,African,some college,standard,none,74,77,79,75,76,92,86,87
+670,male,European,associate's degree,free/reduced,none,77,67,79,85,73,78,78,76
+671,male,American,some high school,standard,completed,81,78,85,75,80,73,77,76
+672,male,European,master's degree,free/reduced,none,74,62,76,64,71,74,79,71
+673,male,Asian,doctorate,standard,none,77,70,85,74,83,76,77,79
+674,male,American,some college,free/reduced,none,78,64,79,74,71,76,74,76
+675,female,Asian,bachelor's degree,free/reduced,completed,75,72,77,72,69,100,93,89
+676,female,American,some high school,standard,completed,90,83,94,94,89,100,100,92
+677,male,American,some college,standard,none,77,78,68,74,71,73,67,68
+678,male,American,master's degree,standard,completed,75,77,78,74,73,80,78,74
+679,female,European,master's degree,standard,completed,76,78,84,81,82,85,86,87
+680,female,European,bachelor's degree,free/reduced,none,78,74,75,75,75,81,76,73
+681,male,European,some high school,standard,none,82,68,78,76,78,75,75,82
+682,female,European,some high school,standard,completed,70,69,73,69,67,70,75,74
+683,female,American,bachelor's degree,standard,none,89,90,90,90,93,91,88,84
+684,female,European,associate's degree,standard,none,84,81,86,84,71,87,88,86
+685,female,European,master's degree,standard,none,81,85,82,85,89,86,79,82
+686,male,European,bachelor's degree,standard,none,60,64,70,65,63,64,66,67
+687,male,European,master's degree,standard,none,87,76,80,86,78,88,85,81
+688,male,European,master's degree,standard,completed,84,88,78,89,82,82,90,82
+689,female,European,some college,standard,none,71,71,70,74,77,77,79,77
+690,female,American,some high school,standard,completed,70,63,76,68,71,74,74,73
+691,female,African,bachelor's degree,standard,none,95,92,92,92,93,100,99,94
+692,male,Asian,doctorate,free/reduced,completed,73,72,72,68,68,66,67,71
+693,male,European,doctorate,standard,none,61,62,72,72,66,78,72,72
+694,female,Asian,doctorate,standard,completed,72,66,68,71,76,94,87,82
+695,female,European,associate's degree,standard,none,60,56,61,68,63,83,87,83
+696,male,American,some college,free/reduced,none,52,54,70,68,61,75,74,72
+697,male,American,doctorate,free/reduced,completed,86,93,91,88,93,91,92,90
+698,female,European,some high school,standard,completed,99,100,100,95,93,92,85,91
+699,female,European,some college,standard,none,78,82,76,73,76,74,68,71
+700,female,Asian,doctorate,standard,none,76,69,78,79,76,94,86,76
+701,male,Asian,some college,standard,none,56,56,62,60,57,63,73,62
+702,female,European,master's degree,standard,none,80,72,78,83,77,69,74,70
+703,male,European,master's degree,standard,completed,80,74,80,85,70,76,80,80
+704,female,European,doctorate,free/reduced,none,79,77,78,79,79,82,84,80
+705,male,European,associate's degree,free/reduced,completed,66,63,72,71,65,67,79,76
+706,female,American,associate's degree,standard,completed,63,54,63,70,67,74,71,71
+707,female,European,bachelor's degree,standard,none,80,87,85,84,74,73,73,70
+708,male,Asian,high school,free/reduced,completed,72,63,78,75,71,80,84,76
+709,female,European,some college,standard,none,72,77,79,76,74,77,76,81
+710,female,Asian,high school,free/reduced,none,79,79,84,79,84,83,74,74
+711,female,European,high school,free/reduced,none,75,63,73,71,67,67,73,68
+712,male,European,some college,standard,none,59,63,55,69,64,77,77,75
+713,male,European,master's degree,standard,completed,80,76,79,84,75,97,91,90
+714,female,European,master's degree,standard,none,89,86,85,82,83,84,83,85
+715,male,American,some high school,free/reduced,completed,80,84,85,77,83,83,76,77
+716,female,American,associate's degree,standard,none,77,71,81,73,76,84,79,81
+717,male,European,some college,standard,completed,91,91,88,84,87,88,87,88
+718,female,European,some college,standard,completed,100,100,100,97,98,96,98,99
+719,female,European,bachelor's degree,standard,none,85,86,82,85,84,99,93,92
+720,female,Asian,associate's degree,standard,completed,79,82,83,76,72,79,70,74
+721,female,European,associate's degree,standard,none,61,47,60,59,59,71,76,66
+722,female,African,high school,free/reduced,none,67,74,71,70,73,75,82,79
+723,male,American,bachelor's degree,standard,completed,80,79,81,81,67,88,80,83
+724,male,American,bachelor's degree,standard,none,78,76,80,82,77,78,73,71
+725,male,Asian,high school,standard,completed,88,77,86,80,81,88,92,82
+726,male,European,master's degree,standard,none,88,93,96,97,87,92,90,84
+727,female,European,associate's degree,standard,completed,87,85,84,77,75,77,78,70
+728,male,European,master's degree,standard,none,87,76,77,78,84,85,85,87
+729,male,European,associate's degree,standard,none,64,56,59,66,63,86,82,79
+730,male,European,doctorate,standard,completed,95,96,89,100,98,100,97,96
+731,male,American,bachelor's degree,standard,none,100,94,95,100,90,100,100,95
+732,female,Asian,some college,free/reduced,none,71,68,73,70,65,75,82,77
+733,female,European,doctorate,standard,completed,79,73,79,80,74,86,88,78
+734,male,European,master's degree,standard,none,86,91,81,92,85,93,91,87
+735,male,European,high school,free/reduced,none,98,87,99,90,95,89,88,93
+736,female,American,some high school,standard,none,81,81,89,89,75,91,90,88
+737,male,European,associate's degree,standard,none,93,83,93,97,88,91,97,85
+738,female,European,associate's degree,free/reduced,none,50,40,56,64,49,71,70,68
+739,male,European,master's degree,free/reduced,completed,73,73,76,73,63,74,77,71
+740,male,European,some high school,standard,none,76,76,85,80,82,74,72,73
+741,female,European,high school,free/reduced,none,72,77,87,85,74,80,83,80
+742,female,European,high school,standard,none,75,64,76,77,72,72,74,77
+743,female,African,doctorate,free/reduced,completed,73,77,75,84,72,81,74,83
+744,male,European,some college,free/reduced,none,54,44,59,61,46,70,73,68
+745,female,Asian,master's degree,free/reduced,none,72,69,70,69,60,74,76,76
+746,female,European,bachelor's degree,free/reduced,none,100,100,95,94,95,95,92,93
+747,female,European,some college,standard,none,71,67,70,69,67,87,82,82
+748,male,American,bachelor's degree,standard,completed,89,88,92,81,84,86,78,81
+749,male,European,high school,standard,completed,72,73,72,75,73,67,75,70
+750,male,European,doctorate,standard,none,73,70,70,74,70,66,64,65
+751,female,European,high school,standard,completed,98,100,100,92,98,100,95,97
+752,female,European,doctorate,free/reduced,none,68,73,67,74,70,75,78,77
+753,male,American,bachelor's degree,standard,completed,90,89,87,86,78,86,82,87
+754,female,European,bachelor's degree,standard,none,65,64,65,66,63,80,74,68
+755,male,Asian,master's degree,standard,none,60,53,70,61,68,66,71,77
+756,male,European,some high school,free/reduced,none,78,71,76,80,68,77,75,70
+757,male,European,bachelor's degree,standard,completed,80,87,84,84,83,81,85,78
+758,male,American,doctorate,free/reduced,completed,84,84,87,85,76,87,80,85
+759,female,European,some high school,standard,completed,94,93,92,85,90,87,80,86
+760,female,European,some college,standard,none,87,90,89,80,81,76,83,82
+761,male,European,associate's degree,free/reduced,none,69,67,84,79,71,91,85,80
+762,male,American,master's degree,standard,completed,79,80,85,73,79,82,87,85
+763,male,European,bachelor's degree,free/reduced,completed,90,90,89,93,92,96,89,92
+764,female,European,doctorate,standard,none,70,62,75,75,66,84,81,79
+765,male,European,some college,standard,completed,64,69,68,67,66,77,72,70
+766,male,European,bachelor's degree,standard,none,64,60,68,70,58,58,66,64
+767,female,European,bachelor's degree,standard,none,72,64,63,70,67,70,64,76
+768,male,European,doctorate,standard,none,69,58,71,63,61,62,59,67
+769,male,European,bachelor's degree,standard,completed,71,73,75,73,77,80,79,72
+770,female,European,high school,standard,none,95,98,98,90,96,90,93,90
+771,male,European,master's degree,standard,none,58,64,65,65,61,64,63,69
+772,male,European,some college,free/reduced,none,66,61,68,73,63,79,66,73
+773,male,Asian,bachelor's degree,standard,none,91,82,95,96,92,89,88,88
+774,male,European,high school,standard,none,85,79,72,74,80,76,70,77
+775,male,African,some college,standard,none,84,72,90,84,80,81,80,83
+776,female,American,some high school,standard,none,74,68,76,72,72,77,78,84
+777,female,Asian,some high school,standard,none,78,73,79,77,69,81,87,78
+778,female,Asian,associate's degree,standard,completed,81,74,87,74,77,80,82,78
+779,male,European,doctorate,standard,completed,78,79,80,84,81,85,90,84
+780,female,Asian,doctorate,free/reduced,none,69,75,72,66,71,79,84,77
+781,female,American,some high school,standard,none,70,73,77,75,75,75,75,72
+782,male,European,some college,standard,none,74,68,74,70,68,78,73,75
+783,female,European,high school,standard,completed,83,84,86,78,75,86,77,78
+784,male,European,high school,free/reduced,none,66,64,67,68,59,84,76,72
+785,female,European,some high school,standard,completed,73,65,75,69,70,77,75,81
+786,male,European,high school,free/reduced,completed,88,95,90,86,89,100,94,99
+787,female,European,some high school,standard,none,70,54,72,66,73,77,71,73
+788,male,American,some high school,free/reduced,completed,100,100,100,97,98,99,99,96
+789,female,American,high school,standard,completed,95,93,99,89,93,90,84,86
+790,male,European,master's degree,free/reduced,completed,79,76,72,80,75,85,84,83
+791,male,European,bachelor's degree,standard,none,71,71,67,74,67,82,85,80
+792,female,European,bachelor's degree,standard,none,62,61,66,64,60,72,71,70
+793,male,European,doctorate,free/reduced,none,66,65,73,72,72,80,80,73
+794,female,European,some college,free/reduced,none,72,55,67,66,70,72,77,78
+795,male,Asian,bachelor's degree,standard,none,77,77,77,76,72,76,76,73
+796,female,European,high school,free/reduced,completed,96,99,91,91,91,90,87,88
+797,female,European,high school,standard,completed,77,78,82,82,79,93,91,84
+798,female,European,associate's degree,standard,none,60,49,55,68,60,72,69,74
+799,female,European,doctorate,standard,none,75,72,76,75,67,73,78,73
+800,female,American,high school,standard,none,69,66,66,79,72,87,86,82
+801,male,European,bachelor's degree,free/reduced,completed,80,74,84,79,76,81,75,78
+802,female,American,associate's degree,standard,none,94,88,88,89,90,84,88,87
+803,female,American,some high school,standard,none,73,65,68,70,68,69,73,69
+804,female,European,bachelor's degree,standard,none,69,71,76,65,66,70,79,67
+805,male,European,bachelor's degree,standard,completed,69,59,69,75,72,77,80,79
+806,female,Asian,bachelor's degree,standard,none,69,71,76,81,70,83,88,86
+807,male,American,master's degree,standard,completed,100,99,98,91,91,93,94,95
+808,male,European,some college,standard,completed,71,70,74,63,77,77,70,71
+809,female,Asian,master's degree,free/reduced,completed,83,75,83,79,76,85,79,84
+810,male,Asian,associate's degree,standard,completed,78,68,81,77,82,85,82,83
+811,male,European,some high school,standard,completed,68,77,77,77,66,78,74,73
+812,male,European,high school,standard,none,78,75,80,78,77,86,80,84
+813,female,European,bachelor's degree,standard,none,83,83,88,87,83,87,84,87
+814,female,European,some college,standard,completed,66,71,73,74,72,94,91,82
+815,female,American,some college,standard,completed,85,76,76,91,88,92,89,87
+816,male,European,master's degree,free/reduced,none,88,81,86,86,80,82,84,80
+817,male,European,doctorate,standard,none,80,71,82,75,70,82,75,75
+818,female,Asian,doctorate,free/reduced,none,59,57,63,66,60,65,68,69
+819,female,European,bachelor's degree,standard,none,71,64,66,66,66,75,76,74
+820,male,American,high school,standard,completed,86,86,86,86,79,82,86,84
+821,male,Asian,associate's degree,standard,completed,70,65,76,66,78,81,84,77
+822,female,European,some college,standard,none,67,59,66,56,54,56,58,64
+823,female,European,master's degree,standard,none,65,60,66,72,65,71,68,76
+824,female,American,master's degree,standard,completed,75,70,73,69,66,81,81,81
+825,male,European,master's degree,standard,completed,80,84,84,85,83,88,87,85
+826,male,Asian,doctorate,standard,none,81,71,72,74,70,80,83,78
+827,female,European,associate's degree,standard,none,99,98,98,95,99,87,82,85
+828,male,European,bachelor's degree,free/reduced,completed,85,88,81,86,85,91,88,84
+829,female,European,high school,free/reduced,none,93,96,87,91,92,80,73,87
+830,female,European,some high school,standard,none,91,88,88,88,89,90,88,84
+831,female,European,master's degree,free/reduced,none,73,66,76,72,74,72,69,74
+832,female,European,bachelor's degree,standard,completed,46,47,49,52,47,63,63,55
+833,male,American,some college,standard,none,83,89,87,84,80,96,90,89
+834,female,Asian,doctorate,standard,none,68,68,71,69,72,75,76,71
+835,female,European,high school,standard,completed,89,88,97,91,93,93,90,99
+836,male,European,master's degree,standard,none,99,90,100,89,93,91,88,90
+837,female,European,doctorate,free/reduced,none,81,81,86,79,81,77,77,78
+838,male,American,associate's degree,standard,none,75,79,86,72,78,72,68,73
+839,female,Asian,bachelor's degree,standard,none,94,100,100,94,92,90,94,88
+840,male,Asian,master's degree,free/reduced,none,76,78,82,71,78,79,78,69
+841,female,European,associate's degree,standard,completed,100,100,100,100,89,94,93,93
+842,female,European,master's degree,standard,completed,73,70,74,73,72,76,79,72
+843,male,Asian,bachelor's degree,standard,completed,68,70,72,72,74,76,74,77
+844,female,American,high school,standard,none,92,90,94,94,98,98,97,92
+845,male,Asian,bachelor's degree,standard,none,71,68,75,73,72,74,69,70
+846,male,European,some college,standard,none,61,67,67,63,65,64,69,69
+847,male,European,associate's degree,standard,none,94,92,93,87,87,94,79,90
+848,male,European,bachelor's degree,standard,completed,69,65,76,66,67,76,79,76
+849,female,Asian,some high school,standard,completed,66,66,71,63,67,83,84,74
+850,male,European,some high school,standard,completed,72,75,75,67,66,80,74,76
+851,female,Asian,some college,free/reduced,none,74,76,78,73,72,70,71,64
+852,male,European,some college,standard,completed,74,76,79,72,78,63,62,65
+853,female,European,bachelor's degree,free/reduced,none,82,76,87,79,80,82,82,79
+854,male,European,master's degree,standard,none,77,67,79,74,69,65,69,73
+855,female,European,some college,standard,completed,87,84,88,88,77,84,84,82
+856,male,European,high school,standard,none,50,40,60,57,47,68,68,63
+857,female,European,high school,standard,completed,76,73,75,74,65,86,84,82
+858,male,European,some high school,free/reduced,none,100,100,100,100,100,100,100,100
+859,female,Asian,doctorate,standard,completed,65,73,69,71,63,82,80,77
+860,male,European,high school,standard,completed,76,76,82,73,73,69,73,74
+861,female,Asian,doctorate,free/reduced,completed,81,85,80,79,75,74,76,78
+862,female,American,doctorate,standard,completed,86,86,86,85,88,87,92,90
+863,male,European,some college,standard,none,100,100,100,92,96,99,94,92
+864,female,European,some college,standard,completed,78,79,76,76,71,75,72,76
+865,female,European,master's degree,free/reduced,none,87,89,90,95,92,98,95,95
+866,female,European,bachelor's degree,standard,completed,66,65,68,76,68,86,82,81
+867,female,Asian,some high school,standard,none,64,63,71,71,74,73,66,68
+868,male,European,some college,free/reduced,none,92,92,90,89,90,84,82,80
+869,male,Asian,associate's degree,standard,completed,85,88,88,90,93,94,85,95
+870,female,American,high school,free/reduced,none,79,81,79,81,81,89,89,87
+871,female,Asian,associate's degree,free/reduced,none,97,83,100,95,88,95,89,93
+872,male,European,master's degree,free/reduced,none,71,68,71,72,67,72,76,71
+873,male,European,master's degree,free/reduced,none,69,70,76,65,70,66,63,61
+874,male,European,doctorate,standard,completed,90,90,97,89,89,84,92,85
+875,male,Asian,doctorate,standard,none,60,55,62,57,58,66,66,62
+876,female,European,some high school,standard,completed,78,84,86,82,78,77,85,73
+877,female,European,bachelor's degree,standard,none,81,80,84,81,76,81,84,77
+878,male,European,doctorate,standard,none,65,59,67,68,61,76,78,68
+879,female,European,some college,standard,none,79,76,88,87,86,88,87,82
+880,male,European,master's degree,free/reduced,none,69,76,71,69,68,79,78,78
+881,male,European,master's degree,free/reduced,none,91,94,96,89,86,84,84,80
+882,male,Asian,high school,standard,completed,66,67,75,71,69,75,71,73
+883,female,European,master's degree,standard,none,79,73,81,77,70,83,82,85
+884,female,European,doctorate,free/reduced,none,59,52,60,59,58,75,73,68
+885,female,European,associate's degree,standard,none,92,90,83,88,80,89,91,88
+886,female,European,doctorate,standard,none,82,79,77,72,74,81,80,75
+887,male,American,bachelor's degree,standard,none,81,85,83,83,86,81,74,76
+888,male,European,doctorate,standard,completed,81,81,83,76,78,89,82,88
+889,female,African,high school,free/reduced,completed,83,74,86,72,76,81,78,76
+890,female,European,master's degree,standard,none,80,82,80,81,78,77,80,78
+891,male,American,bachelor's degree,standard,none,80,85,87,81,69,76,80,77
+892,female,American,doctorate,standard,none,68,68,65,63,62,68,67,62
+893,male,European,associate's degree,standard,none,77,67,74,71,74,79,84,80
+894,female,European,high school,standard,completed,73,71,76,73,75,72,71,68
+895,female,European,associate's degree,free/reduced,none,77,75,83,84,76,83,85,79
+896,male,European,high school,standard,none,65,73,69,67,74,77,70,74
+897,female,European,some college,standard,none,81,66,79,75,77,71,73,72
+898,male,Asian,some college,free/reduced,completed,68,73,72,71,72,83,83,83
+899,male,European,some college,free/reduced,completed,76,86,78,89,81,79,79,80
+900,male,Asian,high school,standard,none,69,59,68,75,61,85,89,82
+901,female,Asian,doctorate,standard,none,70,70,82,87,79,80,79,77
+902,female,European,doctorate,standard,completed,88,100,97,100,89,92,91,93
+903,male,American,some high school,standard,none,79,80,85,82,85,78,82,74
+904,male,Asian,some high school,standard,completed,80,66,75,80,83,90,90,88
+905,male,Asian,high school,standard,none,66,74,76,78,70,65,70,72
+906,male,European,bachelor's degree,standard,completed,73,76,76,79,78,82,74,77
+907,female,American,high school,standard,completed,67,69,67,69,67,74,69,69
+908,male,European,associate's degree,free/reduced,completed,81,79,81,86,80,82,80,80
+909,female,European,doctorate,standard,none,87,92,86,90,86,84,78,83
+910,female,American,some high school,standard,none,98,100,100,88,97,94,89,95
+911,male,Asian,doctorate,standard,none,67,66,75,71,69,72,72,71
+912,female,European,high school,standard,none,100,100,100,99,99,96,95,93
+913,male,European,master's degree,standard,none,70,61,68,68,67,74,75,71
+914,male,European,doctorate,standard,completed,61,62,69,62,63,64,62,69
+915,male,American,master's degree,free/reduced,completed,81,74,77,83,82,100,94,90
+916,female,Asian,some high school,standard,none,80,66,79,67,72,73,78,76
+917,male,European,bachelor's degree,free/reduced,none,59,51,64,69,63,68,62,68
+918,male,Asian,some college,free/reduced,completed,68,57,75,69,60,70,69,70
+919,female,Asian,master's degree,free/reduced,none,69,57,68,70,61,73,79,71
+920,male,European,master's degree,free/reduced,completed,66,65,62,64,59,64,70,59
+921,male,Asian,associate's degree,standard,completed,94,79,88,84,94,80,83,79
+922,male,European,doctorate,standard,none,91,85,88,98,88,100,100,92
+923,female,European,doctorate,standard,completed,96,95,94,94,94,99,97,100
+924,female,European,high school,standard,none,77,78,78,79,80,82,90,88
+925,female,European,some high school,standard,completed,80,70,82,80,86,81,87,84
+926,male,European,doctorate,standard,none,79,71,77,85,74,75,76,76
+927,female,European,some high school,standard,completed,59,53,63,66,57,59,59,62
+928,male,European,some college,free/reduced,none,62,58,62,61,56,64,65,68
+929,male,European,master's degree,free/reduced,completed,72,67,79,79,73,73,66,72
+930,male,Asian,associate's degree,free/reduced,none,55,56,65,62,61,71,65,70
+931,female,African,high school,free/reduced,completed,82,82,85,83,86,86,81,87
+932,female,European,high school,standard,none,63,49,58,68,59,69,66,66
+933,male,European,high school,standard,none,75,78,80,77,66,71,74,79
+934,male,European,high school,standard,none,88,80,81,85,82,94,90,95
+935,male,Asian,master's degree,standard,none,70,69,66,74,63,66,73,67
+936,female,European,master's degree,standard,none,73,75,74,71,65,64,72,65
+937,male,European,master's degree,standard,none,80,76,85,82,81,90,80,82
+938,male,European,doctorate,standard,completed,60,62,69,74,69,78,77,73
+939,male,European,associate's degree,standard,none,81,74,80,78,72,75,79,67
+940,male,European,some college,free/reduced,none,66,61,70,71,70,71,72,75
+941,female,American,bachelor's degree,standard,none,91,97,100,96,94,91,90,95
+942,male,Asian,some high school,standard,completed,55,54,59,56,53,66,69,67
+943,female,African,bachelor's degree,standard,completed,84,81,83,85,80,85,85,90
+944,female,European,associate's degree,standard,completed,80,68,78,79,75,68,70,69
+945,male,European,some high school,standard,completed,84,73,81,77,73,88,89,85
+946,female,Asian,doctorate,standard,completed,90,89,87,88,84,80,83,82
+947,male,Asian,bachelor's degree,standard,completed,66,58,68,70,63,73,67,71
+948,male,Asian,some college,standard,none,55,53,62,52,48,56,57,63
+949,female,European,high school,standard,none,97,76,85,86,82,90,91,94
+950,female,Asian,master's degree,standard,none,71,71,80,69,68,82,75,78
+951,male,American,some college,standard,none,65,66,68,65,63,57,65,57
+952,male,African,doctorate,free/reduced,completed,77,74,77,80,76,79,73,73
+953,male,American,some high school,standard,none,88,93,90,84,83,87,86,86
+954,male,Asian,some high school,standard,completed,72,72,76,75,70,67,67,68
+955,male,Asian,some high school,standard,completed,93,96,93,91,90,97,92,91
+956,male,European,master's degree,standard,none,80,81,78,85,78,85,86,86
+957,male,European,some high school,free/reduced,none,80,76,77,71,74,74,72,77
+958,female,European,some high school,standard,completed,73,76,73,80,70,89,87,73
+959,male,European,master's degree,free/reduced,completed,72,67,60,70,67,85,78,79
+960,male,Asian,associate's degree,free/reduced,none,79,84,77,82,79,80,80,76
+961,female,European,high school,standard,completed,97,82,95,87,80,93,90,89
+962,female,European,some college,free/reduced,completed,73,66,76,73,71,73,71,66
+963,male,European,some college,standard,completed,88,89,90,89,84,85,93,87
+964,male,European,high school,standard,none,77,71,78,83,81,79,83,78
+965,female,American,some high school,standard,completed,86,79,86,91,86,100,98,98
+966,female,European,doctorate,standard,completed,57,57,58,65,67,75,71,63
+967,female,European,bachelor's degree,free/reduced,none,73,64,67,71,69,67,72,72
+968,female,European,high school,standard,none,44,24,46,45,47,60,57,56
+969,male,European,master's degree,standard,completed,85,85,86,87,83,100,100,99
+970,male,American,some college,standard,completed,62,50,58,63,58,73,73,72
+971,female,Asian,associate's degree,free/reduced,none,81,84,85,81,84,84,77,81
+972,female,Asian,high school,standard,completed,87,75,80,78,79,91,83,87
+973,female,European,doctorate,standard,completed,71,67,71,74,81,79,76,79
+974,male,European,doctorate,standard,none,70,59,65,66,65,76,78,74
+975,female,European,high school,standard,completed,97,99,100,96,95,92,87,89
+976,female,European,high school,free/reduced,none,89,88,84,81,77,90,81,84
+977,male,European,doctorate,free/reduced,none,47,52,59,51,54,68,70,65
+978,male,European,doctorate,standard,completed,70,69,73,71,78,88,86,79
+979,female,European,doctorate,standard,completed,83,80,85,85,74,80,78,76
+980,female,European,some college,standard,completed,69,68,75,76,64,69,71,70
+981,female,American,some high school,standard,completed,100,93,94,95,86,97,94,92
+982,male,American,some high school,free/reduced,completed,77,79,84,90,77,93,90,93
+983,male,European,some college,free/reduced,none,81,85,84,83,85,73,72,75
+984,female,American,bachelor's degree,standard,none,60,62,64,66,61,71,79,78
+985,female,European,associate's degree,standard,none,87,81,86,88,87,86,85,85
+986,female,Asian,bachelor's degree,free/reduced,none,92,83,86,88,94,84,85,87
+987,female,European,associate's degree,free/reduced,none,85,90,84,87,85,91,92,92
+988,female,African,some college,free/reduced,none,72,74,80,81,84,79,84,79
+989,male,American,some college,standard,completed,65,65,73,71,70,72,69,70
+990,male,European,associate's degree,standard,none,84,82,83,73,79,88,85,86
+991,male,European,master's degree,free/reduced,none,88,80,85,86,87,84,85,82
+992,male,Asian,some high school,standard,none,68,71,81,71,63,87,87,81
+993,female,European,bachelor's degree,free/reduced,none,80,79,80,89,79,86,80,85
+994,male,American,some high school,standard,none,61,74,77,72,72,74,65,67
+995,male,Asian,doctorate,standard,none,54,49,62,58,53,76,74,70
+996,male,European,doctorate,standard,none,79,81,77,90,80,93,99,88
+997,female,European,some high school,standard,none,78,75,73,83,75,82,81,75
+998,male,European,doctorate,free/reduced,completed,78,72,77,81,79,86,87,83
+999,female,European,associate's degree,free/reduced,completed,93,86,89,82,83,67,67,74
+1000,male,European,doctorate,standard,completed,68,66,69,71,66,56,65,58
+1001,male,American,associate's degree,free/reduced,none,74,78,83,73,73,70,70,76
+1002,male,European,master's degree,free/reduced,completed,76,83,86,86,72,81,73,74
+1003,male,European,some college,standard,none,78,79,84,88,75,81,90,90
+1004,female,European,some college,standard,completed,88,88,92,88,90,89,87,83
+1005,male,African,doctorate,free/reduced,none,72,70,77,72,70,80,82,81
+1006,female,Asian,high school,standard,completed,75,83,81,77,78,93,91,87
+1007,male,Asian,bachelor's degree,free/reduced,none,41,39,44,44,48,51,44,55
+1008,female,Asian,bachelor's degree,standard,none,58,55,69,61,65,75,74,73
+1009,female,European,bachelor's degree,standard,none,69,67,71,80,76,86,89,80
+1010,male,Asian,associate's degree,free/reduced,completed,75,71,75,74,83,92,90,83
+1011,female,European,associate's degree,standard,none,80,81,84,78,77,80,82,82
+1012,female,European,doctorate,free/reduced,none,69,66,71,68,68,78,78,73
+1013,male,European,associate's degree,free/reduced,none,71,78,76,79,79,73,77,71
+1014,female,European,some high school,standard,completed,82,95,85,85,86,94,85,81
+1015,male,European,some college,free/reduced,none,80,79,83,81,69,77,74,76
+1016,male,Asian,bachelor's degree,standard,none,52,48,45,46,54,60,52,57
+1017,female,Asian,bachelor's degree,standard,completed,79,71,72,76,82,81,78,84
+1018,male,American,high school,free/reduced,none,48,57,59,53,52,65,61,63
+1019,male,European,bachelor's degree,standard,none,76,77,84,74,76,66,68,67
+1020,male,Asian,some college,free/reduced,completed,100,100,100,100,90,100,98,100
+1021,male,European,some college,standard,completed,64,50,62,63,71,61,65,62
+1022,male,European,master's degree,free/reduced,none,85,94,87,92,82,90,87,89
+1023,male,Asian,master's degree,free/reduced,completed,68,60,70,68,68,75,78,73
+1024,female,American,master's degree,free/reduced,completed,62,50,54,61,58,70,72,67
+1025,female,European,master's degree,standard,completed,72,74,76,80,79,96,93,90
+1026,male,European,bachelor's degree,standard,none,85,82,92,89,85,89,85,82
+1027,female,European,bachelor's degree,standard,none,78,78,80,75,74,78,76,76
+1028,female,European,doctorate,standard,completed,79,73,73,74,71,75,83,74
+1029,male,European,associate's degree,standard,completed,37,46,40,46,40,51,55,52
+1030,male,Asian,some college,standard,none,71,56,70,70,66,74,78,73
+1031,male,European,doctorate,standard,completed,65,65,66,67,63,69,71,72
+1032,female,European,doctorate,free/reduced,none,78,73,83,88,83,92,91,96
+1033,female,European,doctorate,free/reduced,none,59,60,64,68,65,83,85,77
+1034,male,Asian,some college,standard,none,84,88,82,90,84,83,87,84
+1035,female,European,associate's degree,standard,none,54,44,50,55,50,62,61,61
+1036,female,European,some college,standard,completed,62,57,65,64,57,71,68,67
+1037,female,European,associate's degree,free/reduced,none,83,90,85,93,89,92,88,86
+1038,male,American,master's degree,free/reduced,completed,68,61,64,72,66,69,70,71
+1039,female,European,high school,standard,none,81,78,75,76,71,64,63,60
+1040,male,Asian,bachelor's degree,standard,completed,66,69,66,65,64,79,88,80
+1041,female,American,some high school,standard,none,86,87,89,81,80,79,74,77
+1042,female,Asian,some high school,standard,none,83,84,87,90,83,100,95,97
+1043,male,European,bachelor's degree,standard,none,72,63,76,73,70,79,75,78
+1044,female,Asian,doctorate,free/reduced,completed,77,66,75,79,70,83,78,78
+1045,male,European,master's degree,free/reduced,completed,90,73,85,85,85,90,85,92
+1046,female,Asian,some college,free/reduced,none,78,76,74,77,73,81,81,76
+1047,male,European,associate's degree,free/reduced,none,84,80,82,80,79,86,82,86
+1048,female,European,bachelor's degree,standard,completed,62,58,62,64,56,67,66,65
+1049,female,European,bachelor's degree,free/reduced,none,79,66,77,79,71,77,78,75
+1050,male,Asian,bachelor's degree,standard,completed,61,50,64,60,62,75,75,78
+1051,male,European,master's degree,standard,completed,95,100,94,97,97,99,93,85
+1052,female,European,master's degree,standard,completed,100,100,100,100,100,100,100,100
+1053,male,European,some high school,standard,completed,66,63,72,70,65,81,78,78
+1054,female,European,bachelor's degree,standard,none,88,80,81,100,90,100,95,91
+1055,male,European,master's degree,standard,completed,77,83,80,80,74,77,78,79
+1056,female,European,high school,free/reduced,none,66,71,72,66,68,67,75,64
+1057,female,European,doctorate,standard,none,74,73,74,72,65,81,77,79
+1058,female,European,bachelor's degree,standard,completed,81,80,84,81,87,89,88,85
+1059,female,European,associate's degree,free/reduced,completed,66,55,69,68,65,73,71,69
+1060,female,European,bachelor's degree,standard,none,78,71,82,81,74,80,77,71
+1061,male,European,some college,free/reduced,completed,83,88,84,82,87,81,77,78
+1062,male,European,some college,standard,completed,75,75,79,82,74,80,95,82
+1063,male,Asian,doctorate,standard,none,74,63,71,74,70,83,81,79
+1064,female,American,bachelor's degree,standard,completed,80,79,79,75,73,68,73,71
+1065,male,European,some high school,free/reduced,none,73,63,75,71,73,70,76,71
+1066,female,European,master's degree,free/reduced,none,81,68,86,78,68,80,75,81
+1067,female,American,master's degree,free/reduced,none,100,100,100,100,100,84,91,98
+1068,female,American,some high school,standard,none,77,83,85,86,80,95,91,91
+1069,female,Asian,high school,standard,none,83,77,84,79,79,81,83,74
+1070,male,European,doctorate,standard,completed,69,75,74,77,71,66,69,68
+1071,male,European,some college,free/reduced,none,57,55,60,56,59,69,63,60
+1072,male,Asian,associate's degree,free/reduced,completed,65,69,68,68,62,65,56,59
+1073,female,African,bachelor's degree,standard,completed,85,79,81,89,86,99,91,94
+1074,female,European,high school,standard,completed,75,75,80,78,80,78,82,86
+1075,female,Asian,master's degree,free/reduced,completed,74,67,75,71,68,71,78,75
+1076,female,European,associate's degree,free/reduced,none,74,77,77,75,77,78,76,74
+1077,female,European,doctorate,free/reduced,none,71,65,70,72,66,79,77,76
+1078,female,European,associate's degree,standard,none,73,72,68,73,70,74,68,70
+1079,female,Asian,bachelor's degree,free/reduced,none,76,74,71,73,80,76,69,69
+1080,female,European,some college,standard,completed,82,89,78,80,79,73,72,71
+1081,male,European,master's degree,standard,none,54,47,59,58,56,74,77,72
+1082,male,Asian,high school,free/reduced,none,60,67,67,65,68,70,61,62
+1083,female,African,high school,free/reduced,none,76,75,74,74,79,80,76,79
+1084,male,European,doctorate,standard,none,76,72,73,71,67,75,78,75
+1085,male,European,some college,free/reduced,completed,100,100,100,100,100,100,100,100
+1086,female,Asian,some high school,standard,none,61,58,65,68,63,81,79,76
+1087,female,European,some high school,standard,none,84,81,79,87,87,93,84,82
+1088,female,American,bachelor's degree,free/reduced,none,100,100,95,96,94,79,75,83
+1089,female,European,associate's degree,free/reduced,none,73,62,68,66,64,74,68,60
+1090,female,European,associate's degree,standard,completed,71,80,79,77,74,82,80,78
+1091,male,European,bachelor's degree,standard,completed,84,88,84,80,81,76,77,83
+1092,male,Asian,doctorate,free/reduced,completed,100,100,100,91,92,91,85,85
+1093,female,European,some high school,standard,completed,71,67,78,71,66,73,79,75
+1094,male,European,associate's degree,standard,completed,85,89,98,79,86,76,77,81
+1095,female,European,high school,standard,none,63,55,56,65,58,74,76,69
+1096,male,European,bachelor's degree,free/reduced,completed,69,68,79,73,76,76,82,73
+1097,female,American,master's degree,standard,completed,71,74,84,79,83,77,80,71
+1098,male,European,some high school,standard,completed,75,77,77,78,72,77,77,79
+1099,female,European,bachelor's degree,standard,none,71,67,79,73,71,66,68,61
+1100,male,Asian,associate's degree,free/reduced,completed,98,94,91,87,87,99,94,95
+1101,female,European,bachelor's degree,standard,completed,93,89,88,84,90,86,76,85
+1102,female,Asian,master's degree,standard,none,100,98,100,91,100,100,96,95
+1103,female,American,high school,standard,completed,78,68,74,79,77,75,70,75
+1104,female,European,associate's degree,free/reduced,completed,73,71,78,77,73,72,65,76
+1105,female,European,associate's degree,free/reduced,completed,76,75,77,68,73,57,66,73
+1106,female,Asian,bachelor's degree,standard,completed,86,72,80,86,81,96,88,86
+1107,female,European,some college,standard,completed,73,79,82,80,78,90,81,81
+1108,female,European,high school,standard,completed,100,98,100,90,92,74,82,72
+1109,female,European,bachelor's degree,free/reduced,completed,79,80,83,84,77,86,82,83
+1110,female,European,high school,standard,completed,81,76,75,80,78,78,91,82
+1111,male,European,high school,free/reduced,none,75,70,81,75,73,79,76,80
+1112,male,European,some high school,standard,none,79,77,80,77,74,80,86,82
+1113,female,African,some college,free/reduced,none,84,82,86,82,82,82,81,88
+1114,male,European,doctorate,standard,none,91,100,90,96,96,86,85,91
+1115,female,European,doctorate,standard,none,47,43,43,46,54,53,52,54
+1116,male,European,high school,free/reduced,none,76,76,83,80,79,88,88,82
+1117,female,European,associate's degree,standard,completed,75,69,73,76,71,78,86,75
+1118,female,American,bachelor's degree,standard,completed,85,73,79,86,76,80,82,82
+1119,male,European,master's degree,free/reduced,none,65,58,68,77,67,78,79,73
+1120,female,European,doctorate,standard,none,57,42,62,54,61,73,72,66
+1121,female,European,some college,standard,none,62,65,65,60,62,77,70,76
+1122,female,European,some college,standard,completed,76,76,78,84,75,83,80,79
+1123,female,American,bachelor's degree,standard,none,65,58,69,64,65,77,79,73
+1124,male,Asian,associate's degree,standard,none,72,79,79,75,76,74,75,76
+1125,male,Asian,associate's degree,standard,completed,82,69,71,85,83,74,72,76
+1126,female,European,doctorate,free/reduced,none,71,66,71,77,65,73,76,77
+1127,female,European,some college,standard,none,69,68,72,70,65,74,72,78
+1128,male,European,some high school,standard,none,82,83,81,79,81,74,78,78
+1129,female,European,doctorate,standard,completed,90,97,96,86,86,81,85,83
+1130,female,Asian,some college,standard,none,78,76,81,90,73,87,90,87
+1131,female,European,doctorate,free/reduced,none,85,80,82,83,86,84,83,78
+1132,female,European,associate's degree,standard,none,52,52,69,62,63,62,70,70
+1133,female,American,some high school,standard,none,85,89,87,89,86,80,79,83
+1134,male,European,high school,standard,none,78,83,83,80,84,76,73,84
+1135,female,European,associate's degree,standard,completed,68,55,72,75,71,84,78,76
+1136,male,Asian,high school,standard,none,90,70,92,72,85,83,73,76
+1137,female,European,high school,standard,completed,55,47,54,66,53,90,81,81
+1138,male,European,associate's degree,free/reduced,none,68,72,74,73,65,75,73,73
+1139,female,Asian,some high school,standard,none,76,78,75,83,79,80,81,76
+1140,female,American,master's degree,standard,completed,78,80,89,79,77,79,81,74
+1141,male,European,associate's degree,standard,completed,81,86,86,72,81,83,82,80
+1142,female,European,doctorate,standard,none,80,74,79,70,75,77,81,78
+1143,male,European,master's degree,standard,completed,57,60,58,62,62,69,69,74
+1144,female,Asian,bachelor's degree,free/reduced,completed,60,56,70,70,60,80,76,70
+1145,male,Asian,doctorate,standard,none,88,89,82,87,84,85,91,89
+1146,male,American,some high school,standard,none,94,86,89,87,87,90,87,86
+1147,female,European,doctorate,standard,none,97,99,100,96,95,96,97,99
+1148,female,American,bachelor's degree,standard,completed,86,93,92,83,89,86,88,83
+1149,male,European,some high school,free/reduced,none,81,85,85,78,75,82,80,83
+1150,female,European,associate's degree,free/reduced,completed,70,72,77,73,75,69,77,78
+1151,female,American,bachelor's degree,standard,none,66,71,73,72,72,88,86,82
+1152,male,European,doctorate,free/reduced,none,80,81,85,86,78,98,92,89
+1153,female,American,some high school,standard,none,78,65,78,76,67,79,75,80
+1154,male,Asian,associate's degree,free/reduced,none,68,71,74,70,65,68,67,69
+1155,male,European,some high school,free/reduced,none,72,72,73,72,66,77,77,72
+1156,female,European,bachelor's degree,standard,completed,85,78,91,89,80,98,89,93
+1157,male,European,high school,standard,none,77,73,82,80,70,89,81,88
+1158,female,Asian,high school,standard,none,87,77,84,90,83,86,84,84
+1159,female,American,bachelor's degree,standard,completed,67,56,57,54,63,61,57,58
+1160,female,Asian,master's degree,standard,none,82,71,77,79,70,82,75,77
+1161,male,European,associate's degree,free/reduced,none,96,93,89,92,86,77,86,85
+1162,female,Asian,doctorate,free/reduced,none,77,73,83,78,73,81,79,76
+1163,female,Asian,high school,free/reduced,none,71,75,75,71,71,74,78,74
+1164,female,Asian,bachelor's degree,standard,none,73,67,71,78,72,88,82,84
+1165,male,American,doctorate,standard,none,88,82,89,86,80,79,79,73
+1166,female,European,some college,free/reduced,none,85,88,96,83,81,85,88,88
+1167,male,European,master's degree,free/reduced,none,77,80,80,76,75,83,75,79
+1168,female,European,some high school,standard,none,56,47,53,52,52,50,57,51
+1169,male,European,some college,standard,completed,67,67,67,64,66,60,58,54
+1170,female,European,some college,standard,completed,84,83,79,84,85,73,78,79
+1171,female,European,master's degree,standard,completed,78,74,82,71,75,71,65,65
+1172,male,European,bachelor's degree,standard,none,86,79,85,87,86,80,83,75
+1173,male,European,associate's degree,standard,none,90,96,87,82,82,74,80,76
+1174,female,American,master's degree,free/reduced,none,84,87,93,90,91,100,99,93
+1175,male,Asian,high school,free/reduced,none,71,66,75,73,73,93,93,92
+1176,female,European,associate's degree,standard,completed,66,66,68,70,63,90,76,78
+1177,female,Asian,bachelor's degree,free/reduced,completed,74,55,73,73,64,78,76,76
+1178,female,Asian,master's degree,standard,none,81,80,81,82,78,96,94,89
+1179,female,European,high school,standard,none,71,78,80,79,74,76,78,77
+1180,male,European,doctorate,standard,completed,96,94,100,89,92,95,92,97
+1181,female,European,some college,free/reduced,none,69,68,84,77,71,78,75,77
+1182,male,European,associate's degree,standard,none,72,67,79,74,82,84,86,82
+1183,female,European,bachelor's degree,free/reduced,completed,79,84,80,78,80,89,83,81
+1184,female,Asian,some high school,standard,completed,68,69,68,66,71,69,73,71
+1185,female,European,doctorate,standard,completed,79,75,79,78,72,77,67,78
+1186,female,European,associate's degree,standard,none,75,83,88,76,74,84,81,83
+1187,male,European,high school,free/reduced,none,81,73,75,72,69,68,67,72
+1188,male,Asian,doctorate,standard,none,67,68,75,76,73,80,80,82
+1189,female,European,doctorate,free/reduced,none,81,77,82,71,84,66,68,65
+1190,female,European,some college,standard,none,86,84,77,73,80,75,69,68
+1191,male,European,bachelor's degree,standard,none,56,48,53,60,58,77,80,73
+1192,male,Asian,master's degree,standard,none,100,100,97,99,99,100,95,94
+1193,female,Asian,bachelor's degree,standard,none,90,77,85,82,76,87,84,81
+1194,male,European,master's degree,standard,completed,78,82,73,79,75,69,68,75
+1195,female,Asian,bachelor's degree,standard,none,80,75,80,82,88,88,82,81
+1196,female,American,some high school,standard,none,82,88,97,93,89,93,87,87
+1197,male,American,bachelor's degree,standard,none,99,98,100,100,100,98,91,98
+1198,female,American,master's degree,standard,none,72,67,70,69,74,86,82,84
+1199,male,European,associate's degree,standard,none,94,99,100,100,96,100,90,95
+1200,female,American,some college,free/reduced,none,82,80,86,83,75,76,87,82
+1201,female,European,associate's degree,standard,none,62,65,66,69,67,68,69,77
+1202,male,European,master's degree,free/reduced,none,76,76,76,78,74,87,90,80
+1203,female,Asian,master's degree,standard,none,80,81,82,84,83,85,88,81
+1204,male,European,some college,standard,none,88,81,87,86,84,86,88,82
+1205,female,American,bachelor's degree,standard,completed,79,69,69,75,68,80,78,75
+1206,female,European,high school,standard,none,81,79,82,78,76,94,85,82
+1207,male,European,master's degree,free/reduced,none,81,69,76,73,68,85,83,80
+1208,female,European,associate's degree,standard,completed,60,65,69,70,58,63,67,74
+1209,male,European,some college,standard,none,76,70,67,77,70,70,76,68
+1210,female,European,high school,standard,completed,66,56,72,69,63,80,84,85
+1211,female,Asian,some high school,free/reduced,completed,74,76,74,79,78,85,81,79
+1212,male,European,doctorate,standard,none,95,100,100,93,86,88,83,82
+1213,male,Asian,doctorate,free/reduced,completed,86,84,89,90,80,73,77,79
+1214,female,European,high school,free/reduced,completed,79,81,80,84,75,85,83,78
+1215,male,Asian,bachelor's degree,standard,completed,62,58,63,64,63,83,79,78
+1216,male,European,some college,standard,completed,63,58,64,59,56,68,75,66
+1217,male,European,master's degree,standard,none,68,73,72,72,68,76,72,72
+1218,female,Asian,doctorate,standard,completed,77,71,72,84,81,82,80,75
+1219,male,European,doctorate,standard,none,77,67,65,75,69,80,78,69
+1220,male,American,doctorate,free/reduced,completed,82,79,72,77,71,76,72,73
+1221,male,Asian,some high school,standard,none,78,87,89,87,86,83,86,90
+1222,male,American,some college,standard,none,64,54,56,61,58,69,60,61
+1223,male,European,high school,standard,none,76,82,82,84,83,80,79,81
+1224,male,Asian,doctorate,standard,none,58,54,56,61,60,58,64,61
+1225,female,Asian,high school,free/reduced,none,72,65,69,70,72,81,77,76
+1226,male,Asian,high school,standard,none,67,69,73,80,66,85,84,77
+1227,male,European,some high school,free/reduced,none,70,69,72,75,64,89,89,80
+1228,male,African,some college,free/reduced,completed,86,83,93,86,85,81,83,83
+1229,female,European,bachelor's degree,standard,none,100,100,100,100,97,100,100,100
+1230,female,African,bachelor's degree,standard,none,98,86,92,90,81,94,90,86
+1231,male,European,doctorate,standard,completed,73,75,77,82,84,84,82,82
+1232,female,African,associate's degree,free/reduced,none,51,56,56,54,52,62,63,53
+1233,female,European,doctorate,free/reduced,none,86,93,87,81,86,79,75,79
+1234,female,Asian,bachelor's degree,standard,none,94,88,90,99,92,98,90,87
+1235,female,American,bachelor's degree,free/reduced,none,70,73,71,77,72,82,84,85
+1236,female,Asian,associate's degree,standard,completed,66,66,66,62,62,72,66,70
+1237,male,Asian,high school,free/reduced,completed,88,78,80,86,81,79,78,78
+1238,female,European,high school,standard,completed,62,64,69,71,67,83,75,72
+1239,female,European,high school,standard,completed,95,99,91,97,95,85,91,85
+1240,female,Asian,master's degree,free/reduced,completed,73,66,73,77,77,82,87,77
+1241,male,European,master's degree,standard,completed,72,68,76,69,75,71,71,73
+1242,male,European,some college,standard,none,100,100,100,100,96,99,97,96
+1243,male,Asian,associate's degree,standard,completed,80,90,83,79,83,69,69,70
+1244,male,American,master's degree,standard,none,65,53,58,70,53,73,76,75
+1245,male,American,some college,standard,none,63,61,59,63,64,63,66,61
+1246,female,Asian,some high school,standard,none,74,73,85,75,71,72,74,72
+1247,male,European,master's degree,standard,none,78,73,78,78,73,79,81,84
+1248,male,American,bachelor's degree,standard,none,59,61,66,62,63,72,71,77
+1249,female,European,bachelor's degree,standard,none,62,61,67,68,59,76,64,71
+1250,female,Asian,associate's degree,standard,completed,74,66,73,77,79,79,71,69
+1251,male,European,high school,free/reduced,none,66,80,78,71,79,78,77,78
+1252,female,European,some college,standard,none,91,100,97,93,91,92,89,92
+1253,male,European,some high school,free/reduced,none,72,64,73,75,74,88,87,80
+1254,male,Asian,associate's degree,standard,completed,86,85,83,82,84,82,91,78
+1255,male,American,doctorate,free/reduced,completed,77,74,77,83,79,91,89,83
+1256,female,European,associate's degree,standard,none,59,45,58,54,56,71,72,64
+1257,male,European,associate's degree,free/reduced,none,62,51,59,61,61,68,65,68
+1258,male,European,high school,free/reduced,completed,78,72,76,79,74,79,79,78
+1259,female,European,some high school,standard,completed,91,90,92,89,84,94,86,93
+1260,male,American,some college,standard,none,60,46,53,68,54,77,70,65
+1261,male,American,doctorate,free/reduced,completed,49,42,54,58,57,64,65,63
+1262,female,European,doctorate,standard,completed,84,85,89,85,81,86,83,89
+1263,male,European,doctorate,standard,none,62,59,65,64,59,67,65,71
+1264,male,European,some college,standard,completed,73,64,72,75,78,70,76,78
+1265,male,Asian,bachelor's degree,standard,completed,68,59,65,64,64,76,69,64
+1266,female,European,high school,standard,none,53,52,62,59,57,68,62,65
+1267,male,Asian,some high school,standard,completed,77,73,74,76,71,79,81,80
+1268,male,European,bachelor's degree,standard,completed,87,90,91,81,81,66,72,77
+1269,male,Asian,associate's degree,standard,none,82,89,92,87,85,83,83,87
+1270,female,Asian,bachelor's degree,standard,completed,56,54,54,60,55,61,62,64
+1271,male,European,high school,standard,none,81,89,84,78,73,84,80,82
+1272,male,European,some college,standard,none,80,77,81,79,82,95,87,93
+1273,male,European,high school,standard,completed,78,56,75,77,72,67,74,74
+1274,male,European,some high school,standard,completed,70,75,74,79,71,76,82,77
+1275,female,American,bachelor's degree,standard,completed,78,78,77,77,78,75,72,73
+1276,female,European,bachelor's degree,standard,none,66,63,66,74,69,83,82,74
+1277,male,European,bachelor's degree,standard,none,56,56,56,61,59,61,64,53
+1278,female,European,associate's degree,standard,none,99,94,97,100,91,86,91,90
+1279,female,European,some college,standard,completed,73,71,73,71,71,67,66,69
+1280,female,American,some college,standard,completed,90,87,84,93,95,98,98,98
+1281,male,Asian,high school,free/reduced,none,62,69,69,61,63,71,66,67
+1282,male,Asian,some college,standard,none,79,83,85,82,86,77,83,78
+1283,male,Asian,associate's degree,free/reduced,completed,63,55,66,67,57,82,83,73
+1284,male,European,doctorate,standard,none,52,54,62,59,56,78,68,69
+1285,female,Asian,doctorate,free/reduced,completed,89,89,90,80,92,88,86,82
+1286,female,European,associate's degree,free/reduced,completed,62,60,70,63,61,73,76,74
+1287,female,Asian,doctorate,standard,none,75,74,82,75,71,68,71,70
+1288,male,European,master's degree,standard,none,80,74,76,81,78,83,83,75
+1289,male,Asian,high school,standard,completed,74,86,81,76,76,76,76,76
+1290,male,European,master's degree,free/reduced,completed,80,71,72,77,75,86,79,77
+1291,female,European,doctorate,standard,completed,76,70,76,74,72,77,83,74
+1292,male,European,bachelor's degree,standard,none,74,68,76,75,73,86,94,90
+1293,male,Asian,bachelor's degree,standard,none,62,71,82,69,66,74,66,72
+1294,female,Asian,high school,standard,none,97,100,97,88,93,93,97,94
+1295,male,European,master's degree,standard,completed,94,100,99,93,100,89,90,87
+1296,male,European,high school,free/reduced,none,78,82,85,71,75,70,70,74
+1297,female,Asian,bachelor's degree,standard,completed,57,57,58,65,58,65,64,62
+1298,female,European,doctorate,standard,none,82,75,88,88,79,86,85,80
+1299,female,European,associate's degree,standard,completed,65,60,66,69,62,74,80,76
+1300,male,European,bachelor's degree,standard,completed,81,81,79,79,77,72,75,69
+1301,female,Asian,master's degree,standard,none,68,73,76,68,69,84,79,79
+1302,female,European,bachelor's degree,standard,completed,84,94,90,89,83,84,85,83
+1303,male,American,master's degree,standard,completed,59,54,65,66,63,77,76,74
+1304,male,European,associate's degree,free/reduced,none,73,73,74,80,68,73,75,76
+1305,male,Asian,doctorate,standard,none,73,61,76,74,69,84,83,77
+1306,male,European,associate's degree,standard,none,100,100,96,100,98,95,94,95
+1307,female,European,doctorate,free/reduced,none,78,80,84,79,81,76,76,74
+1308,male,European,high school,standard,none,72,67,79,73,69,74,72,75
+1309,female,European,high school,free/reduced,completed,65,56,67,69,71,81,85,79
+1310,female,European,high school,standard,completed,83,81,91,85,85,90,86,91
+1311,female,Asian,master's degree,standard,none,97,99,95,83,91,92,88,93
+1312,female,European,doctorate,free/reduced,completed,82,89,88,87,90,100,99,97
+1313,female,European,associate's degree,standard,none,61,55,61,66,62,74,73,71
+1314,female,European,some college,standard,completed,68,62,74,72,64,79,78,78
+1315,male,Asian,some high school,standard,completed,94,98,97,84,83,96,93,91
+1316,female,European,bachelor's degree,standard,completed,73,74,74,77,72,75,74,77
+1317,female,Asian,master's degree,standard,none,90,89,99,93,89,92,92,95
+1318,female,American,high school,standard,none,76,78,83,86,73,97,97,98
+1319,male,European,high school,free/reduced,none,76,83,84,84,86,85,87,83
+1320,male,Asian,associate's degree,free/reduced,completed,89,82,81,78,85,89,91,87
+1321,female,European,some college,standard,completed,63,61,65,70,58,75,80,78
+1322,male,African,some college,standard,none,81,77,77,77,77,62,64,74
+1323,female,European,associate's degree,free/reduced,completed,78,71,69,73,69,81,82,86
+1324,male,European,doctorate,standard,none,92,94,100,88,91,94,89,88
+1325,female,Asian,master's degree,free/reduced,none,87,79,81,82,81,79,79,78
+1326,female,European,high school,standard,completed,80,74,75,71,78,70,69,74
+1327,female,European,associate's degree,standard,completed,69,66,73,73,69,88,79,92
+1328,female,European,bachelor's degree,free/reduced,none,55,50,61,61,61,73,72,77
+1329,male,Asian,some high school,standard,completed,85,83,82,86,86,91,88,92
+1330,male,European,doctorate,standard,none,85,89,89,84,87,79,77,82
+1331,female,European,some college,standard,completed,76,77,84,83,84,86,86,79
+1332,female,European,master's degree,free/reduced,none,74,70,77,75,73,86,85,81
+1333,female,Asian,master's degree,free/reduced,completed,68,63,66,71,65,73,76,74
+1334,male,European,some high school,standard,completed,73,67,73,74,71,82,81,75
+1335,male,European,high school,standard,none,80,75,75,78,74,94,93,89
+1336,male,European,doctorate,standard,completed,84,74,80,84,84,89,91,87
+1337,female,European,some high school,free/reduced,completed,73,73,80,82,74,78,79,81
+1338,male,American,master's degree,standard,none,100,100,100,100,94,84,87,86
+1339,female,European,some high school,standard,none,76,78,75,73,84,65,68,68
+1340,male,European,associate's degree,standard,none,67,65,74,70,64,85,83,80
+1341,female,European,doctorate,standard,none,77,75,80,71,73,72,69,70
+1342,male,Asian,associate's degree,standard,none,67,65,68,71,65,71,76,68
+1343,female,Asian,some high school,standard,none,97,100,92,90,92,74,81,85
+1344,female,European,some college,standard,completed,81,78,77,83,73,76,80,83
+1345,female,African,some high school,free/reduced,none,60,62,69,56,59,66,71,62
+1346,male,African,doctorate,free/reduced,none,90,91,97,98,87,97,97,92
+1347,female,African,bachelor's degree,standard,none,95,91,88,91,87,79,73,73
+1348,male,European,some college,standard,completed,83,85,84,82,86,94,92,90
+1349,female,Asian,associate's degree,standard,completed,68,64,73,61,61,59,61,70
+1350,female,European,master's degree,standard,completed,77,75,81,77,82,83,85,79
+1351,female,Asian,bachelor's degree,standard,none,68,76,75,69,73,79,85,80
+1352,female,European,some high school,standard,completed,56,52,59,59,63,71,73,65
+1353,female,European,bachelor's degree,standard,none,77,75,77,86,82,80,81,84
+1354,female,European,some high school,standard,completed,62,74,64,67,63,51,59,53
+1355,female,European,associate's degree,standard,completed,62,51,54,56,57,70,69,63
+1356,male,African,some high school,standard,none,83,85,94,90,90,95,95,95
+1357,female,European,some high school,standard,completed,65,49,67,61,63,73,69,73
+1358,female,European,bachelor's degree,standard,none,65,56,65,64,63,65,64,67
+1359,female,European,some college,standard,none,99,100,100,100,99,100,100,100
+1360,male,European,some college,standard,none,73,78,79,83,80,84,84,81
+1361,male,European,bachelor's degree,standard,none,72,64,70,70,69,75,81,77
+1362,female,American,some high school,standard,none,74,80,79,78,76,68,78,78
+1363,female,Asian,some high school,standard,none,82,80,82,78,76,87,85,81
+1364,female,Asian,some college,standard,none,55,56,57,58,66,72,67,75
+1365,female,Asian,master's degree,standard,completed,63,62,66,72,70,79,76,80
+1366,male,European,master's degree,free/reduced,none,77,71,75,71,79,81,75,76
+1367,male,European,master's degree,standard,completed,84,89,90,85,87,84,82,83
+1368,female,American,some college,standard,completed,93,91,88,87,87,88,92,89
+1369,female,Asian,doctorate,standard,completed,80,79,72,81,82,87,93,85
+1370,male,Asian,high school,standard,none,73,73,79,78,75,91,84,83
+1371,female,European,doctorate,standard,none,59,54,55,62,57,66,62,64
+1372,male,African,some college,standard,none,71,73,75,76,68,72,68,76
+1373,male,Asian,doctorate,standard,none,83,75,79,89,77,85,82,82
+1374,female,American,some high school,standard,none,89,80,85,82,81,77,77,79
+1375,female,Asian,master's degree,free/reduced,none,71,69,71,67,67,81,80,79
+1376,female,European,associate's degree,free/reduced,completed,78,72,80,77,78,78,79,79
+1377,female,American,some college,standard,completed,60,36,54,54,52,75,74,69
+1378,female,Asian,some high school,standard,none,76,70,73,77,76,83,87,80
+1379,male,American,bachelor's degree,standard,none,61,60,65,70,61,71,72,71
+1380,female,European,associate's degree,standard,completed,100,88,95,100,95,96,97,95
+1381,female,African,high school,free/reduced,completed,57,53,55,54,57,65,65,63
+1382,male,European,associate's degree,standard,completed,77,67,76,79,69,76,76,76
+1383,male,European,master's degree,standard,completed,71,77,76,78,68,89,85,85
+1384,male,European,bachelor's degree,standard,none,91,83,79,87,76,91,91,87
+1385,female,Asian,master's degree,free/reduced,completed,56,53,67,66,64,79,81,80
+1386,female,American,bachelor's degree,standard,none,85,72,74,80,73,75,72,72
+1387,female,European,high school,standard,completed,62,59,62,63,65,80,75,71
+1388,male,European,master's degree,standard,completed,90,95,92,92,85,86,84,83
+1389,female,Asian,high school,free/reduced,none,100,100,100,100,99,95,96,92
+1390,male,American,associate's degree,standard,none,69,67,70,69,58,87,81,75
+1391,female,American,high school,standard,none,77,66,73,73,67,74,79,75
+1392,female,Asian,doctorate,standard,completed,97,95,97,95,87,100,100,98
+1393,male,European,some college,standard,completed,85,83,81,84,82,87,85,84
+1394,female,African,bachelor's degree,standard,none,72,61,64,68,65,78,74,79
+1395,male,African,doctorate,free/reduced,none,63,73,63,74,71,85,81,79
+1396,male,European,some college,standard,none,71,69,72,67,62,88,85,82
+1397,female,European,associate's degree,standard,completed,61,58,62,57,67,60,65,63
+1398,female,American,bachelor's degree,standard,none,88,77,80,80,79,72,79,74
+1399,male,American,some college,free/reduced,none,99,91,96,88,88,77,84,81
+1400,male,European,master's degree,standard,completed,70,76,75,81,70,83,82,77
+1401,male,European,associate's degree,standard,completed,95,91,96,86,86,84,85,90
+1402,male,European,some college,standard,completed,66,66,68,73,59,66,66,67
+1403,male,Asian,associate's degree,standard,completed,66,61,71,73,67,80,84,84
+1404,female,European,associate's degree,standard,completed,88,89,89,92,95,92,90,89
+1405,female,European,master's degree,standard,completed,87,83,84,86,82,95,90,84
+1406,male,American,bachelor's degree,free/reduced,none,67,58,69,63,65,69,66,70
+1407,female,American,master's degree,free/reduced,completed,76,70,78,82,74,80,83,78
+1408,male,European,high school,free/reduced,none,77,76,84,77,69,82,76,79
+1409,female,European,high school,standard,completed,81,82,81,85,79,75,76,79
+1410,female,European,some college,standard,completed,100,96,94,95,90,85,87,88
+1411,female,European,bachelor's degree,standard,none,80,75,75,72,76,81,80,77
+1412,female,Asian,some high school,standard,none,81,69,77,78,78,80,81,78
+1413,female,American,some college,free/reduced,completed,86,86,90,86,86,81,84,80
+1414,male,European,some college,free/reduced,none,75,73,75,72,73,87,83,85
+1415,female,European,master's degree,standard,none,93,91,91,91,89,92,90,90
+1416,female,American,some high school,standard,none,75,73,80,70,65,75,74,76
+1417,male,American,bachelor's degree,standard,none,70,71,77,76,73,80,76,73
+1418,male,Asian,some college,standard,none,80,79,79,82,75,84,80,79
+1419,male,European,associate's degree,standard,completed,69,66,73,79,80,76,80,74
+1420,female,American,high school,free/reduced,none,71,71,79,79,65,89,92,86
+1421,male,Asian,some high school,standard,completed,64,71,79,66,65,75,75,71
+1422,male,American,some college,standard,none,76,69,75,75,73,76,66,69
+1423,female,Asian,associate's degree,standard,none,82,75,80,80,78,80,77,77
+1424,female,European,high school,standard,completed,89,89,91,88,91,100,94,94
+1425,female,European,bachelor's degree,free/reduced,none,67,65,67,70,65,79,79,72
+1426,female,European,associate's degree,free/reduced,completed,64,59,65,68,64,73,70,70
+1427,female,European,associate's degree,standard,none,77,79,75,76,78,81,81,76
+1428,male,European,master's degree,free/reduced,completed,78,75,73,76,70,86,82,75
+1429,female,European,some high school,standard,none,77,72,81,76,82,83,85,85
+1430,male,Asian,associate's degree,standard,none,54,49,57,58,61,71,68,62
+1431,female,European,high school,free/reduced,none,43,45,56,56,52,68,68,54
+1432,male,European,some college,standard,completed,95,100,96,93,98,90,96,88
+1433,male,European,some college,standard,none,65,47,55,55,58,70,69,62
+1434,female,African,doctorate,free/reduced,none,100,97,100,100,95,92,94,94
+1435,female,European,some college,standard,none,66,57,69,70,61,75,73,72
+1436,male,Asian,doctorate,standard,none,79,80,79,75,73,82,77,76
+1437,female,European,some high school,standard,none,66,73,75,69,70,73,75,69
+1438,female,European,master's degree,free/reduced,none,90,85,87,86,80,84,85,85
+1439,male,Asian,some college,standard,none,64,55,72,62,62,54,56,54
+1440,male,European,high school,standard,none,80,81,82,84,79,82,78,81
+1441,female,African,bachelor's degree,standard,none,74,62,74,72,59,69,74,70
+1442,male,European,associate's degree,standard,completed,74,75,82,78,74,79,77,74
+1443,female,European,bachelor's degree,standard,none,65,60,67,69,68,78,71,79
+1444,male,European,some college,standard,none,85,82,87,81,78,76,81,80
+1445,female,Asian,master's degree,standard,none,90,89,90,99,93,100,97,93
+1446,female,European,doctorate,standard,completed,82,80,91,82,78,82,83,77
+1447,female,European,some college,standard,none,70,69,79,77,69,72,78,71
+1448,male,European,doctorate,free/reduced,none,60,54,66,59,54,65,59,66
+1449,male,European,some college,free/reduced,none,77,67,73,67,73,74,72,68
+1450,male,American,bachelor's degree,standard,completed,86,91,89,88,85,84,82,83
+1451,female,European,master's degree,standard,completed,72,70,75,80,75,83,76,80
+1452,male,European,master's degree,free/reduced,completed,69,59,67,69,62,75,73,75
+1453,male,European,doctorate,standard,none,63,65,74,71,72,88,83,84
+1454,male,European,high school,free/reduced,none,65,59,70,61,63,62,57,65
+1455,male,European,some college,standard,none,79,75,79,83,74,81,83,75
+1456,male,Asian,associate's degree,standard,completed,57,54,59,61,57,61,62,66
+1457,female,European,master's degree,standard,completed,84,80,89,79,75,90,92,86
+1458,female,American,some college,standard,none,85,91,88,80,76,92,92,88
+1459,male,Asian,master's degree,standard,none,67,61,70,80,70,82,81,75
+1460,male,Asian,master's degree,standard,none,84,83,88,80,86,79,79,82
+1461,female,European,some high school,standard,completed,85,87,87,94,91,99,97,90
+1462,male,European,doctorate,standard,none,74,73,79,72,66,72,69,72
+1463,male,American,master's degree,standard,completed,84,99,83,86,86,91,90,89
+1464,female,European,bachelor's degree,standard,none,72,63,63,67,57,74,70,74
+1465,female,European,high school,standard,none,100,100,99,95,93,90,86,86
+1466,female,European,some college,standard,completed,80,66,80,79,75,82,84,84
+1467,female,Asian,master's degree,standard,completed,79,81,86,85,81,88,89,89
+1468,female,Asian,master's degree,standard,completed,84,86,78,79,89,100,91,89
+1469,female,Asian,high school,standard,completed,63,68,72,68,65,75,73,72
+1470,female,European,high school,standard,none,77,74,79,81,76,70,72,71
+1471,female,European,doctorate,standard,none,84,93,91,90,80,91,87,90
+1472,male,European,doctorate,standard,none,62,67,68,63,59,64,69,66
+1473,male,Asian,some high school,standard,completed,82,77,78,78,78,71,77,76
+1474,male,Asian,some college,standard,none,78,79,84,82,76,86,90,82
+1475,female,European,bachelor's degree,standard,none,69,72,75,72,67,75,74,71
+1476,male,European,associate's degree,standard,completed,77,71,82,77,72,88,87,78
+1477,female,African,some college,standard,none,79,76,77,79,82,83,78,71
+1478,female,European,bachelor's degree,standard,completed,77,86,84,73,71,70,75,76
+1479,female,European,high school,standard,none,68,71,71,70,64,86,86,81
+1480,male,African,bachelor's degree,standard,completed,74,76,78,84,78,77,82,79
+1481,male,American,bachelor's degree,standard,completed,66,55,66,65,61,70,71,70
+1482,female,Asian,doctorate,standard,completed,79,73,76,74,81,84,83,71
+1483,female,Asian,high school,free/reduced,completed,84,77,79,82,76,88,84,80
+1484,male,European,doctorate,standard,none,57,48,57,58,58,67,67,57
+1485,female,Asian,doctorate,standard,none,82,88,93,89,88,96,99,95
+1486,female,Asian,some college,free/reduced,none,74,63,71,72,66,70,71,65
+1487,male,Asian,doctorate,standard,none,66,65,79,76,70,75,72,77
+1488,female,European,associate's degree,standard,none,85,80,84,83,86,99,98,97
+1489,female,Asian,doctorate,free/reduced,none,97,88,99,93,89,100,100,98
+1490,female,European,some college,standard,none,78,61,68,69,68,75,76,72
+1491,female,European,doctorate,free/reduced,none,61,56,61,70,60,82,75,70
+1492,male,European,high school,standard,completed,73,78,84,78,76,81,83,79
+1493,female,European,high school,standard,completed,73,67,73,66,64,80,77,74
+1494,female,European,doctorate,standard,none,79,80,78,79,80,75,73,74
+1495,male,European,master's degree,standard,none,69,75,68,77,77,76,79,76
+1496,male,European,some college,free/reduced,completed,76,76,74,70,81,82,84,82
+1497,male,American,master's degree,free/reduced,completed,59,61,65,66,58,78,79,72
+1498,male,European,some college,standard,none,75,76,78,75,74,74,70,76
+1499,male,European,doctorate,standard,none,72,61,71,69,70,63,60,62
+1500,male,European,associate's degree,standard,none,74,65,77,76,73,78,75,80
+1501,male,European,master's degree,free/reduced,none,86,90,88,91,85,93,86,92
+1502,male,Asian,some high school,standard,completed,88,89,87,87,91,94,88,89
+1503,male,European,some high school,standard,completed,83,80,78,83,74,93,80,82
+1504,male,Asian,high school,standard,none,84,92,85,90,89,98,95,94
+1505,female,European,high school,free/reduced,completed,77,72,81,87,81,91,83,86
+1506,male,Asian,master's degree,standard,none,89,87,83,90,84,80,77,77
+1507,male,Asian,some college,standard,none,77,75,78,84,79,81,82,81
+1508,female,European,master's degree,free/reduced,none,77,77,86,74,73,78,74,77
+1509,female,American,some college,standard,completed,68,68,69,65,64,78,80,75
+1510,female,European,doctorate,standard,none,79,82,76,81,78,75,73,73
+1511,male,Asian,high school,free/reduced,none,84,91,88,84,82,85,86,85
+1512,female,European,associate's degree,standard,none,73,75,76,77,71,92,91,84
+1513,female,African,bachelor's degree,standard,none,90,92,87,87,84,79,79,89
+1514,female,European,doctorate,standard,none,89,86,89,85,82,77,83,78
+1515,male,European,associate's degree,standard,none,74,68,86,77,68,76,81,81
+1516,male,Asian,bachelor's degree,standard,completed,89,88,84,79,82,87,86,85
+1517,male,American,associate's degree,standard,completed,90,86,91,88,89,82,81,84
+1518,male,Asian,doctorate,standard,none,70,71,77,70,73,79,77,81
+1519,male,African,some college,standard,none,72,68,77,68,72,69,71,69
+1520,male,European,doctorate,standard,none,67,69,70,68,74,77,84,78
+1521,male,European,associate's degree,free/reduced,none,90,92,100,94,88,86,79,85
+1522,female,Asian,some high school,standard,none,79,79,83,82,77,86,85,87
+1523,male,American,some college,standard,completed,86,86,81,85,72,85,87,86
+1524,male,Asian,master's degree,free/reduced,completed,90,95,99,87,81,74,66,70
+1525,male,European,some college,standard,completed,58,54,56,63,58,74,75,65
+1526,female,European,master's degree,standard,none,58,52,58,63,59,80,82,81
+1527,male,Asian,master's degree,free/reduced,none,72,79,82,80,87,79,77,76
+1528,female,European,doctorate,standard,completed,88,92,92,86,88,81,83,77
+1529,female,American,bachelor's degree,standard,completed,79,73,75,76,78,87,84,85
+1530,female,American,doctorate,standard,none,88,78,90,89,82,87,92,87
+1531,female,European,some college,free/reduced,none,94,86,82,89,85,90,91,83
+1532,male,European,some high school,standard,none,76,87,83,81,82,70,73,73
+1533,female,African,bachelor's degree,standard,none,79,88,89,84,80,88,83,91
+1534,male,American,high school,free/reduced,completed,50,48,64,55,57,52,53,53
+1535,male,European,some college,standard,none,69,72,78,75,75,93,98,84
+1536,female,European,some college,standard,none,82,79,80,85,76,78,72,72
+1537,female,European,bachelor's degree,standard,none,65,67,71,65,65,68,71,69
+1538,female,European,associate's degree,standard,none,70,67,69,68,65,74,64,68
+1539,female,European,some high school,standard,none,81,73,77,81,66,70,80,72
+1540,female,American,some college,standard,none,81,75,81,76,80,74,71,71
+1541,female,Asian,master's degree,free/reduced,none,73,72,70,72,68,84,79,76
+1542,male,European,doctorate,free/reduced,none,62,52,58,56,56,63,65,67
+1543,male,Asian,some college,standard,none,85,98,96,88,87,77,72,78
+1544,male,European,master's degree,free/reduced,none,58,58,70,63,66,71,75,70
+1545,male,American,high school,standard,none,66,64,71,67,65,60,58,61
+1546,male,Asian,associate's degree,standard,none,98,98,100,97,100,96,96,93
+1547,male,European,some high school,standard,none,78,73,81,80,74,79,73,88
+1548,female,European,bachelor's degree,standard,none,95,87,92,86,86,90,86,90
+1549,male,European,bachelor's degree,free/reduced,completed,93,78,80,81,81,76,77,78
+1550,female,European,doctorate,standard,completed,48,57,61,61,62,68,71,65
+1551,male,European,master's degree,standard,none,90,78,84,81,82,98,90,96
+1552,female,American,high school,standard,none,100,100,100,100,97,94,98,100
+1553,male,European,high school,standard,none,55,59,60,64,61,65,69,68
+1554,male,Asian,high school,standard,completed,63,52,66,71,67,68,66,68
+1555,female,Asian,high school,standard,none,57,46,57,58,58,68,73,71
+1556,female,European,high school,standard,none,56,62,59,64,65,73,70,69
+1557,female,Asian,some high school,standard,none,67,73,73,70,77,70,68,73
+1558,male,European,associate's degree,standard,completed,88,88,93,94,81,91,84,93
+1559,male,European,some college,free/reduced,completed,88,81,89,83,80,96,86,88
+1560,male,African,bachelor's degree,free/reduced,none,76,86,80,77,70,74,72,80
+1561,female,European,associate's degree,standard,completed,73,68,71,76,77,80,71,71
+1562,male,Asian,doctorate,free/reduced,completed,70,76,76,77,84,89,85,80
+1563,female,European,high school,standard,completed,62,55,60,54,58,63,59,61
+1564,female,Asian,bachelor's degree,standard,completed,76,85,85,80,93,91,89,89
+1565,male,European,some high school,standard,none,78,74,71,73,66,71,64,65
+1566,male,European,master's degree,free/reduced,none,63,57,68,71,67,74,73,75
+1567,female,Asian,bachelor's degree,standard,completed,83,79,87,80,82,78,88,82
+1568,female,European,some college,free/reduced,none,78,79,78,88,80,96,100,95
+1569,female,Asian,high school,free/reduced,none,79,80,74,75,74,77,78,70
+1570,female,European,master's degree,standard,none,85,85,91,74,81,79,77,84
+1571,female,European,doctorate,standard,none,69,63,68,70,72,80,77,77
+1572,male,American,bachelor's degree,standard,none,81,76,73,78,78,82,82,86
+1573,female,European,some college,free/reduced,none,64,62,70,63,70,75,75,69
+1574,female,European,bachelor's degree,standard,none,67,53,67,64,66,70,76,71
+1575,female,Asian,some high school,standard,none,88,88,100,95,89,96,93,96
+1576,female,Asian,associate's degree,free/reduced,none,76,72,68,66,68,71,72,71
+1577,male,European,bachelor's degree,free/reduced,completed,68,67,72,66,62,69,71,75
+1578,male,European,doctorate,standard,none,58,58,52,63,62,74,69,74
+1579,male,European,bachelor's degree,free/reduced,completed,73,74,71,72,66,73,77,69
+1580,male,American,bachelor's degree,standard,none,96,91,91,93,92,90,90,89
+1581,male,European,some high school,standard,completed,87,81,93,87,85,88,86,85
+1582,female,American,some high school,standard,none,78,78,78,76,78,74,80,84
+1583,female,Asian,high school,standard,completed,63,57,60,58,51,69,59,66
+1584,male,European,associate's degree,free/reduced,none,78,71,82,76,73,87,83,79
+1585,female,European,bachelor's degree,free/reduced,none,85,81,90,90,84,94,91,90
+1586,female,European,doctorate,standard,none,76,72,74,70,71,79,78,75
+1587,male,European,associate's degree,standard,completed,86,80,82,82,80,76,83,79
+1588,female,European,associate's degree,free/reduced,completed,68,69,76,74,71,75,74,69
+1589,male,European,associate's degree,standard,none,100,100,100,91,99,96,92,99
+1590,male,European,high school,standard,none,76,67,70,78,65,88,90,84
+1591,female,European,master's degree,standard,none,94,95,91,93,91,84,77,84
+1592,male,Asian,associate's degree,free/reduced,completed,99,100,99,96,97,97,95,99
+1593,female,European,high school,free/reduced,none,71,78,77,74,78,81,76,81
+1594,female,American,associate's degree,standard,none,79,75,80,74,78,74,69,73
+1595,female,Asian,high school,standard,none,91,85,88,88,85,100,100,96
+1596,male,African,doctorate,free/reduced,none,77,64,68,79,74,87,83,74
+1597,female,Asian,high school,standard,completed,68,57,67,67,71,74,75,71
+1598,male,European,high school,standard,none,96,93,94,87,84,91,87,80
+1599,female,American,some college,standard,none,66,72,76,73,73,80,79,76
+1600,male,European,doctorate,standard,completed,94,92,92,89,92,100,98,97
+1601,male,European,some college,free/reduced,completed,58,55,59,62,59,58,63,61
+1602,female,European,high school,free/reduced,completed,92,88,93,86,81,87,79,80
+1603,male,American,some college,free/reduced,none,84,76,84,75,75,84,84,84
+1604,female,European,high school,free/reduced,completed,77,74,79,75,80,73,75,72
+1605,male,American,some college,standard,none,85,79,87,69,77,78,81,82
+1606,female,European,some college,standard,completed,78,70,82,77,74,78,75,73
+1607,female,European,doctorate,standard,completed,69,72,76,80,68,68,75,73
+1608,male,European,some high school,free/reduced,completed,80,72,77,82,79,86,82,82
+1609,male,American,doctorate,standard,none,70,75,78,81,78,86,80,84
+1610,male,European,high school,standard,none,90,93,92,88,91,76,74,80
+1611,male,Asian,high school,free/reduced,none,81,76,80,79,82,86,85,77
+1612,male,European,some college,standard,completed,60,59,69,62,67,66,62,68
+1613,male,American,bachelor's degree,standard,completed,85,85,90,78,84,76,80,82
+1614,male,European,bachelor's degree,free/reduced,completed,87,93,93,87,88,83,80,80
+1615,female,European,master's degree,free/reduced,none,77,73,77,80,73,75,73,75
+1616,female,Asian,bachelor's degree,free/reduced,completed,89,84,90,89,85,98,96,92
+1617,male,European,some high school,standard,none,66,64,67,71,74,75,77,74
+1618,female,European,doctorate,standard,none,73,77,80,79,71,77,74,77
+1619,male,European,high school,free/reduced,completed,71,70,69,74,68,85,79,75
+1620,female,American,high school,standard,completed,89,98,100,98,91,95,91,88
+1621,male,European,master's degree,standard,none,86,92,90,84,78,88,88,90
+1622,female,European,high school,standard,completed,100,100,100,100,100,100,97,99
+1623,male,American,bachelor's degree,free/reduced,none,67,58,62,66,71,77,77,77
+1624,female,European,some high school,standard,none,77,71,77,68,65,73,72,69
+1625,male,European,doctorate,standard,completed,83,76,80,78,79,80,79,76
+1626,male,European,master's degree,free/reduced,none,68,69,70,67,69,72,73,76
+1627,female,European,high school,standard,completed,76,83,78,87,82,90,92,92
+1628,male,American,bachelor's degree,standard,none,90,79,82,81,84,89,88,83
+1629,male,European,some high school,standard,completed,68,70,79,76,68,93,93,83
+1630,male,American,doctorate,standard,none,87,85,82,84,85,82,79,83
+1631,female,Asian,doctorate,standard,completed,62,64,65,66,65,72,72,69
+1632,female,American,some high school,standard,completed,88,92,87,84,88,78,83,86
+1633,male,American,bachelor's degree,free/reduced,completed,52,49,59,59,51,63,61,65
+1634,female,European,some college,free/reduced,none,89,88,88,85,80,81,78,84
+1635,female,American,associate's degree,standard,completed,73,59,66,72,64,77,77,81
+1636,female,Asian,some high school,standard,none,79,89,84,87,81,79,75,78
+1637,female,European,bachelor's degree,standard,none,77,72,81,78,71,85,85,90
+1638,female,Asian,bachelor's degree,standard,none,70,72,74,73,71,83,81,85
+1639,male,European,some high school,standard,none,65,57,66,64,62,57,62,68
+1640,female,European,some college,standard,none,79,80,75,70,75,64,70,65
+1641,female,European,some college,free/reduced,completed,74,79,73,80,71,88,89,82
+1642,male,European,some college,standard,completed,51,43,48,61,58,64,63,67
+1643,female,European,doctorate,free/reduced,none,88,91,91,91,90,89,85,92
+1644,female,European,bachelor's degree,standard,none,88,85,91,88,83,75,76,75
+1645,male,African,high school,free/reduced,completed,71,73,81,77,72,77,81,78
+1646,female,European,master's degree,standard,completed,90,96,90,84,89,82,81,91
+1647,male,European,master's degree,standard,completed,90,84,86,84,93,80,76,76
+1648,female,American,some high school,standard,none,75,67,76,70,69,74,70,69
+1649,female,African,bachelor's degree,standard,none,100,100,99,100,100,92,91,91
+1650,male,European,some college,free/reduced,none,99,98,100,99,96,94,93,95
+1651,female,Asian,master's degree,standard,completed,71,70,73,75,76,79,78,77
+1652,male,Asian,some college,standard,none,69,78,77,81,74,73,70,73
+1653,female,Asian,some high school,standard,none,80,83,83,79,75,82,78,77
+1654,female,European,high school,standard,completed,76,77,87,80,75,93,93,92
+1655,female,Asian,bachelor's degree,standard,completed,81,78,84,73,77,78,78,79
+1656,male,American,some college,standard,completed,74,83,75,73,75,67,62,64
+1657,female,European,bachelor's degree,free/reduced,completed,73,81,85,82,75,87,89,88
+1658,male,European,doctorate,standard,none,91,92,98,91,84,82,81,81
+1659,female,European,master's degree,standard,none,75,76,88,82,82,87,80,77
+1660,female,American,high school,standard,completed,71,73,71,71,67,74,76,74
+1661,male,American,master's degree,free/reduced,none,94,95,100,93,97,85,88,79
+1662,male,American,some college,standard,none,74,68,76,75,76,74,77,74
+1663,male,European,associate's degree,free/reduced,none,90,88,95,87,91,79,77,73
+1664,female,Asian,master's degree,standard,completed,69,63,72,71,70,75,84,80
+1665,female,Asian,bachelor's degree,standard,none,83,80,83,74,71,72,75,71
+1666,male,European,associate's degree,free/reduced,none,59,57,60,69,61,62,64,66
+1667,female,European,associate's degree,standard,completed,95,85,91,85,85,90,89,88
+1668,male,European,master's degree,free/reduced,none,74,77,66,73,68,80,76,74
+1669,female,Asian,master's degree,standard,completed,87,87,87,85,85,95,91,96
+1670,male,European,some high school,standard,completed,73,68,72,71,69,71,67,74
+1671,female,European,some college,standard,none,86,84,87,81,83,75,77,82
+1672,female,European,bachelor's degree,standard,none,100,96,95,98,97,80,86,89
+1673,male,African,some college,standard,none,63,53,64,58,63,65,65,57
+1674,male,European,high school,free/reduced,none,81,70,82,77,77,84,92,81
+1675,male,European,some college,standard,none,67,67,75,70,71,69,74,70
+1676,male,European,master's degree,standard,none,61,61,60,70,70,80,82,81
+1677,male,European,some college,standard,completed,77,78,72,74,72,75,78,67
+1678,male,European,some college,standard,completed,83,79,87,85,78,85,82,85
+1679,female,European,doctorate,standard,completed,74,72,79,81,74,89,84,87
+1680,female,European,high school,standard,none,53,61,63,62,57,69,76,71
+1681,male,European,master's degree,free/reduced,none,91,80,80,88,88,94,88,92
+1682,female,European,doctorate,standard,completed,84,79,89,78,84,81,83,84
+1683,female,European,doctorate,standard,none,78,80,85,75,85,73,81,74
+1684,female,American,some high school,standard,completed,73,76,77,86,72,82,81,78
+1685,male,Asian,doctorate,standard,none,72,67,66,66,66,65,68,71
+1686,male,African,some college,standard,none,92,92,91,99,97,100,100,100
+1687,female,European,master's degree,free/reduced,completed,92,95,92,96,91,100,100,100
+1688,male,European,associate's degree,free/reduced,none,71,68,73,74,71,78,80,73
+1689,male,European,master's degree,free/reduced,none,56,53,58,59,55,60,59,65
+1690,male,Asian,bachelor's degree,standard,completed,79,73,85,82,77,86,83,88
+1691,male,Asian,bachelor's degree,free/reduced,completed,82,81,84,85,82,80,82,84
+1692,male,European,doctorate,standard,completed,71,71,73,73,65,70,66,68
+1693,female,European,associate's degree,standard,none,57,48,62,69,54,75,75,70
+1694,female,European,bachelor's degree,standard,none,68,73,73,76,61,64,68,72
+1695,male,European,master's degree,free/reduced,none,87,85,84,80,84,84,79,88
+1696,male,Asian,some college,standard,none,82,70,80,77,77,69,62,69
+1697,male,Asian,doctorate,free/reduced,none,68,69,66,64,71,74,72,74
+1698,female,African,bachelor's degree,standard,none,75,70,74,79,72,83,82,79
+1699,male,European,some college,standard,none,64,52,68,60,62,65,64,63
+1700,female,European,doctorate,standard,none,65,63,70,71,70,81,74,72
+1701,male,European,high school,standard,none,82,70,85,84,82,82,92,80
+1702,female,European,some high school,standard,none,72,68,80,72,70,81,82,73
+1703,male,European,high school,free/reduced,none,71,74,82,77,74,76,78,72
+1704,male,Asian,high school,standard,none,63,65,69,66,58,81,82,82
+1705,female,European,master's degree,standard,none,75,78,85,88,79,92,89,82
+1706,female,European,high school,free/reduced,completed,87,83,86,81,87,92,87,89
+1707,female,African,bachelor's degree,standard,none,73,78,87,76,79,84,80,79
+1708,male,Asian,bachelor's degree,standard,none,95,100,99,91,88,78,73,81
+1709,female,European,some college,standard,none,100,100,100,94,100,84,90,87
+1710,female,Asian,master's degree,free/reduced,completed,73,73,74,81,79,80,86,86
+1711,male,Asian,bachelor's degree,standard,completed,64,59,70,64,68,65,71,68
+1712,female,European,doctorate,standard,none,76,79,83,79,80,87,84,84
+1713,female,European,some college,free/reduced,completed,86,74,81,80,80,87,89,91
+1714,female,American,doctorate,standard,completed,80,69,83,75,81,90,95,81
+1715,female,European,some high school,standard,completed,53,58,54,57,60,62,63,61
+1716,male,Asian,some high school,standard,completed,82,90,85,89,78,84,74,79
+1717,female,European,some college,standard,completed,82,85,76,77,80,81,79,80
+1718,male,European,some college,standard,completed,72,68,73,73,75,71,79,74
+1719,female,Asian,master's degree,standard,none,63,64,71,74,65,73,73,72
+1720,female,European,high school,standard,completed,66,69,75,77,70,69,73,68
+1721,female,African,associate's degree,free/reduced,none,77,87,89,82,78,73,74,71
+1722,male,European,high school,free/reduced,none,61,56,66,67,63,68,69,72
+1723,female,European,doctorate,standard,completed,84,76,84,77,83,76,77,73
+1724,male,African,some college,free/reduced,completed,69,61,75,71,59,80,77,73
+1725,male,European,some college,standard,completed,82,83,84,85,83,81,85,90
+1726,female,American,some college,free/reduced,completed,88,84,83,75,84,79,76,78
+1727,male,Asian,some college,standard,none,84,81,91,87,79,87,92,81
+1728,female,European,some college,standard,completed,66,56,64,69,63,76,76,72
+1729,female,European,master's degree,free/reduced,none,70,73,73,68,75,70,73,67
+1730,male,European,high school,standard,none,71,71,79,79,71,75,75,79
+1731,male,African,bachelor's degree,free/reduced,none,66,70,66,76,66,75,73,73
+1732,male,European,doctorate,standard,none,71,74,75,77,72,88,85,81
+1733,male,Asian,associate's degree,standard,none,79,69,75,73,69,70,73,63
+1734,male,European,master's degree,standard,completed,80,76,79,80,73,74,73,72
+1735,male,Asian,high school,free/reduced,none,71,61,71,70,65,83,76,76
+1736,male,European,some high school,standard,completed,85,74,79,76,72,73,74,69
+1737,female,African,bachelor's degree,standard,none,81,70,79,83,75,90,77,79
+1738,female,European,bachelor's degree,standard,none,87,91,84,86,77,77,74,76
+1739,female,European,some college,standard,none,76,75,73,75,73,79,75,71
+1740,male,European,master's degree,free/reduced,none,70,74,76,71,71,70,67,72
+1741,female,American,some college,free/reduced,completed,84,80,87,84,89,100,93,96
+1742,female,African,some college,free/reduced,none,78,75,80,75,73,77,77,77
+1743,female,Asian,some high school,standard,none,60,60,59,67,59,78,71,68
+1744,male,European,associate's degree,free/reduced,none,79,77,78,78,79,87,90,87
+1745,male,American,bachelor's degree,free/reduced,completed,75,80,79,79,78,72,76,64
+1746,male,European,doctorate,standard,none,88,87,83,83,85,85,82,84
+1747,male,American,doctorate,standard,none,68,62,72,70,62,75,72,73
+1748,male,European,bachelor's degree,standard,none,67,50,69,60,60,60,63,67
+1749,female,African,bachelor's degree,standard,none,68,70,72,72,71,76,75,75
+1750,male,European,some high school,standard,none,67,58,70,69,61,64,68,62
+1751,male,European,associate's degree,free/reduced,none,65,57,64,72,59,83,84,80
+1752,female,European,high school,standard,completed,92,93,94,90,90,79,74,82
+1753,male,European,doctorate,standard,completed,75,70,77,71,75,71,62,69
+1754,male,European,bachelor's degree,standard,completed,68,66,71,70,66,67,69,69
+1755,male,Asian,associate's degree,standard,none,64,68,70,72,66,85,80,79
+1756,female,European,doctorate,standard,none,90,91,85,89,87,87,90,90
+1757,male,Asian,associate's degree,standard,none,87,82,91,84,89,76,77,80
+1758,female,Asian,associate's degree,standard,completed,71,67,74,68,67,79,75,77
+1759,male,European,doctorate,standard,completed,86,92,95,80,85,90,93,93
+1760,male,European,bachelor's degree,standard,none,86,84,77,77,78,92,85,89
+1761,male,Asian,some college,standard,none,75,73,72,71,81,74,78,75
+1762,female,European,doctorate,free/reduced,none,79,81,81,84,78,80,80,79
+1763,female,European,high school,standard,completed,72,61,71,72,65,61,58,59
+1764,male,Asian,some college,standard,none,70,70,76,74,73,82,83,83
+1765,male,European,bachelor's degree,standard,none,69,64,71,67,66,72,69,67
+1766,female,Asian,high school,standard,none,62,64,63,66,67,74,67,75
+1767,female,European,high school,free/reduced,none,69,69,70,74,72,81,70,77
+1768,male,American,bachelor's degree,standard,completed,75,79,82,77,74,67,69,72
+1769,female,European,some high school,standard,none,87,87,85,80,90,68,73,71
+1770,male,American,bachelor's degree,free/reduced,completed,100,93,97,98,92,91,90,90
+1771,male,American,master's degree,free/reduced,none,89,90,88,74,82,85,88,82
+1772,female,European,high school,standard,none,51,49,58,58,50,69,62,56
+1773,female,European,bachelor's degree,standard,completed,68,64,66,71,65,79,70,76
+1774,female,European,some college,standard,completed,91,81,76,85,82,87,89,89
+1775,female,Asian,some high school,free/reduced,completed,65,53,63,72,65,72,78,64
+1776,female,European,high school,standard,completed,71,70,77,76,72,78,83,79
+1777,female,African,doctorate,free/reduced,none,73,67,68,79,69,78,72,75
+1778,female,American,master's degree,free/reduced,completed,76,73,83,78,77,72,81,78
+1779,female,European,some college,standard,none,74,69,71,71,72,77,77,82
+1780,male,European,some high school,free/reduced,none,62,57,67,64,66,83,80,68
+1781,female,European,some college,free/reduced,completed,38,36,46,54,49,60,64,60
+1782,male,European,high school,free/reduced,none,95,84,78,86,80,85,86,90
+1783,male,American,master's degree,standard,completed,95,95,93,91,91,95,93,92
+1784,male,European,master's degree,free/reduced,completed,63,57,62,64,60,55,55,59
+1785,female,European,bachelor's degree,free/reduced,none,67,67,72,74,73,64,72,71
+1786,female,European,master's degree,standard,none,90,84,83,84,81,90,85,85
+1787,female,European,master's degree,standard,completed,88,92,94,89,88,94,82,91
+1788,male,African,some college,free/reduced,completed,100,100,100,100,100,100,98,98
+1789,male,European,some high school,standard,completed,44,33,48,54,47,60,67,59
+1790,female,European,bachelor's degree,free/reduced,none,80,82,77,84,79,88,87,93
+1791,female,European,some college,standard,none,72,75,76,76,75,77,79,75
+1792,male,Asian,associate's degree,standard,none,81,69,75,75,77,84,83,82
+1793,female,African,bachelor's degree,standard,none,70,68,76,69,75,72,66,76
+1794,female,European,master's degree,free/reduced,none,62,63,61,65,63,77,79,73
+1795,male,European,associate's degree,free/reduced,completed,74,76,82,75,73,75,75,72
+1796,male,European,master's degree,standard,completed,95,87,96,94,96,100,97,94
+1797,male,Asian,associate's degree,standard,none,68,78,72,81,70,82,81,86
+1798,male,European,master's degree,free/reduced,none,55,51,70,63,60,68,65,62
+1799,female,American,associate's degree,standard,none,88,90,93,88,91,89,85,89
+1800,female,American,master's degree,standard,completed,95,91,94,90,89,96,90,89
+1801,male,Asian,associate's degree,free/reduced,completed,89,93,96,88,93,79,79,82
+1802,male,European,doctorate,standard,none,87,89,90,87,85,88,81,83
+1803,male,European,associate's degree,standard,completed,73,66,80,71,68,74,72,70
+1804,male,European,master's degree,free/reduced,completed,74,73,74,77,83,78,71,73
+1805,female,European,some college,standard,none,83,86,84,86,85,85,84,83
+1806,male,European,high school,standard,none,75,73,77,80,76,78,75,74
+1807,male,Asian,high school,free/reduced,none,60,54,63,63,62,72,62,65
+1808,male,European,bachelor's degree,standard,none,69,72,79,72,72,75,80,77
+1809,female,European,doctorate,standard,none,86,81,79,75,76,89,84,88
+1810,male,Asian,doctorate,standard,none,85,88,89,90,91,96,100,93
+1811,female,European,associate's degree,standard,none,60,58,67,69,65,71,73,69
+1812,female,European,some college,standard,none,61,53,61,59,57,73,73,69
+1813,female,Asian,master's degree,standard,completed,56,51,60,70,63,98,93,89
+1814,male,American,associate's degree,standard,none,86,78,82,81,84,71,72,70
+1815,female,European,doctorate,standard,completed,83,81,79,78,76,89,90,89
+1816,female,American,bachelor's degree,standard,none,69,57,78,79,74,85,77,78
+1817,female,European,associate's degree,standard,completed,75,64,72,70,70,79,80,78
+1818,male,Asian,associate's degree,standard,none,64,59,75,68,63,73,72,76
+1819,male,American,doctorate,free/reduced,completed,79,86,83,79,77,81,77,78
+1820,female,Asian,master's degree,standard,none,82,76,83,89,76,83,77,79
+1821,female,Asian,some high school,standard,none,45,53,52,50,50,57,56,58
+1822,male,European,some high school,standard,none,86,76,81,85,83,82,85,83
+1823,female,European,some high school,standard,completed,83,77,95,88,81,97,100,91
+1824,female,European,some high school,standard,none,81,74,77,78,77,88,82,80
+1825,male,European,bachelor's degree,standard,none,80,84,90,86,89,91,85,81
+1826,female,European,high school,standard,completed,92,83,85,88,86,91,93,88
+1827,male,European,associate's degree,free/reduced,completed,61,63,67,71,63,73,74,76
+1828,male,Asian,associate's degree,standard,none,71,68,77,74,67,70,77,79
+1829,female,European,some high school,free/reduced,completed,92,82,86,92,81,89,90,84
+1830,female,European,high school,standard,completed,60,59,62,64,61,66,67,62
+1831,male,American,bachelor's degree,standard,none,82,85,75,79,73,72,73,73
+1832,female,European,high school,free/reduced,none,56,47,54,55,52,55,64,60
+1833,female,American,some high school,standard,completed,90,83,90,84,91,75,73,76
+1834,male,Asian,high school,standard,none,88,82,93,82,82,90,88,91
+1835,female,European,bachelor's degree,standard,none,90,83,89,85,92,79,80,79
+1836,male,Asian,bachelor's degree,standard,completed,77,68,72,79,72,84,85,84
+1837,female,European,doctorate,standard,none,76,64,71,66,65,71,73,70
+1838,female,Asian,high school,free/reduced,completed,65,58,70,68,67,69,76,74
+1839,male,European,some high school,standard,none,69,70,81,73,64,73,68,73
+1840,male,European,master's degree,standard,completed,81,79,88,89,84,69,74,75
+1841,male,European,associate's degree,free/reduced,none,52,58,58,57,57,61,62,58
+1842,male,Asian,high school,standard,completed,100,100,100,100,100,93,88,93
+1843,male,European,associate's degree,free/reduced,none,56,47,56,59,59,74,71,76
+1844,male,European,associate's degree,free/reduced,none,80,79,83,81,79,78,82,75
+1845,female,European,some college,standard,completed,77,71,71,76,78,86,83,86
+1846,female,European,bachelor's degree,free/reduced,none,91,87,93,79,80,76,72,77
+1847,female,European,bachelor's degree,free/reduced,completed,86,82,84,93,81,90,88,83
+1848,female,African,some high school,free/reduced,none,79,76,81,79,81,91,88,85
+1849,male,European,high school,standard,none,60,57,58,62,61,59,68,63
+1850,female,American,some college,standard,completed,72,59,67,69,63,74,75,75
+1851,female,European,some high school,standard,none,59,49,65,64,50,69,73,73
+1852,female,European,doctorate,standard,none,79,88,91,85,86,85,87,85
+1853,female,European,doctorate,standard,completed,77,77,75,84,77,78,80,80
+1854,female,European,high school,standard,none,86,85,87,85,86,83,89,85
+1855,female,Asian,master's degree,standard,completed,75,71,73,76,74,85,86,81
+1856,female,European,master's degree,standard,none,73,69,75,83,70,93,93,89
+1857,female,European,master's degree,free/reduced,completed,74,65,70,74,73,81,84,76
+1858,female,European,some high school,standard,none,62,61,65,68,70,69,73,62
+1859,female,European,master's degree,standard,none,56,54,57,60,58,57,58,64
+1860,female,European,bachelor's degree,standard,none,88,79,84,79,80,97,94,92
+1861,male,Asian,associate's degree,free/reduced,none,81,84,86,78,81,72,65,75
+1862,male,European,master's degree,free/reduced,completed,79,83,81,86,84,89,91,87
+1863,male,European,some college,standard,completed,83,82,81,86,76,79,83,77
+1864,male,European,some high school,free/reduced,none,61,53,59,63,53,72,73,67
+1865,female,Asian,bachelor's degree,standard,none,78,66,82,77,74,93,88,88
+1866,female,European,some college,free/reduced,none,84,76,79,74,81,81,79,83
+1867,female,European,master's degree,standard,none,85,85,91,78,87,90,83,89
+1868,male,European,some college,standard,completed,80,78,80,81,77,76,73,77
+1869,male,European,master's degree,standard,none,80,87,83,78,78,81,75,78
+1870,female,European,some college,standard,completed,75,68,70,66,67,75,71,72
+1871,female,European,bachelor's degree,standard,none,73,75,77,89,77,100,96,89
+1872,female,European,bachelor's degree,free/reduced,none,78,74,77,78,84,92,93,88
+1873,male,European,bachelor's degree,free/reduced,none,96,97,92,92,94,70,74,75
+1874,male,European,some high school,free/reduced,completed,81,63,70,78,73,89,91,90
+1875,male,European,high school,free/reduced,none,84,85,89,85,81,85,80,73
+1876,female,European,bachelor's degree,standard,none,81,74,84,73,78,72,75,73
+1877,female,Asian,some high school,standard,none,78,82,85,84,81,80,76,75
+1878,female,European,bachelor's degree,free/reduced,none,54,50,52,62,52,78,74,68
+1879,male,European,associate's degree,standard,completed,96,100,95,98,99,98,95,92
+1880,female,European,some high school,free/reduced,completed,82,86,79,78,78,79,80,79
+1881,male,African,some college,standard,none,54,63,69,63,63,72,70,70
+1882,female,European,doctorate,free/reduced,none,80,82,80,87,78,85,79,88
+1883,female,African,high school,free/reduced,none,87,81,85,90,85,100,96,95
+1884,female,European,high school,standard,completed,57,48,59,64,61,79,79,78
+1885,male,European,some high school,standard,none,67,63,80,74,69,83,78,78
+1886,female,European,master's degree,standard,none,83,82,83,86,84,89,91,87
+1887,female,European,doctorate,free/reduced,none,59,48,60,63,56,67,58,55
+1888,male,European,some high school,standard,none,82,91,90,87,86,97,96,96
+1889,male,African,bachelor's degree,free/reduced,none,59,61,70,75,71,77,79,79
+1890,female,American,bachelor's degree,standard,completed,72,62,75,75,70,75,76,73
+1891,male,European,doctorate,standard,none,78,80,82,73,78,83,79,74
+1892,male,European,doctorate,standard,none,85,82,80,86,88,79,78,85
+1893,female,European,some high school,standard,none,62,55,61,62,61,72,72,69
+1894,male,European,some high school,standard,completed,79,81,79,85,79,64,73,68
+1895,female,European,master's degree,free/reduced,none,78,79,81,83,85,90,93,89
+1896,male,American,associate's degree,standard,none,67,71,68,70,73,73,69,72
+1897,female,European,high school,standard,completed,75,71,72,71,72,75,76,74
+1898,female,Asian,some high school,standard,none,72,55,69,66,73,65,61,66
+1899,female,Asian,high school,standard,completed,73,59,67,73,70,86,78,78
+1900,female,European,master's degree,standard,completed,74,66,79,74,72,85,84,81
+1901,female,African,bachelor's degree,standard,completed,92,83,89,88,91,74,77,73
+1902,male,African,bachelor's degree,free/reduced,completed,77,72,76,78,75,76,70,78
+1903,female,European,master's degree,standard,completed,80,81,85,83,80,80,78,79
+1904,female,Asian,doctorate,standard,completed,62,52,62,70,62,70,69,71
+1905,male,Asian,master's degree,free/reduced,completed,71,69,68,73,72,70,67,66
+1906,male,European,some college,standard,none,79,75,82,83,86,73,76,73
+1907,male,European,associate's degree,standard,completed,73,67,65,72,72,78,77,76
+1908,male,European,some college,free/reduced,completed,63,68,74,69,67,74,71,70
+1909,male,European,some college,standard,completed,73,63,73,73,63,71,67,69
+1910,male,American,some high school,standard,none,74,72,73,82,81,87,87,80
+1911,female,Asian,high school,standard,none,65,62,62,68,61,73,71,71
+1912,female,Asian,some college,free/reduced,none,92,97,100,91,94,76,82,85
+1913,female,Asian,high school,standard,none,94,97,96,88,88,76,80,81
+1914,male,Asian,associate's degree,free/reduced,completed,91,97,97,92,86,93,85,94
+1915,female,European,high school,free/reduced,none,71,62,65,66,62,74,75,69
+1916,male,African,bachelor's degree,standard,completed,71,70,73,66,68,76,72,72
+1917,female,European,master's degree,standard,completed,79,67,75,79,80,83,80,78
+1918,male,European,some college,free/reduced,none,84,81,85,81,86,81,77,79
+1919,female,European,master's degree,free/reduced,none,76,76,80,74,73,70,72,73
+1920,female,European,master's degree,standard,none,82,74,86,87,83,80,78,77
+1921,male,European,bachelor's degree,free/reduced,none,57,63,66,69,65,84,83,77
+1922,female,European,associate's degree,standard,none,57,57,62,71,61,83,80,71
+1923,male,Asian,associate's degree,standard,completed,72,67,70,76,73,72,73,76
+1924,female,European,master's degree,standard,none,80,77,94,82,78,92,89,96
+1925,female,Asian,bachelor's degree,standard,none,65,60,64,66,62,84,89,84
+1926,female,European,master's degree,standard,none,78,76,83,78,79,71,75,72
+1927,male,American,some college,standard,completed,58,50,61,67,62,76,72,69
+1928,male,European,associate's degree,standard,completed,69,60,66,65,65,64,73,67
+1929,male,European,some high school,standard,completed,93,88,94,90,85,85,82,75
+1930,male,European,some high school,standard,completed,62,51,58,62,53,63,66,63
+1931,male,European,bachelor's degree,free/reduced,none,74,75,83,71,72,75,76,70
+1932,male,American,bachelor's degree,free/reduced,completed,76,75,76,81,70,68,70,74
+1933,female,European,some high school,standard,none,75,72,71,76,71,77,79,80
+1934,male,European,associate's degree,standard,none,72,64,71,73,70,72,77,71
+1935,male,European,some college,free/reduced,none,58,63,60,65,56,68,67,68
+1936,male,American,bachelor's degree,standard,none,60,54,63,72,63,79,69,71
+1937,female,European,bachelor's degree,standard,completed,72,76,77,79,79,85,81,86
+1938,male,Asian,some college,free/reduced,completed,84,77,78,90,74,85,82,89
+1939,female,Asian,some college,free/reduced,none,83,87,89,80,83,79,76,76
+1940,female,European,bachelor's degree,standard,none,85,86,82,86,89,84,78,75
+1941,male,European,some high school,free/reduced,none,75,82,81,75,78,84,90,79
+1942,female,African,high school,free/reduced,completed,77,73,82,71,81,74,76,80
+1943,female,Asian,some college,standard,none,74,76,87,79,80,77,73,79
+1944,male,European,bachelor's degree,free/reduced,none,74,64,82,69,72,88,77,82
+1945,female,Asian,some high school,standard,none,73,69,79,74,70,79,78,79
+1946,female,American,doctorate,free/reduced,none,87,79,82,85,84,73,73,77
+1947,male,European,associate's degree,standard,completed,99,100,100,100,97,96,84,90
+1948,female,European,bachelor's degree,standard,completed,63,65,67,71,59,85,82,74
+1949,male,Asian,doctorate,standard,none,91,91,90,92,89,96,94,98
+1950,female,European,associate's degree,standard,none,81,76,78,77,76,68,65,72
+1951,male,Asian,doctorate,standard,none,79,89,83,87,81,86,75,80
+1952,male,European,some college,free/reduced,none,63,60,68,64,64,58,60,60
+1953,female,African,doctorate,standard,none,58,50,59,60,51,64,65,59
+1954,female,European,bachelor's degree,standard,none,90,95,94,84,85,82,80,80
+1955,male,European,some college,standard,none,84,84,84,87,91,91,90,92
+1956,female,European,master's degree,standard,completed,83,70,81,80,76,75,79,80
+1957,male,European,master's degree,free/reduced,completed,81,83,83,79,77,86,83,83
+1958,male,Asian,master's degree,standard,none,83,81,78,86,86,93,98,93
+1959,male,European,bachelor's degree,standard,completed,91,93,84,84,81,87,86,87
+1960,female,American,associate's degree,standard,none,61,66,70,69,66,71,75,71
+1961,female,American,doctorate,standard,none,80,79,81,83,75,85,78,77
+1962,male,European,associate's degree,standard,completed,79,83,89,84,74,84,79,82
+1963,male,European,some college,standard,completed,84,87,73,83,82,90,89,87
+1964,male,American,bachelor's degree,standard,completed,68,63,80,72,69,84,78,79
+1965,male,European,bachelor's degree,free/reduced,none,67,58,65,63,55,70,69,65
+1966,male,European,bachelor's degree,standard,completed,75,63,73,72,69,86,83,73
+1967,female,European,master's degree,standard,completed,75,76,73,71,74,78,80,70
+1968,female,Asian,doctorate,free/reduced,none,75,73,80,75,73,70,77,76
+1969,female,European,some college,standard,completed,87,89,89,77,82,75,75,78
+1970,female,European,bachelor's degree,standard,none,76,87,86,78,79,82,82,82
+1971,male,European,doctorate,standard,completed,83,83,87,87,82,92,81,79
+1972,male,European,associate's degree,standard,none,82,83,85,84,76,78,79,82
+1973,female,European,some high school,standard,none,86,83,86,72,77,78,70,74
+1974,male,African,doctorate,free/reduced,none,77,77,80,82,78,94,90,94
+1975,male,European,associate's degree,standard,completed,70,60,69,68,70,62,70,70
+1976,male,American,master's degree,standard,completed,91,95,94,88,87,88,84,84
+1977,female,African,some high school,free/reduced,none,92,94,100,93,92,86,94,87
+1978,female,African,some high school,free/reduced,none,81,79,82,80,76,92,87,86
+1979,male,European,doctorate,standard,none,84,75,82,74,78,81,75,73
+1980,female,European,some high school,standard,completed,91,86,91,83,83,78,79,82
+1981,male,European,bachelor's degree,standard,completed,60,51,62,68,67,71,65,64
+1982,male,Asian,associate's degree,standard,none,76,76,73,78,74,85,90,84
+1983,male,European,master's degree,free/reduced,none,81,85,85,81,86,74,74,78
+1984,male,European,high school,free/reduced,none,60,55,62,68,65,77,74,64
+1985,male,Asian,bachelor's degree,standard,completed,96,98,100,87,98,89,89,85
+1986,female,European,some high school,standard,completed,87,92,84,91,89,100,100,100
+1987,female,European,associate's degree,standard,completed,64,69,61,66,67,80,83,74
+1988,male,European,some college,standard,completed,81,78,82,80,76,77,78,75
+1989,female,European,bachelor's degree,free/reduced,none,61,59,68,65,65,73,69,75
+1990,male,European,some college,standard,none,66,69,66,70,66,69,66,72
+1991,female,Asian,doctorate,free/reduced,completed,65,64,70,61,60,66,65,65
+1992,male,European,some college,free/reduced,none,75,70,74,76,71,80,79,74
+1993,female,European,high school,free/reduced,completed,14,17,26,27,22,40,38,37
+1994,male,European,master's degree,free/reduced,none,69,76,80,81,77,92,87,84
+1995,male,American,master's degree,free/reduced,none,68,60,65,69,66,67,67,71
+1996,male,African,some college,standard,none,70,54,72,77,68,90,85,84
+1997,male,European,doctorate,free/reduced,none,70,66,69,73,67,75,79,70
+1998,female,European,master's degree,free/reduced,none,92,88,96,89,92,72,77,77
+1999,female,Asian,master's degree,free/reduced,none,55,57,55,68,59,78,73,72
+2000,male,European,bachelor's degree,free/reduced,none,72,63,64,73,67,86,74,84

@@ -170,6 +170,7 @@ function checkAuthStatus() {
   const userName = document.getElementById('user-name');
   const userWelcomeSection = document.getElementById('user-welcome-section');
   const userWelcomeMessage = document.getElementById('user-welcome-message');
+  const userNameNavbar = document.getElementById('user-name-navbar');
 
   console.log('Checking auth status on predict page...');
   console.log('User data:', user);
@@ -179,23 +180,47 @@ function checkAuthStatus() {
       const userData = JSON.parse(user);
       const userNameText = userData.name || userData.email || 'User';
       console.log('User data parsed:', userData);
-      
-      userName.textContent = `Welcome, ${userNameText} 👋`;
-      authButtons.style.display = 'none';
-      userInfo.style.display = 'flex';
-      userWelcomeSection.style.display = 'none';
+      if (userName) {
+        userName.textContent = `Welcome, ${userNameText}`;
+      }
+      const capitalizeName = userNameText.charAt(0).toUpperCase() + userNameText.slice(1);
+
+      if (userNameNavbar) {
+        userNameNavbar.textContent = `${capitalizeName}`;
+      }
+      if (authButtons) {
+        authButtons.style.display = 'none';
+      }
+      if (userInfo) {
+        userInfo.style.display = 'flex';
+      }
+      if (userWelcomeSection) {
+        userWelcomeSection.style.display = 'none';
+      }
       console.log('User is logged in, showing welcome message and logout button on predict page');
     } catch (error) {
       console.error('Error parsing user data:', error);
-      authButtons.style.display = 'flex';
-      userInfo.style.display = 'none';
-      userWelcomeSection.style.display = 'none';
+      if (authButtons) {
+        authButtons.style.display = 'flex';
+      }
+      if (userInfo) {
+        userInfo.style.display = 'none';
+      }
+      if (userWelcomeSection) {
+        userWelcomeSection.style.display = 'none';
+      }
     }
   } else {
     console.log('User is not logged in, showing auth buttons on predict page');
-    authButtons.style.display = 'flex';
-    userInfo.style.display = 'none';
-    userWelcomeSection.style.display = 'none';
+    if (authButtons) {
+      authButtons.style.display = 'flex';
+    }
+    if (userInfo) {
+      userInfo.style.display = 'none';
+    }
+    if (userWelcomeSection) {
+      userWelcomeSection.style.display = 'none';
+    }
   }
 }
 
@@ -207,7 +232,7 @@ function logout() {
   showNotification('Logged out successfully!', 'success');
   setTimeout(() => {
     checkAuthStatus();
-    window.location.href = '/';
+    window.location.href = 'index';
   }, 1000);
 }
 

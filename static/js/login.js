@@ -35,9 +35,9 @@ form.addEventListener('submit', async (e) => {
 
   let valid = true;
 
-  // Updated password regex to match register.js (requires letter and number, no special character)
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,15}$/;
-  if (!passwordRegex.test(input_password.value) || input_password.value.length > 15 || input_password.value.length < 7) {
+  // Password validation: 1 uppercase, 1 lowercase, 1 number, 1 special char, 7-15 chars
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{7,15}$/;
+  if (!passwordRegex.test(input_password.value)) {
     valid = false;
     input_password.classList.add("is-invalid");
     passwordInvalidFeedback.style.display = "block";
@@ -101,9 +101,9 @@ form.addEventListener('submit', async (e) => {
     // Redirect based on user email (case-insensitive)
     setTimeout(() => {
       if (userData.email.toLowerCase() === 'admin@gmail.com') {
-        window.location.href = 'admin-chrom.html';
+        window.location.href = 'admin';
       } else {
-        window.location.href = 'predict-chrom.html';
+        window.location.href = 'predict';
       }
     }, 1500);
 

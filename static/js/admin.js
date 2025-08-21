@@ -5,16 +5,50 @@ async function editUser(userId, currentName, currentEmail) {
   
   const newEmail = prompt('Enter new email:', currentEmail);
   if (!newEmail) return; // User clicked Cancel on email prompt
-  
+
   try {
-    console.log('Sending update request for user:', userId); // Debug log
-    console.log('Request data:', { name: newName.trim(), email: newEmail.trim() }); // Debug log
-    
+    // Check if the email is being changed
+    if (newEmail.trim().toLowerCase() !== currentEmail.toLowerCase()) {
+      // Check predictions history for this email
+      const predsResponse = await fetch('http://localhost:5002/api/admin/predictions', {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const predsData = await predsResponse.json();
+      const predictions = predsData.success ? predsData.predictions : [];
+      
+      // Check if this email was ever used in any prediction
+      const emailUsed = predictions.some(p => p.user_email.toLowerCase() === newEmail.trim().toLowerCase());
+      
+      if (emailUsed) {
+        showNotification('This email cannot be used as it was previously used by another user.', 'error');
+        return;
+      }
+    }
+
+    // If email is safe to use, update the user and their predictions
+    // First update all predictions to use new email
+    if (newEmail.trim().toLowerCase() !== currentEmail.toLowerCase()) {
+      const userPreds = predictions.filter(p => p.user_email.toLowerCase() === currentEmail.toLowerCase());
+      for (const pred of userPreds) {
+        await fetch(`http://localhost:5002/api/predictions/${pred._id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            user_email: newEmail.trim()
+          })
+        });
+      }
+    }
+
+    // Then update the user
     const response = await fetch(`http://localhost:5002/api/users/${userId}`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         name: newName.trim(),
@@ -22,27 +56,10 @@ async function editUser(userId, currentName, currentEmail) {
       })
     });
     
-    const rawText = await response.text();
-    console.log('Raw server response:', rawText); // Debug log
-
-    let data;
-    try {
-      data = JSON.parse(rawText);
-    } catch (e) {
-      data = null;
-    }
-
-    if (!response.ok) {
-      console.error('Server response:', response.status, rawText);
-      throw new Error(`Server returned ${response.status}: ${rawText}`);
-    }
-
-    if (!data) {
-      throw new Error('Invalid JSON response from server');
-    }
+    const data = await response.json();
 
     if (data.success) {
-      showNotification('User updated successfully!', 'success');
+      showNotification('User and predictions updated successfully!', 'success');
       location.reload();
     } else {
       throw new Error(data.message || 'Failed to update user');
@@ -54,16 +71,31 @@ async function editUser(userId, currentName, currentEmail) {
 }
 
 // Delete user function
-async function deleteUser(userId) {
+async function deleteUser(userId, userEmail) {
   if (!confirm('Are you sure you want to delete this user?')) return;
   
   try {
+    // First get the user's predictions count
+    const userPreds = window._allPredictions.filter(p => p.user_email === userEmail);
+    console.log('User predictions:', userPreds.length, 'for email:', userEmail);
+    
     const response = await fetch(`http://localhost:5002/api/users/${userId}`, {
       method: 'DELETE'
     });
     
     const data = await response.json();
     if (data.success) {
+      // Update the stats immediately
+      const statsDiv = document.getElementById('admin-stats');
+      if (statsDiv) {
+        const totalPredictions = document.querySelector('.kpi strong');
+        if (totalPredictions) {
+          const currentTotal = parseInt(totalPredictions.textContent);
+          const newTotal = Math.max(0, currentTotal - userPreds.length);
+          totalPredictions.textContent = newTotal;
+        }
+      }
+      
       showNotification('User deleted successfully!', 'success');
       location.reload();
     } else {
@@ -82,7 +114,7 @@ function logout() {
   sessionStorage.removeItem('token');
   
   // Redirect to home page
-  window.location.href = 'index-chrom.html';
+  window.location.href = 'index';
 }
 
 // Notification function
@@ -159,8 +191,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Fetch users and predictions in parallel
     const [usersRes, predsRes] = await Promise.all([
-      fetch('http://localhost:5002/api/users'),
-      fetch('http://localhost:5002/api/admin/predictions')
+      fetch('http://localhost:5002/api/users', {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }),
+      fetch('http://localhost:5002/api/admin/predictions', {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
     ]);
     const usersData = await usersRes.json();
     const predsData = await predsRes.json();
@@ -171,9 +211,25 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Show stats
       if (statsDiv) {
         const totalUsers = usersData.users.length - 1; // Exclude admin
+        
+        // Calculate total predictions by summing predictions for each user
+        let totalPredictions = 0;
+        usersData.users.forEach(user => {
+          if (user.email.toLowerCase() !== 'admin@gmail.com') {
+            const userPreds = predictions.filter(p => p.user_email === user.email);
+            totalPredictions += userPreds.length;
+          }
+        });
+
         statsDiv.innerHTML = `
-          <p><strong>Total Users:</strong> ${totalUsers}</p>
-          <p><strong>Total Predictions:</strong> ${predictions.length}</p>
+          <div class="kpi">
+            <span>Total Users</span>
+            <strong>${totalUsers}</strong>
+          </div>
+          <div class="kpi">
+            <span>Total Predictions</span>
+            <strong>${totalPredictions}</strong>
+          </div>
         `;
       }
       tableBody.innerHTML = usersData.users
@@ -200,7 +256,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <button onclick="showHistoryModal('${user.email}')" class="btn btn-sm btn-info me-2">
                   <i class="fas fa-history me-1"></i>History
                 </button>
-                <button onclick="deleteUser('${user._id}')" class="btn btn-sm btn-danger">
+                <button onclick="deleteUser('${user._id}', '${user.email}')" class="btn btn-sm btn-danger">
                   <i class="fas fa-trash-alt me-1"></i>Delete
                 </button>
               </td>

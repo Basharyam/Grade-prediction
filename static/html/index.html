@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GradePredictor • Plan Smarter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Custom -->
+  <link rel="stylesheet" href="/css/index.css" />
+</head>
+<body>
+
+  <!-- Ambient Gradient (behind everything) -->
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-sheen">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="brand-text">GradePredictor</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse justify-content-end align-items-center gap-2">
+        <!-- when NOT logged in -->
+        <div id="auth-buttons" class="d-flex gap-2">
+          <button class="btn btn-ghost" onclick="location.href='about'">
+            <i class="fa-solid fa-circle-info me-2"></i>About
+          </button>
+          <button class="btn btn-ghost" onclick="location.href='login'">
+            <i class="fa-solid fa-right-to-bracket me-2"></i>Login
+          </button>
+          <button class="btn btn-primary-gradient" onclick="location.href='register'">
+            <i class="fa-solid fa-user-plus me-2"></i>Register
+          </button>
+        </div>
+
+        <!-- when logged in -->
+        <div id="user-info" class="d-none align-items-center gap-3">
+          <span class="user-pill">
+            <i class="fa-solid fa-user me-2" aria-hidden="true"></i>
+            <span id="user-name">User</span>
+          </span>
+          <button class="btn btn-ghost text-danger" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket me-2"></i>Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="container hero">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-7">
+        <div class="glass hero-card p-4 p-lg-5">
+          <h1 class="display-5 fw-extrabold lh-tight">
+            Plan Smarter, <span class="text-gradient">Succeed Better</span>
+          </h1>
+          <p class="lead text-muted mt-3">
+            Enter your past grades and let our AI forecast your performance—helping you choose courses that match your strengths.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="login" class="btn btn-primary-gradient btn-lg">
+              <i class="fa-solid fa-wand-magic-sparkles me-2"></i>Start Predicting
+            </a>
+            <a href="about" class="btn btn-ghost btn-lg">
+              <i class="fa-solid fa-circle-question me-2"></i>How it works
+            </a>
+          </div>
+
+          <div class="tip-box mt-4" role="note" aria-label="What subjects can you predict">
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+              <h5 class="m-0 fw-bold">What Subjects Can You Predict?</h5>
+            </div>
+            <p class="m-0 small text-light-strong">
+              Math, Biology, Physics, Computer Science, Psychology, Literature, Economics, History.
+              <br><span class="text-muted">Example: select <b>Physics</b>, enter your other scores, and click <b>Check Results</b>.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="glass metrics p-4">
+          <div class="kpi"><span>Model</span><strong>KNN</strong></div>
+          <div class="kpi"><span>Avg MAE</span><strong>±2.1</strong></div>
+          <div class="kpi"><span>Latency</span><strong>&lt; 120ms</strong></div>
+
+          <div class="chart mt-3" aria-hidden="true">
+            <div class="bar" style="--h:72%"></div>
+            <div class="bar" style="--h:86%"></div>
+            <div class="bar" style="--h:64%"></div>
+            <div class="bar" style="--h:92%"></div>
+            <div class="bar" style="--h:78%"></div>
+          </div>
+          <small class="text-muted d-block mt-2">Synthetic preview of recent prediction confidence.</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="container section">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <article class="feature glass h-100">
+          <div class="icon-wrap"><i class="fa-solid fa-brain"></i></div>
+          <h4 class="fw-bold mt-2">AI‑Powered</h4>
+          <p class="m-0 text-muted">KNN-based ML analyzes your academic history to estimate course outcomes with strong accuracy.</p>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="feature glass h-100">
+          <div class="icon-wrap"><i class="fa-solid fa-chart-bar"></i></div>
+          <h4 class="fw-bold mt-2">Data‑Driven</h4>
+          <p class="m-0 text-muted">Insights from real data help you choose electives with confidence—and prepare smarter.</p>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="feature glass h-100">
+          <div class="icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4 class="fw-bold mt-2">Secure & Private</h4>
+          <p class="m-0 text-muted">Your data is protected with best practices and never shared without consent.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="container section">
+    <div class="row g-4">
+      <div class="col-6 col-lg-3"><div class="step glass"><span class="step-num">1</span><h6>Pick a Subject</h6><p class="text-muted">Math, Physics, CS, etc.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="step glass"><span class="step-num">2</span><h6>Enter Grades</h6><p class="text-muted">Provide past related scores.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="step glass"><span class="step-num">3</span><h6>Get Prediction</h6><p class="text-muted">See your likely outcome.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="step glass"><span class="step-num">4</span><h6>Plan Action</h6><p class="text-muted">Use tips for next term.</p></div></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container section">
+    <div class="cta glass text-center p-5">
+      <h3 class="fw-bold mb-2">Ready to try it?</h3>
+      <p class="text-muted mb-4">Create an account and start forecasting your next course grade now.</p>
+      <a href="login" class="btn btn-primary-gradient btn-lg">
+        <i class="fa-solid fa-rocket me-2"></i>Get Started
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container py-4 small text-muted text-center">
+    © <span id="year"></span> GradePredictor • All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/index.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // helper: show user (keeps your existing IDs intact)
+    window.showUser = function(name='User'){
+      document.getElementById('auth-buttons').classList.add('d-none');
+      const ui = document.getElementById('user-info');
+      ui.classList.remove('d-none'); ui.classList.add('d-flex');
+      document.getElementById('user-name').textContent = name;
+    }
+  </script>
+</body>
+</html>

@@ -1,64 +1,155 @@
-# Grade-prediction
+# GradePredictor
 
-## Project Overview
-This system helps students make informed decisions about which elective courses to register for by predicting the grade they are likely to receive, based on their own grade history and the performance of similar students. The prediction is powered by a K-Nearest Neighbors (KNN) algorithm.
-
-## How the System Works
-- The system uses a database of students who have already completed their studies and their grades in various courses.
-- The student enters their grade history for courses completed so far.
-- The system uses KNN to find students with similar grade profiles.
-- The system predicts the student's grade in the course of interest based on the grades of these similar students.
+A machine learning-powered web application that predicts student grades across multiple subjects using KNN (K-Nearest Neighbors) algorithm.
 
 ## Features
-- User registration, login, and logout
-- Grade prediction using KNN
-- Admin dashboard for user management (view, edit, delete users)
-- Analytics: total users, recent logins
-- Modern, responsive UI
+
+- **Grade Prediction**: Predicts grades for 8 different subjects:
+  - Mathematics
+  - Biology
+  - Physics
+  - Computer Science
+  - Psychology
+  - Literature
+  - Economics
+  - History
+
+- **User Management**:
+  - User registration and login
+  - Secure password policy
+  - Personal prediction history
+  - Email validation and uniqueness check
+
+- **Admin Dashboard**:
+  - View all registered users
+  - Track total predictions
+  - View user prediction history
+  - User management (edit/delete)
+
+## Technology Stack
+
+### Frontend
+- HTML5, CSS3, JavaScript
+- Bootstrap 5 for responsive design
+- Font Awesome for icons
+- Custom dark theme with glass morphism effects
+
+### Backend
+- **Node.js/Express**:
+  - Serves static files
+  - Handles user authentication
+  - API routing
+  - MongoDB integration
+
+- **Python/Flask**:
+  - Machine learning model (KNN)
+  - Grade prediction API
+  - Data preprocessing
+  - MongoDB integration
+
+### Database
+- MongoDB for storing:
+  - User data
+  - Prediction history
+  - System statistics
+
+### Machine Learning
+- K-Nearest Neighbors (KNN) Regressor
+- Feature preprocessing:
+  - One-Hot Encoding for categorical features
+  - StandardScaler for numerical features
+
+## Project Structure
+
+```
+Grade-prediction/
+├── backend/
+│   ├── python/
+│   │   ├── app.py
+│   │   ├── train_model.py
+│   │   └── model files (.pkl)
+│   └── node/
+│       └── server.js
+├── static/
+│   ├── html/
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── predict.html
+│   │   └── admin.html
+│   ├── css/
+│   │   ├── index.css
+│   │   ├── about.css
+│   │   ├── login.css
+│   │   ├── register.css
+│   │   ├── predict.css
+│   │   └── admin.css
+│   └── js/
+│       ├── index.js
+│       ├── login.js
+│       ├── register.js
+│       ├── predict.js
+│       └── admin.js
+└── Data/
+    └── Data.csv
+```
 
 ## Setup Instructions
-1. Clone the repository and install dependencies:
+
+1. **Install Dependencies**:
    ```bash
-   git clone <repo-url>
-   cd Grade-prediction
+   # Python dependencies
+   pip install flask flask-cors numpy pandas scikit-learn pymongo
+
+   # Node.js dependencies
    npm install
    ```
-2. Set up your MongoDB connection string in a `.env` file:
-   ```env
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   ```
-3. Train the KNN model and start the Flask backend:
+
+2. **Database Setup**:
+   - Install MongoDB
+   - Set environment variables:
+     - MONGODB_URI
+     - DB_NAME
+
+3. **Train Model**:
    ```bash
+   cd backend/python
    python train_model.py
-   python app.py
    ```
-4. Start the Node.js server:
+
+4. **Start Servers**:
    ```bash
-   npm start
+   # Start Node.js server (port 3000)
+   node server.js
+
+   # Start Flask server (port 5002)
+   python backend/python/app.py
    ```
-5. Open `index.html` in your browser to use the system.
 
-## Usage Guide
-### For Students
-- Register and log in.
-- Enter your grade history and select a course to predict your grade.
-- View the prediction and personalized advice.
+5. **Access Application**:
+   - Open browser and navigate to: `http://localhost:3000`
+   - Admin access: Use admin credentials
 
-### For Admins
-- Log in as the admin user.
-- Access the admin dashboard to:
-  - View all registered users and their last login times
-  - Edit or delete users
-  - View system statistics (total users, recent logins)
-- Log out to return to the home page.
+## Security Features
 
-## Example Workflow
-1. Student registers and logs in.
-2. Student enters their grades and requests a prediction.
-3. The system finds similar students and predicts the grade.
-4. Admin can view all users and recent activity in the dashboard.
+- Password requirements:
+  - One capital letter
+  - One lowercase letter
+  - One number
+  - One special character
+  - Length between 7-15 characters
 
----
+- Email validation:
+  - Unique email requirement
+  - Email format validation
+  - Prevention of email reuse after account deletion
 
-For more details, see the code and comments in each file. If you have questions or want to contribute, open an issue or pull request!
+## Contributors
+
+- [Your Name]
+- [Other Contributors]
+
+## License
+
+[Your License]

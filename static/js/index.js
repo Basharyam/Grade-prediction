@@ -110,20 +110,3 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-function logout() {
-  console.log('Logout clicked from index page');
-  
-  // Clear session storage
-  sessionStorage.removeItem('user');
-  sessionStorage.removeItem('token');
-  
-  // Show notification
-  showNotification('Logged out successfully!', 'success');
-  
-  // Update navigation
-  setTimeout(() => {
-    checkAuthStatus();
-    // Redirect to current page to refresh
-    window.location.href = '/index-chrom.html';
-  }, 1000);
-}

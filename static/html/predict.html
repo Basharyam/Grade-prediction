@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Prediction • GradePredictor</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Bootstrap (for layout utility classes only) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/css/predict.css">
+</head>
+<body>
+  <!-- Ambient gradient glow -->
+  <div class="bg-ambient"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-sheen">
+    <div class="container">
+      <div class="navbar-brand d-flex align-items-center gap-2">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="brand-text">GradePredictor</span>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse justify-content-end align-items-center gap-2">
+        <div id="auth-buttons" class="d-flex gap-2">
+          <span class="user-pill d-flex align-items-center">
+            <i class="fa-solid fa-user me-2"></i>
+            Welcome, <span id="user-name-navbar">User</span>
+          </span>
+          <button class="btn btn-outline-danger" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket me-2"></i>Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Optional welcome (visible when logged in) -->
+  <div id="user-welcome-section" class="page-intro d-none">
+    <div class="container">
+      <div class="glass p-3 d-flex align-items-center gap-2">
+        <i class="fas fa-user-circle fs-3 text-gradient"></i>
+        <h5 id="user-welcome-message" class="m-0">Welcome!</h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero / Form -->
+  <main class="container my-4">
+    <div class="glass p-4 p-md-5 hero-card">
+      <header class="text-center mb-4">
+        <h1 class="display-6 fw-extrabold">Course Grade <span class="text-gradient">Prediction</span></h1>
+        <p class="lead text-muted-strong">Enter your details to get an AI‑powered prediction for one target subject.</p>
+      </header>
+
+      <form id="predictForm" class="content-grid">
+        <!-- Personal -->
+        <section class="section-card glass">
+          <h2 class="h5 mb-3"><i class="fa-solid fa-user me-2"></i>Personal Information</h2>
+
+          <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="gender" value="male" required>
+                <span class="radio-custom"></span>
+                <i class="fas fa-mars me-1"></i>Male
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="female" required>
+                <span class="radio-custom"></span>
+                <i class="fas fa-venus me-1"></i>Female
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label for="race" class="form-label"><i class="fas fa-globe me-2"></i>Race/Ethnicity</label>
+            <select id="race" name="race" class="form-control" required>
+              <option value="">Select…</option>
+              <option value="european">European</option>
+              <option value="american">American</option>
+              <option value="asian">Asian</option>
+              <option value="african">African</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Background -->
+        <section class="section-card glass">
+          <h2 class="h5 mb-3"><i class="fa-solid fa-graduation-cap me-2"></i>Background</h2>
+
+          <div class="mb-2">
+            <label for="education" class="form-label"><i class="fas fa-university me-2"></i>Parental Education</label>
+            <select id="education" name="education" class="form-control" required>
+              <option value="">Select…</option>
+              <option value="some high school">Some High School</option>
+              <option value="high school">High School</option>
+              <option value="some college">Some College</option>
+              <option value="associate's degree">Associate's Degree</option>
+              <option value="bachelor's degree">Bachelor's Degree</option>
+              <option value="master's degree">Master's Degree</option>
+              <option value="doctorate">Doctorate</option>
+            </select>
+          </div>
+
+          <div class="mb-2">
+            <label for="lunch" class="form-label"><i class="fas fa-utensils me-2"></i>Lunch Type</label>
+            <select id="lunch" name="lunch" class="form-control" required>
+              <option value="">Select…</option>
+              <option value="standard">Standard</option>
+              <option value="free/reduced">Free/Reduced</option>
+            </select>
+          </div>
+
+          <div class="mb-1">
+            <label class="form-label"><i class="fas fa-book me-2"></i>Test Preparation</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="test_prep" value="completed" required>
+                <span class="radio-custom"></span>
+                <i class="fas fa-check-circle me-1"></i>Completed
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="test_prep" value="none" required>
+                <span class="radio-custom"></span>
+                <i class="fas fa-times-circle me-1"></i>None
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Scores -->
+        <section class="section-card glass">
+          <h2 class="h5 mb-2"><i class="fa-solid fa-chart-bar me-2"></i>Academic Scores</h2>
+          <p class="small text-muted">Pick the subject you want to predict, then enter scores (0–100) for the rest.</p>
+
+          <div class="mb-3">
+            <label for="target_subject" class="form-label"><i class="fas fa-bullseye me-2"></i>Subject to Predict</label>
+            <select id="target_subject" name="target_subject" class="form-control" onchange="updateScoreFields()" required>
+              <option value="">Select…</option>
+              <option value="math score">Math</option>
+              <option value="biology score">Biology</option>
+              <option value="physics score">Physics</option>
+              <option value="computer science score">Computer Science</option>
+              <option value="psychology score">Psychology</option>
+              <option value="literature score">Literature</option>
+              <option value="economics score">Economics</option>
+              <option value="history score">History</option>
+            </select>
+          </div>
+
+          <div id="scores-grid" class="scores-grid"></div>
+        </section>
+
+        <!-- CTA -->
+        <div class="glass p-3">
+          <button type="button" class="btn btn-primary-gradient w-100 py-3 fw-bold" onclick="checkResults()">
+            <i class="fas fa-magic me-2"></i>Check Results
+          </button>
+          <div id="progress" class="progress-bar mt-3" style="display:none;">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Prediction output -->
+      <section id="result" class="glass mt-4 p-4"></section>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="/js/predict.js"></script>
+  <script>
+    // dynamic score fields (unchanged)
+    function updateScoreFields() {
+      const target = document.getElementById('target_subject').value;
+      const grid = document.getElementById('scores-grid');
+      grid.innerHTML = '';
+      const subjects = [
+        "math score","biology score","physics score","computer science score",
+        "psychology score","literature score","economics score","history score"
+      ];
+      subjects.filter(s=>s!==target).forEach(subject=>{
+        const label = subject.replace(' score','');
+        const pretty = label.charAt(0).toUpperCase() + label.slice(1);
+        const wrap = document.createElement('div');
+        wrap.className = 'form-group';
+        wrap.innerHTML = `
+          <label class="form-label" for="${subject}">${pretty} Score</label>
+          <input type="number" class="form-control" id="${subject}" name="${subject}" min="0" max="100" required>
+        `;
+        grid.appendChild(wrap);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', updateScoreFields);
+  </script>
+</body>
+</html>

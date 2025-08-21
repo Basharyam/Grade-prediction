@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard • GradePredictor</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Bootstrap (optional, for grid/table helpers) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- Admin Theme -->
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <!-- Ambient gradient glows -->
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-sheen">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index">
+        <span class="logo-dot"></span>
+        <span class="brand-text">GradePredictor</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-3">
+        <div id="admin-info" class="user-pill d-flex align-items-center gap-2">
+          <i class="fas fa-user-shield"></i>
+          <span id="admin-name" class="fw-bold">Admin</span>
+        </div>
+        <button class="btn btn-outline-danger" onclick="logout()">
+          <i class="fas fa-right-from-bracket me-2"></i>Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-intro">
+    <div class="container">
+      <div class="glass hero-card p-4 p-md-5">
+        <div class="text-center">
+          <h1 class="text-gradient">Admin Dashboard</h1>
+          <p class="subtitle">Manage users, review usage, and track system health across 8 subjects.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="container pb-5">
+    <!-- KPI quick stats -->
+    <section class="glass section-card mb-4">
+      <h2 class="h5 fw-bold mb-3">
+        <i class="fas fa-chart-line me-2"></i>System Statistics
+      </h2>
+      <div id="admin-stats" class="kpi-grid">
+        <!-- Stats will be dynamically populated by admin.js -->
+      </div>
+    </section>
+
+    <!-- Users table -->
+    <section class="glass section-card">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <h2 class="h5 fw-bold mb-0"><i class="fas fa-users me-2"></i>Registered Users</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="table admin-table align-middle mb-0">
+          <thead>
+            <tr>
+              <th><i class="fa-regular fa-id-card me-1"></i>Name</th>
+              <th><i class="fa-regular fa-envelope me-1"></i>Email</th>
+              <th><i class="fa-regular fa-clock me-1"></i>Last Login</th>
+              <th><i class="fa-solid fa-wand-magic-sparkles me-1"></i>Last Prediction</th>
+              <th class="text-end"><i class="fa-solid fa-gear me-1"></i>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body">
+            <!-- Filled by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- History Modal -->
+  <div class="modal-backdrop-custom" id="historyModal" style="display:none;">
+    <div class="modal-card glass">
+      <div class="modal-head d-flex align-items-center justify-content-between">
+        <h5 class="mb-0">Prediction History</h5>
+        <button type="button" class="btn btn-ghost btn-sm" onclick="closeHistoryModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="historyModalBody">
+        <!-- Filled by admin.js -->
+      </div>
+      <div class="modal-foot d-flex justify-content-end">
+        <button type="button" class="btn btn-primary-gradient" onclick="closeHistoryModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/admin.js"></script>
+</body>
+</html>

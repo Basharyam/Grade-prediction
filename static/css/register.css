@@ -1,0 +1,106 @@
+/* Uses variables/background from index.css. This file only adds page-specific styles. */
+
+/* Layout */
+main.container{ max-width: 980px }
+
+/* Light card for readability on dark background */
+.register-card{
+  max-width: 560px;
+  background: rgba(255,255,255,0.98) !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: var(--r-lg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  padding: 2.25rem 2rem;
+  color: #222 !important; /* dark text on light card */
+}
+
+/* Header */
+.register-icon{
+  font-size: 2.8rem;
+  margin-bottom: .75rem;
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.register-header h2{ font-weight: 800; color:#111827 }
+.register-header p{ color:#6b7280 }
+
+/* Form */
+.form-group{ margin-bottom: 1rem }
+.form-label{
+  display:block; font-weight:700; color:#111827; margin-bottom:.5rem;
+  font-size:.95rem;
+}
+.form-label i{ color:#6b7280 }
+
+.form-control{
+  width:100%;
+  padding: .9rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background:#fff;
+  color:#111827;
+  font-size:1rem;
+  transition: border-color var(--tr), box-shadow var(--tr), transform var(--tr);
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+.form-control::placeholder{ color:#9ca3af }
+.form-control:focus{
+  outline:none;
+  border-color: var(--brand-1);
+  box-shadow: 0 0 0 3px rgba(124,58,237,.16);
+  transform: translateY(-1px);
+}
+
+/* Validation feedback (toggle display via JS) */
+.invalid-feedback{
+  display:none; color:#dc2626; font-size:.86rem; margin-top:.5rem;
+  background:#fef2f2; border-left:3px solid #dc2626; padding:.5rem; border-radius:8px;
+}
+.valid-feedback{
+  display:none; color:#16a34a; font-size:.86rem; margin-top:.5rem;
+  background:#f0fdf4; border-left:3px solid #16a34a; padding:.5rem; border-radius:8px;
+}
+
+/* Submit button – same gradient as site */
+.register-btn{
+  width:100%;
+  padding:.95rem 1.5rem;
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  color:#fff; border:none; border-radius:12px;
+  font-size:1.05rem; font-weight:700; cursor:pointer;
+  transition: transform var(--tr), box-shadow var(--tr), opacity var(--tr);
+  box-shadow: 0 10px 24px rgba(124,58,237,.25);
+  margin-top:.5rem;
+}
+.register-btn:hover{ transform: translateY(-2px) }
+.register-btn:active{ transform: translateY(0) }
+
+/* Footer */
+.register-footer{
+  text-align:center; margin-top:1.5rem; padding-top:1rem;
+  border-top:1px solid #e5e7eb;
+}
+.register-footer p{ color:#6b7280 }
+.register-footer a{ color: var(--brand-1); font-weight:700; text-decoration:none }
+.register-footer a:hover{ text-decoration:underline }
+
+/* Subtle floating deco from your old design (optional) */
+.register-container::before,
+.register-container::after{ display:none } /* disable if you don’t want the bubbles */
+
+.register-card, .hero-card, .login-card {
+  color: #222 !important;
+}
+.register-card h1, .register-card h2, .register-card h3, .register-card h4, .register-card h5, .register-card h6,
+.register-card p, .register-card label, .register-card li,
+.hero-card h1, .hero-card h2, .hero-card h3, .hero-card h4, .hero-card h5, .hero-card h6,
+.hero-card p, .hero-card label, .hero-card li,
+.login-card h1, .login-card h2, .login-card h3, .login-card h4, .login-card h5, .login-card h6,
+.login-card p, .login-card label, .login-card li {
+  color: #222 !important;
+}
+
+@media (max-width: 480px){
+  .register-card{ padding: 1.5rem }
+  .register-icon{ font-size: 2.2rem }
+}

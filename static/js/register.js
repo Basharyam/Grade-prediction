@@ -59,8 +59,9 @@ form.addEventListener('submit', async (e) => {
   }
 
   // Check if the password is legal
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,15}$/;
-  if (!passwordRegex.test(input_password.value) || input_password.value.length > 15 || input_password.value.length < 7) {
+  // Must have 1 uppercase, 1 lowercase, 1 number, 1 special character, 7-15 chars
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{7,15}$/;
+  if (!passwordRegex.test(input_password.value)) {
     valid = false;
     input_password.classList.add("is-invalid");
     passwordInvalidFeedback.style.display = "block";
@@ -116,7 +117,7 @@ form.addEventListener('submit', async (e) => {
     if (result.success) {
       showNotification('Registration successful! Redirecting to login...', 'success');
       setTimeout(() => {
-        window.location.href = 'login-chrom.html';
+        window.location.href = 'login';
       }, 1500);
     } else {
       showNotification(`Error: ${result.error || result.message || 'Unknown error'}`, 'error');

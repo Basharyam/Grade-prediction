@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login • GradePredictor</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Base theme (same as index) -->
+  <link rel="stylesheet" href="/css/index.css">
+  <!-- Page overrides -->
+  <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+  <!-- Ambient gradient -->
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <!-- Navbar (same design as index) -->
+  <nav class="navbar navbar-expand-lg navbar-sheen">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="brand-text">GradePredictor</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse justify-content-end align-items-center gap-2">
+        <div id="auth-buttons" class="d-flex gap-2">
+          <button class="btn btn-ghost" onclick="location.href='index'">
+            <i class="fa-solid fa-house me-2"></i>Home
+          </button>
+          <button class="btn btn-primary-gradient" onclick="location.href='register'">
+            <i class="fa-solid fa-user-plus me-2"></i>Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Card (light surface for readability) -->
+  <main class="container py-5">
+    <div class="hero-card glass login-card mx-auto">
+      <div class="login-header text-center">
+        <i class="fas fa-sign-in-alt login-icon"></i>
+        <h2 class="m-0">Welcome Back</h2>
+        <p class="text-muted">Sign in to access your grade predictions for 8 subjects</p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="form-label">
+            <i class="fas fa-envelope me-2"></i>Email
+          </label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+          <div class="valid-feedback"><i class="fas fa-check"></i> Valid email</div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password" class="form-label">
+            <i class="fas fa-lock me-2"></i>Password
+          </label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          <div class="invalid-feedback">
+            Password must be at least 7 characters and include lowercase, uppercase, and a number.
+          </div>
+          <div class="valid-feedback"><i class="fas fa-check"></i> Valid password</div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="login-btn">
+          <i class="fas fa-right-to-bracket me-2"></i>Sign In
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <p class="m-0">Don't have an account? <a href="register">Register here</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>
